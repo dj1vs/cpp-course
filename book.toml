@@ -1,6 +1,6 @@
 [book]
 authors = ["dj1vs"]
-language = "en"
+language = "ru"
 multilingual = false
 src = "src"
 title = "Курс по C++"

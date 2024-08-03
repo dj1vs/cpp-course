@@ -1,3 +1,4 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+- [Вступление](./introduction.md)
+- [Чем отличаются языки программирования](./pl_differences.md)
