@@ -444,10 +444,10 @@ main: 1.o 2.o 3.o main.o
 <li><code>Makefile</code> - <code>Makefile</code> для сборки всего проекта под конкретную платформу</li>
 <li><code>src/Makefile</code> - вложенные <code>Makefile</code>ы для отдельных компонентов</li>
 </ul>
-<pre><code class="language-mermaid">flowchart TD
-	A["configure"] --&gt; B["Makefile"]
-	A --&gt; C["src/Makefile"]
-	A --&gt; D["configure.h"]
+<pre class="mermaid">flowchart TD
+	A[&quot;configure&quot;] --&gt; B[&quot;Makefile&quot;]
+	A --&gt; C[&quot;src/Makefile&quot;]
+	A --&gt; D[&quot;configure.h&quot;]
 
 	classDef utility fill:yellow,color:black
 	classDef finalfile fill:black,color:white
@@ -458,7 +458,7 @@ main: 1.o 2.o 3.o main.o
 	class C finalfile
 	class D finalfile
 		
-</code></pre>
+</pre>
 <p>И вот так выглядит типичный процесс установки программы с использованием <code>make</code> и <code>configure:</code></p>
 <pre><code class="language-bash">tar zxf helloworld-1.0.tar.gz # распаковываем архив с исходниками
 cd helloworld-1.0 # переходим в папку с исходниками
@@ -577,13 +577,13 @@ tar zcvf ~/helloworld-1.0-i686.tar.gz .
 </code></pre>
 <h3 id="Итоговый-алгоритм-работы-configure"><a class="header" href="#Итоговый-алгоритм-работы-configure">Итоговый алгоритм работы <code>configure</code></a></h3>
 <h4 id="Упрощённый"><a class="header" href="#Упрощённый">Упрощённый</a></h4>
-<pre><code class="language-mermaid">flowchart TD
-	A["Makefile.in"] --&gt; B["configure"]
-	C["src/Makefile.in"] --&gt; B
-	D["config.h.in"] --&gt; B
-	B --&gt; E["Makefile"]
-	B --&gt; F["src/Makefile"]
-	B --&gt; G["config.h"]
+<pre class="mermaid">flowchart TD
+	A[&quot;Makefile.in&quot;] --&gt; B[&quot;configure&quot;]
+	C[&quot;src/Makefile.in&quot;] --&gt; B
+	D[&quot;config.h.in&quot;] --&gt; B
+	B --&gt; E[&quot;Makefile&quot;]
+	B --&gt; F[&quot;src/Makefile&quot;]
+	B --&gt; G[&quot;config.h&quot;]
 
 	classDef configfile fill:orange,color:black
 	classDef configutil fill:yellow,color:black
@@ -598,20 +598,20 @@ tar zcvf ~/helloworld-1.0-i686.tar.gz .
 	class G finalfile
 
 	class B configutil
-</code></pre>
+</pre>
 <p><code>*.in</code> - это файлы-шаблоны, которые скрипт <code>configure</code> использует для генерации готовых конфигурационных файлов <code>Makefile</code>, <code>src/Makefile</code>, <code>config.h</code></p>
 <h4 id="Реальный"><a class="header" href="#Реальный">Реальный</a></h4>
-<pre><code class="language-mermaid">flowchart LR
-	A["Makefile.in"] --&gt; F
-	C["src/Makefile.in"] --&gt; F
-	D["config.h.in"] --&gt; F
-	B["configure"] --&gt; E["config.log"]
-	B --&gt; F["config.status"]
-	F --&gt; G["Makefile"]
-	F --&gt; H["src/Makefile"]
-	F --&gt; I["config.h"]
+<pre class="mermaid">flowchart LR
+	A[&quot;Makefile.in&quot;] --&gt; F
+	C[&quot;src/Makefile.in&quot;] --&gt; F
+	D[&quot;config.h.in&quot;] --&gt; F
+	B[&quot;configure&quot;] --&gt; E[&quot;config.log&quot;]
+	B --&gt; F[&quot;config.status&quot;]
+	F --&gt; G[&quot;Makefile&quot;]
+	F --&gt; H[&quot;src/Makefile&quot;]
+	F --&gt; I[&quot;config.h&quot;]
 	F --&gt; E
-	B --&gt; J["config.cache"]
+	B --&gt; J[&quot;config.cache&quot;]
 	J --&gt; B
 
 	classDef configfile fill:orange,color:black
@@ -633,7 +633,7 @@ tar zcvf ~/helloworld-1.0-i686.tar.gz .
 	class J configtemp
 	class E configtemp
 
-</code></pre>
+</pre>
 <ul>
 <li>В <code>config.log</code> хранится лог процесса конфигурации</li>
 <li>Фактически обрабатывает шаблонные файлы <code>config.status</code></li>
@@ -780,24 +780,24 @@ helloworld-1.0.tar.gz
 <h3 id="Алгоритм-работы"><a class="header" href="#Алгоритм-работы">Алгоритм работы</a></h3>
 <p>В данном примере мы используем утилиту <code>autoreconf</code> для того, чтобы сгенерировать скрипт <code>configure</code> и его "входные" файлы (<code>Makefile.in</code>, <code>src/Makefile.in</code>, <code>config.h.in</code>).
 Таким образом, получаем следующую схему сборки нашего проекта:</p>
-<pre><code class="language-mermaid">flowchart LR
-	L["configure.ac"] --&gt; K
-	M["Makefile.am"] --&gt; K
-	N["src/Makefile.am"] --&gt; K
-	K["autoreconf"] --&gt; A
+<pre class="mermaid">flowchart LR
+	L[&quot;configure.ac&quot;] --&gt; K
+	M[&quot;Makefile.am&quot;] --&gt; K
+	N[&quot;src/Makefile.am&quot;] --&gt; K
+	K[&quot;autoreconf&quot;] --&gt; A
 	K --&gt; C
 	K --&gt; D
 	K --&gt; B 
-	A["Makefile.in"] --&gt; F
-	C["src/Makefile.in"] --&gt; F
-	D["config.h.in"] --&gt; F
-	B["configure"] --&gt; E["config.log"]
-	B --&gt; F["config.status"]
-	F --&gt; G["Makefile"]
-	F --&gt; H["src/Makefile"]
-	F --&gt; I["config.h"]
+	A[&quot;Makefile.in&quot;] --&gt; F
+	C[&quot;src/Makefile.in&quot;] --&gt; F
+	D[&quot;config.h.in&quot;] --&gt; F
+	B[&quot;configure&quot;] --&gt; E[&quot;config.log&quot;]
+	B --&gt; F[&quot;config.status&quot;]
+	F --&gt; G[&quot;Makefile&quot;]
+	F --&gt; H[&quot;src/Makefile&quot;]
+	F --&gt; I[&quot;config.h&quot;]
 	F --&gt; E
-	B --&gt; J["config.cache"]
+	B --&gt; J[&quot;config.cache&quot;]
 	J --&gt; B
 
 	classDef autotools fill:green,color:black
@@ -827,7 +827,7 @@ helloworld-1.0.tar.gz
 
 	class K utility
 
-</code></pre>
+</pre>
 <h4 id="Сгенерированные-файлы"><a class="header" href="#Сгенерированные-файлы">Сгенерированные файлы</a></h4>
 <ul>
 <li><code>Makefile.in</code>, <code>configure.h.in</code>, <code>src/Makefile.in</code> - шаблонные файлы для настройки конфигурации</li>
@@ -839,19 +839,19 @@ helloworld-1.0.tar.gz
 <h4 id="Состав-autotools"><a class="header" href="#Состав-autotools">Состав Autotools</a></h4>
 <p>На самом деле, <code>autoreconf</code> - это не единственная утилита <code>Autotools</code>, которая была нами использована в процессе сборки.
 Рассмотрим примерное устройство <code>GNU Autotools</code>:</p>
-<pre><code class="language-mermaid">flowchart LR
-a["GNU Autotools"] --&gt; b["GNU Autoconf"]
-a --&gt; c["GNU Automake"]
-b --&gt; d["autoconf"]
-b --&gt; e["autoheader"]
-b --&gt; f["autoreconf"]
-b --&gt; g["autoscan"]
-b --&gt; h["autoupdate"]
-b --&gt; i["ifnames"]
-b --&gt; j["autom4te"]
-c --&gt; k["automake"]
-c --&gt; l["aclocal"]
-</code></pre>
+<pre class="mermaid">flowchart LR
+a[&quot;GNU Autotools&quot;] --&gt; b[&quot;GNU Autoconf&quot;]
+a --&gt; c[&quot;GNU Automake&quot;]
+b --&gt; d[&quot;autoconf&quot;]
+b --&gt; e[&quot;autoheader&quot;]
+b --&gt; f[&quot;autoreconf&quot;]
+b --&gt; g[&quot;autoscan&quot;]
+b --&gt; h[&quot;autoupdate&quot;]
+b --&gt; i[&quot;ifnames&quot;]
+b --&gt; j[&quot;autom4te&quot;]
+c --&gt; k[&quot;automake&quot;]
+c --&gt; l[&quot;aclocal&quot;]
+</pre>
 <h5 id="gnu-autocnf"><a class="header" href="#gnu-autocnf">GNU Autocnf</a></h5>
 <ul>
 <li><code>autoconf</code> - Создаёт скрипт <code>configure</code> из конфига <code>configure.ac</code></li>
@@ -869,31 +869,31 @@ c --&gt; l["aclocal"]
 </ul>
 <hr />
 <p>Таким образом, конечная реальная схема будет выглядеть так:</p>
-<pre><code class="language-mermaid">flowchart TD
-	K["configure.ac"] --&gt; L["aclocal"]
-	L --&gt; M["alocal.m4"]
-	N["autoconf"] --&gt; B
+<pre class="mermaid">flowchart TD
+	K[&quot;configure.ac&quot;] --&gt; L[&quot;aclocal&quot;]
+	L --&gt; M[&quot;alocal.m4&quot;]
+	N[&quot;autoconf&quot;] --&gt; B
 	K --&gt; N
 	M --&gt; N
-	O["autoheader"] --&gt; D
+	O[&quot;autoheader&quot;] --&gt; D
 	M --&gt; O
 	K --&gt; O
-	P["automake"] --&gt; A
+	P[&quot;automake&quot;] --&gt; A
 	P --&gt; C
-	Q["Makefile.am"] --&gt; P
-	R["src/Makefile.am"] --&gt; P
+	Q[&quot;Makefile.am&quot;] --&gt; P
+	R[&quot;src/Makefile.am&quot;] --&gt; P
 	M --&gt; P
 	K --&gt; P
-	A["Makefile.in"] --&gt; F
-	C["src/Makefile.in"] --&gt; F
-	D["config.h.in"] --&gt; F
-	B["configure"] --&gt; E["config.log"]
-	B --&gt; F["config.status"]
-	F --&gt; G["Makefile"]
-	F --&gt; H["src/Makefile"]
-	F --&gt; I["config.h"]
+	A[&quot;Makefile.in&quot;] --&gt; F
+	C[&quot;src/Makefile.in&quot;] --&gt; F
+	D[&quot;config.h.in&quot;] --&gt; F
+	B[&quot;configure&quot;] --&gt; E[&quot;config.log&quot;]
+	B --&gt; F[&quot;config.status&quot;]
+	F --&gt; G[&quot;Makefile&quot;]
+	F --&gt; H[&quot;src/Makefile&quot;]
+	F --&gt; I[&quot;config.h&quot;]
 	F --&gt; E
-	B --&gt; J["config.cache"]
+	B --&gt; J[&quot;config.cache&quot;]
 	J --&gt; B
 	
 	classDef autotools fill:green,color:black
@@ -925,7 +925,7 @@ c --&gt; l["aclocal"]
 	class G finalfile
 	class H finalfile
 	class I finalfile
-</code></pre>
+</pre>
 <ul>
 <li>Зелёный - файлы конфигурации для <code>Automake</code></li>
 <li>Красный - утилиты <code>Autotools</code></li>
