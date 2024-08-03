@@ -1,0 +1,6 @@
+[book]
+authors = ["dj1vs"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Курс по C++"
