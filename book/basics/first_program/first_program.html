@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Чем отличаются языки программирования - Курс по C++</title>
+        <title>Первая программа на C++ - Курс по C++</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
         </script>
 
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="intro/pl_differences.html" class="active"><strong aria-hidden="true">1.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="intro/language_processors.html"><strong aria-hidden="true">2.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="cpp_intro/compile_and_link.html"><strong aria-hidden="true">3.</strong> Компиляция и сборка программ на C++</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="basics/first_program/first_program.html"><strong aria-hidden="true">4.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="basics/first_program/tasks.html"><strong aria-hidden="true">4.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">5.</strong> Марш бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="basics/bare_minimum/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">6.</strong> Введение в GNU Autotools с нуля</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">1.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">2.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">3.</strong> Компиляция и сборка программ на C++</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html" class="active"><strong aria-hidden="true">4.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">4.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">5.</strong> Марш бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">6.</strong> Введение в GNU Autotools с нуля</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -144,7 +144,7 @@
                     <h1 class="menu-title">Курс по C++</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/dj1vs/cpp-course/" title="Git repository" aria-label="Git repository">
@@ -413,77 +413,122 @@
   --color-pink: #d53984;
 }
 </style>
-<h1 id="Чем-отличаются-языки-программирования"><a class="header" href="#Чем-отличаются-языки-программирования">Чем отличаются языки программирования</a></h1>
-<p>Прежде чем начать изучать какой-то из языков программирования, нужно очень чётко представлять себе, а почему вы выбрали учить именно его.</p>
-<p>На моём опыте и в школе и в универе особо не заостряли на этом моменте внимания, и как итог, многие люди считают, что языки отличаются только тем, что "один быстрее другого", или "на одном языке писать код легче, чем на другом".</p>
-<h2 id="Основные-различия-ЯП"><a class="header" href="#Основные-различия-ЯП">Основные различия ЯП</a></h2>
-<h3 id="Разное-предназначение"><a class="header" href="#Разное-предназначение">Разное предназначение</a></h3>
-<p>Перед разработкой нового языка программирования, авторы в первую очередь закладывают какую-то цель, какую-то потребность, которую должен восполнять новый создаваемый инструмент.</p>
-<p>Например:</p>
+<h1 id="Первая-программа-на-c"><a class="header" href="#Первая-программа-на-c">Первая программа на C++</a></h1>
+<p>Обычно изучение любого языка программирования начинается с написания программы, которая выводит на экран строчку "Hello World!". Поступим так же.</p>
+<p>Итак, та самая программа:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main()
+{
+    std::cout &lt;&lt; "Hello World!\n";
+}
+</code></pre>
+<p>В принципе, что здесь происходит, можно понять и чисто наугад, но давайте всё же разберём подробнее.</p>
+<ol>
+<li>Выполнение <strong>любой</strong> программы на C++ начинается с выполнения функции <code>main</code>. Можно сказать, что это такая "точка входа" в нашу программу.</li>
+</ol>
+<p>В противовес этому решению в C++, на питоне например выполнение программы начинается прямо с первой строки файла.
+Но зачастую на питоне можно встретить следующие штуки:</p>
+<pre><code class="language-python">def main():
+    print("Hello world")
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+<p>Так достаточно часто пишут в реальных популярных проектах. Как пример, который первым пришёл в голову : проект <a href="https://github.com/sherlock-project/sherlock/blob/master/sherlock_project/sherlock.py"><code>Sherlock</code></a>, у которого на гитхабе ~53000 звёзд.
+По сути, это можно назвать мимикрией под язык C++, в котором <em>выполнение программы начинается с выполнения функции main (ну и, в принципе, им и заканчивается)</em>.
+2. Перед функцией <code>main</code> мы написали <code>#include &lt;iostream&gt;</code> - так мы попросили <em>препроцессор</em> включить в наш файл весь код, записанный в библиотеке <code>iostream</code>. Нам это нужно, чтобы вывести текст в консоль.
+3. Что же происходит в самой функции <code>main</code>? В ней у нас прописана только одна строчка: <code>std::cout &lt;&lt; "Hello world!\n";</code>. <strong>Здесь мы помещаем в <em>поток стандартного вывода</em> строчку "Hello World!" с <em>переносом на новую строчку</em>.</strong></p>
+<p>Последний пункт, скорее всего, вызывает у вас больше всего вопросов. Разберём, что здесь происходит, подробнее.</p>
+<ol>
+<li>В этой строчке у нас записана <em>конечная операуия</em>. Прибавить число к переменной, вывести строчку на экран, объявить новую переменную, вызвать функцию, ... - всё это какие-то операции. В конце каждой операции в C++ нужно ставить <code>;</code>. Это - очередное дизайнерское решение, отделяющее C++ от других языков, таких как, например, питон.</li>
+<li>Что такое <em>поток стандартного вывода</em>? Вообще, <em>поток</em> - это какой-то канал, через который можно отправлять куда-то информацию, или получать её оттуда. Можно представить себе это как конвейер на производстве, где на бесконечно крутящуюся ленту ставят коробки. <em>Поток стандартного вывода</em> - это такой же "конвейер", который поставляет определённую нами информацию в <em>стандартный вывод (или, проще говоря, в терминал)</em>.
+В нашем коде мы "положили на конвейер" <code>std::cout</code> строчку "Hello World", и конвейер доставил эту строчку в терминал.
+Так же бывают строковые потоки, или файловые. В этих случаях "конвейер" будет доставлять данные в переменную <code>string</code> (в строчку), или в файл.</li>
+<li>Помещаем мы данные в поток при помощи оператора угловых скобок - <code>&lt;&lt;</code>. Этот оператор принимает два аргумента (один записывается слева, а другой справа). Первый аргумент - это поток, куда мы будем помещать информацию, а второй - сама "информация" (имя переменной, класс, вызов функции, ...), которую нам надо передать.
+Если же вызвать оператор <code>&lt;&lt;</code> для двух целых чисел (например, <code>1 &lt;&lt; 2</code>), произойдёт <em>бинарный сдвиг</em>. Подробнее о различных операторах будем говорить в темах "основные операции C++" и "перегрузка операторов".</li>
+<li>В конце мы записали символ <code>\n</code>. Это - специальный символ, который обозначает переход на новую строку в терминале. Когда компьютер видит, что мы хотим вывести <code>\n</code>, он понимает, что мы хотим перейти на следующую строчку.</li>
+</ol>
+<p><strong>Почему переход на новую строку так странно записывается? Почему нельзя было просто нажать в коде <code>Enter</code>?</strong>
+Дело в том, что <code>\n</code> - это специальная <a href="https://ru.wikipedia.org/wiki/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B0%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C">управляющая последовательность</a>, или же <em>escape sequence</em> для терминала.</p>
+<p>Когда мы работаем с терминалом в нашей программе (да и в любой другой), мы работаем по сути с 2D-полем, на котором можем рисовать свои символы. На этом поле у нас есть курсор, который определяет конкретную позицию на поле, на котором мы остановились.</p>
+<p>Итак. Вот мы вывели на экран "Hello world".</p>
+<pre><code>Hello world!
+            @ &lt;- так я изобразил курсор. Он указывает на поле после `!`
+</code></pre>
+<p>И дальше мы хотим перейти на следующую строчку. Вспомним, что мы находимся на 2D-поле. И во фразе "поместить на поле символ <code>Enter</code>" нет никакого смысла! Потому что <code>Enter</code> - это управляющая кнопка на клавиатуре, которая не представляет никакой символ. Символы - это буквы, цифры, знаки препинания и т.д.
+Чтобы перейти на следующую строчку, нам на самом деле нужно <em>переместить курсор на начало следующей строки</em>.</p>
+<p>Представьте себе курсор как исполнителя-робота из Кумира, или черепаху из ПервоЛого: курсору, чтобы перейти по 2D-полю на начало следующей строки, надо:</p>
+<ol>
+<li>Опуститься на одну "клетку" вниз - на следующую строку</li>
+</ol>
+<pre><code>Hello world!
+
+            @
+</code></pre>
+<ol start="2">
+<li>Переместиться влево до начала текущей строки</li>
+</ol>
+<pre><code>Hello world!
+
+@
+</code></pre>
+<p>Таким образом, мы перешли на новую строку. Да, оказывается, даже переход на новую строчку в терминале не такой простой, как кажется!</p>
+<p>...стоит понимать, что <code>\n</code> - это не единственная управляющая последовательность. Среди основных других можно встретить:</p>
 <ul>
-<li><strong>C</strong> был задуман как язык с удобным синтаксисом, на котором возможно писать низкоуровневые эффективные приложения, и первое применение получил в написании операционной системы (ОС) Unix.</li>
-<li><strong>Golang</strong> был придуман как простой язык с низким порогом входа, для быстрого создания маленьких и быстрых программ.</li>
-<li><strong>С++</strong> был создан как продолжение языка <strong>C</strong> с реализацией новых концепций программирования (о чём мы более подробно поговорим в других статьях).</li>
-<li><strong>Ada</strong> был создан как очень безопасный и надёжный язык для работы на военных объектах и самолётах</li>
-<li>и так далее...</li>
+<li><code>\t</code> - вывод таба (<code>Tab</code>) на экран</li>
+<li><code>\r</code> - перемещение курсора в начало текущей строки</li>
+<li><code>\'</code>, <code>\"</code>, <code>\\</code> - не совсем управляющие последовательности, но просто способ вывести символы <code>'</code>, <code>"</code> и <code>\</code> на экран.</li>
 </ul>
-<p>Причём стоит различать конкретные области, в которых используется ЯП, и его предназначение.</p>
-<p>Например, С++ зачастую используют для создания игр - но это не была его изначальная цель (на момент появления C++ ещё не был создан тетрис). В этом случае характеристики языка просто очень удачно подходят для решения заданной задачи.</p>
-<p>Предназначение языка программирования выражается на практике в его реализации, о чём мы поговорим далее.</p>
-<h3 id="Исполнение-программ-на-ЯП"><a class="header" href="#Исполнение-программ-на-ЯП">Исполнение программ на ЯП</a></h3>
-<p>Существуют разные способы "запуска" кода на каком-то языке программирования. Подробнее об этом говорится <a href="https://dj1vs.github.io/cpp-course/book/language_processors.html">здесь</a>.</p>
-<p>Но если коротко, код, написанный на разных языках программирования, запускается и работает по-разному.</p>
-<p>Какой-то код собирается в готовую программу (например, <code>.exe</code>), какой-то нет.<br />
-Для программ на одном языке может использоваться сборщик мусора (что это такое, рассмотрим в другой статье), для программ на другом языке нет.</p>
-<p>Это может значительно влиять как на производительность программ, так и на простоту их переноса с одной системы на другую.</p>
-<h3 id="Идиомы-и-парадигмы"><a class="header" href="#Идиомы-и-парадигмы">Идиомы и парадигмы</a></h3>
-<p>Люди занимаются программированием (...в том или ином виде) уже больше сотни лет, и за это время у разработчиков выработалось огромное число разных подходов и основных техник написания кода, планирования архитектуры программы, и так далее.</p>
-<p>Если говорить обобщённо, то какие-то из этих подходов и техник можно назвать <em>идиомами</em>, а какие-то <em>парадигмами</em>. Конкретно об этих понятиях мы будем говорить далее.</p>
-<p>Яркими примерами парадигм программирования являются <strong>Объектно-ориентированное программирование (ООП)</strong>, <strong>Функциональное программирование (ФП)</strong> и <strong>Аспектно-ориентированное программирование</strong>.</p>
-<p>Как пример самых простых идиом же можно привести <strong>RAII</strong>, <strong>Обмен значениями</strong> и <strong>Инкремент</strong>.</p>
-<h3 id="Реализованные-концепции"><a class="header" href="#Реализованные-концепции">Реализованные концепции</a></h3>
-<p>В языках программирования существуют разные инструменты, которые облегчают работу над какими-то задачами, или просто позволяют подстроить процесс написания программы под себя.</p>
-<p>В разных языках реализовываются разные <em>концепции</em>. Например, в C++ есть перегрузка операторов, шаблонное программирование, указатели, и так далее.</p>
-<h3 id="Низкоуровневость"><a class="header" href="#Низкоуровневость">Низкоуровневость</a></h3>
-<p>Разные языки на разных уровнях взаимодействуют с железом компьютера.</p>
-<p>Компьютеру, чтобы, например, вывести на экран окно графического приложения (например, того же калькулятора), нужно сделать очень много вычислений: просчитать координаты всех пикселей на экране, которые нужно вывести, закрасить их каким-то цветом, и т.д. и т.п.</p>
-<p>И на каких-то языках можно программировать <em>очень близко</em> к тем самым <em>низкоуровневым</em> командам, которые на самом деле выполняются на машине, а на каких-то нет.<br />
-В том же питоне, например, то же самое окно можно инициализировать буквально за пару строчек кода.</p>
-<p><em>Низкоуровневость</em> языка влияет на его скорость: чем ближе мы с помощью ЯП общаемся с компьютером, тем точнее и быстрее будут программы на этом языке (очень грубо говоря).</p>
-<p>Но у <em>низкоуровневости</em> есть и свои минусы: из-за того, что мы <em>близко</em> общаемся с целевым компьютером, переносить приложения на таких ЯП с одной машины на другую может быть достаточно проблематично. Также увеличивается время и сложность разработки в целом.</p>
-<h3 id="Дизайнерские-решения"><a class="header" href="#Дизайнерские-решения">Дизайнерские решения</a></h3>
-<p>Это те отличия, которые и без всякой теоретической базы вы заметите при переходе от одного языка программирования на другой.</p>
-<p>В основном, это конечно же разный синтаксис, разные правила оформления кода, разные структуры и расширения файлов с исходным кодом и так далее.</p>
-<h2 id="Косвенные-различия-ЯП"><a class="header" href="#Косвенные-различия-ЯП">Косвенные различия ЯП</a></h2>
-<p>Итак, всё то, что мы обсуждали выше - это <em>основные</em> различия языков программирования, то есть различия, которые в язык были заложены самими создателями языка. Далее же мы посмотрим на более бытовые, и из-за этого чуть более <em>актуальные</em>, раличия между ЯП.</p>
-<h3 id="Сферы-применения"><a class="header" href="#Сферы-применения">Сферы применения</a></h3>
-<p>Об этом мы частично говорили в пункте про <em>разное предназначение</em>.</p>
-<p>Какие-то языки используют в основном для написания игр и серверных программ, какие-то - для веб-разработки, какие-то для написания драйверов и программирования микроконтроллеров, какие-то языки используют для научных расчётов, и т.д.</p>
-<p>Зачастую люди выбирают ЯП именно из-за конкретной сферы разработки, с которой они хотели бы работать.</p>
-<h3 id="Порог-входа"><a class="header" href="#Порог-входа">Порог входа</a></h3>
-<p>Какие-то языки программирования легко начинать изучать с нуля, а на какие-то необходимо потратить не один десяток часов, чтобы начать хотя бы примерно понимать, что там вообще происходит.</p>
-<p>Как пример ЯП с низким порогом входа, можно вспомнить Python и Golang (у Golang низкий порог входа вообще является чуть ли не одним из главных преимуществ).</p>
-<p>Как пример ЯП с высоким порогом входа упомяну:</p>
+<p>Таким образом, именно из-за таких особенностей работы в терминале, чтобы перейти в терминале на новую строчку, нужно писать <code>\n</code>. Но на самом деле есть и другие причины. Например:</p>
 <ul>
-<li>NASM, TASM и прочие диалекты ассемблера</li>
-<li>C</li>
-<li>Rust</li>
-<li>С++</li>
-<li>...</li>
+<li>если бы мы реально в коде нажимали <code>Enter</code>, он бы выглядел мягко говоря неряшливо. Что было бы, если бы мы хотели вывести, скажем, 5 переходов на новую строку?</li>
+<li>по правилам синтаксиса C++, строчки у нас должны записываться на одной линии исходного кода (с некоторыми оговорками). У нас же в файле есть и форматирование, и табы, и отступы. Как тогда нам надо бы было с этим всем работать? Просто забить на все предыдущие табы и всё форматирование, и просто поверх фигачить строчки? Это бы тогда выглядело как-то так:</li>
 </ul>
-<h3 id="Актуальность"><a class="header" href="#Актуальность">Актуальность</a></h3>
-<p>Возможно, учить какой-нибудь <code>Lisp</code>, <code>COBOL</code> или <code>Eiffel</code> очень интересно, но в реальном мире эти языки не особо то и применяются, и работу со знанием этих технологий будет найти очень тяжело.</p>
-<p>Но актуальность языка выражается не только в количестве рабочих мест: это отражается и на самом процессе разработки. В устаревшем ЯП скорее всего не будут поддерживаться современные технологии и концепции, реализованные в новых языках, для него будет мало современных <em>библиотек, фреймворков и SDK</em> (что это такое подробнее обсудим позже), из-за чего писать программы на нём будет уже не так удобно.</p>
-<h3 id="Уровень-зп"><a class="header" href="#Уровень-зп">Уровень з/п</a></h3>
-<p>Пункт, который косвенно связан с предыдущим. Но здесь скорее играет роль спрос и предложение на специалистов в конкретной области.</p>
-<p>Ведь питон, например, сейчас <strong>очень</strong> востребован, и применяется в практически любой крупной компании. Но одновременно с этим людей, которые ищут работу для начинающего разработчика на этом языке тоже огромное множество: из-за огромной популярности языка, низкого порога входа и бесчисленных курсов.</p>
+<pre><code class="language-cpp">int main()
+{
+	std::cout &lt;&lt; "Hello World!
+This is multiline text
+
+
+
+I wanted to print
+";
+}
+</code></pre>
+<p>И выглядело бы ужасно.</p>
+<p>На самом деле, в C++ существуют <code>raw string literals</code>, которые помогают записывать примерно в такой форме текст в исходных файлах без управляющих последовательностей. Если интересно, что это, можешь загуглить. Но примерно с ними строчки можно записывать так:</p>
+<pre><code class="language-cpp">int main()
+{
+	std::cout &lt;&lt;
+R"###(
+Hello world!
+This is multiline text
+
+
+I wanted to print.
+)###";
+}
+</code></pre>
+<p><strong>Зачем нам вообще здесь переходить на новую строку?</strong> На самом деле, это не критичный момент. Переход на новую строку здесь является скорее правилом приличия.
+Потому что, если мы запустим нашу программу без вывода <code>\n</code>, мы получим следующее:</p>
+<pre><code class="language-bash">$ &gt; g++ main.cpp -o main
+$ &gt; ./main
+Hello world! $ &gt;
+</code></pre>
+<p>То есть мы не перевели терминал на новую строчку, и ввод новой терминальной команды будет перемешан с текстом, который вывела наша программа. Получилось не очень аккуратно.</p>
+<h1 id="Завершение"><a class="header" href="#Завершение">Завершение</a></h1>
+<p>В принципе, на этом можно остановиться. Как видите, даже в самой базовой программе на <code>C++</code> скрывается очень много теории, хотя я даже специально умалчивал о некоторых моментах. Но не стоит бояться: после относительно тяжёлого обучения основам дальнейшее изучение плюсов становится намного легче.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../cpp_intro/compile_and_link.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="intro/language_processors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../basics/first_program/tasks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -493,8 +538,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../cpp_intro/compile_and_link.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="intro/language_processors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../basics/first_program/tasks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -509,17 +557,17 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="mermaid.min.js"></script>
-        <script src="mermaid-init.js"></script>
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
 
 
     </div>

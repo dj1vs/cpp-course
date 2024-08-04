@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Чем отличаются языки программирования - Курс по C++</title>
+        <title>Марш бросок по основам языка - Курс по C++</title>
 
 
         <!-- Custom HTML head -->
@@ -12,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
         </script>
 
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="intro/pl_differences.html" class="active"><strong aria-hidden="true">1.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="intro/language_processors.html"><strong aria-hidden="true">2.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="cpp_intro/compile_and_link.html"><strong aria-hidden="true">3.</strong> Компиляция и сборка программ на C++</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="basics/first_program/first_program.html"><strong aria-hidden="true">4.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="basics/first_program/tasks.html"><strong aria-hidden="true">4.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">5.</strong> Марш бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="basics/bare_minimum/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">6.</strong> Введение в GNU Autotools с нуля</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">1.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">2.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">3.</strong> Компиляция и сборка программ на C++</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html"><strong aria-hidden="true">4.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">4.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html" class="active"><strong aria-hidden="true">5.</strong> Марш бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">6.</strong> Введение в GNU Autotools с нуля</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -144,7 +144,7 @@
                     <h1 class="menu-title">Курс по C++</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/dj1vs/cpp-course/" title="Git repository" aria-label="Git repository">
@@ -413,77 +413,257 @@
   --color-pink: #d53984;
 }
 </style>
-<h1 id="Чем-отличаются-языки-программирования"><a class="header" href="#Чем-отличаются-языки-программирования">Чем отличаются языки программирования</a></h1>
-<p>Прежде чем начать изучать какой-то из языков программирования, нужно очень чётко представлять себе, а почему вы выбрали учить именно его.</p>
-<p>На моём опыте и в школе и в универе особо не заостряли на этом моменте внимания, и как итог, многие люди считают, что языки отличаются только тем, что "один быстрее другого", или "на одном языке писать код легче, чем на другом".</p>
-<h2 id="Основные-различия-ЯП"><a class="header" href="#Основные-различия-ЯП">Основные различия ЯП</a></h2>
-<h3 id="Разное-предназначение"><a class="header" href="#Разное-предназначение">Разное предназначение</a></h3>
-<p>Перед разработкой нового языка программирования, авторы в первую очередь закладывают какую-то цель, какую-то потребность, которую должен восполнять новый создаваемый инструмент.</p>
-<p>Например:</p>
+<h1 id="Марщ-бросок-по-основам-языка"><a class="header" href="#Марщ-бросок-по-основам-языка">Марщ-бросок по основам языка</a></h1>
+<p>Давайте разберём самую базовую базу С++, необходимую для написания минимально полезных программ на C++.</p>
+<p>Мы не будем вдаваться в конкретные подробности каждой темы и вообще в целом будем обо всём говорить поверхностно. Но основная цель данного урока - это просто как можно быстрее преодолеть вот этот порог, до которого "непонятно как" писать код на C++.</p>
+<h2 id="Переменные"><a class="header" href="#Переменные">Переменные</a></h2>
+<p>Как мы упоминали ранее, С++ - это <em>сильно типизированный</em> язык. Это значит, что для каждой функции, для каждой переменной, и т.д. мы должны явно чётко указывать <em>тип</em>.
+Переменные на С++ объявляются следующим образом:</p>
+<pre><code class="language-cpp">/*тип переменной*/ /*название переменной*/;
+</code></pre>
+<p>Пример: объявление переменной типа <code>int</code> с именем <code>a</code>:</p>
+<pre><code class="language-cpp">int a = 1;
+</code></pre>
+<div class="mdbook-callouts mdbook-callouts-quote">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  страуструп б. - программирование. принципы и практика с использованием c++
+</p>
+<p>В языке С++ предусмотрен довольно широкий выбор типов (см. раздел А.8). Однако можно создавать прекрасные программы, обходясь лишь пятью из них.</p>
+<pre><code class="language-cpp">int number_of_steps = 39; // int - для целых чисел
+double flyinq_time = 3.5; // double - для чисел с плавающей точкой
+char decimal_point = '.'; // char - для СИМВ ОЛОВ
+string name = "Annemarie"; // string - для строк
+bool tap_on = true ; // bool - для логических переменных
+</code></pre>
+</div>
+<p>Но учтите, что <code>string</code> записывается как <code>std::string</code> - это часть <em>стандартной библиотеки</em>, или же <em>стандартного пространства имён</em>. Про пространства имён поговорим в следующих занятиях.</p>
+<p>Скорее всего, с названием переменной у вас не будет проблем, но вот основные правила именования:</p>
 <ul>
-<li><strong>C</strong> был задуман как язык с удобным синтаксисом, на котором возможно писать низкоуровневые эффективные приложения, и первое применение получил в написании операционной системы (ОС) Unix.</li>
-<li><strong>Golang</strong> был придуман как простой язык с низким порогом входа, для быстрого создания маленьких и быстрых программ.</li>
-<li><strong>С++</strong> был создан как продолжение языка <strong>C</strong> с реализацией новых концепций программирования (о чём мы более подробно поговорим в других статьях).</li>
-<li><strong>Ada</strong> был создан как очень безопасный и надёжный язык для работы на военных объектах и самолётах</li>
-<li>и так далее...</li>
+<li>Имена переменных могут состоять только из букв, цифр и нижних подчёркиваний</li>
+<li>Имена переменных не могут начинаться с цифры</li>
+<li>В качестве имён переменных нельзя использовать ключевые слова C++ (<code>return</code>, <code>int</code>, <code>double</code>, ...)
+Обратите внимание! Если не <em>инициализировать</em> переменную при создании (то есть если ей не присвоить какое-то значение), то в ней будут лежать мусорные данные, состав которых предсказать невозможно! Поэтому, при создании переменной, обязательно нужно в неё что-то "класть" (ну, кроме случаев, когда из контекста понятно, что не будет доступа к инициализированной памяти):\</li>
 </ul>
-<p>Причём стоит различать конкретные области, в которых используется ЯП, и его предназначение.</p>
-<p>Например, С++ зачастую используют для создания игр - но это не была его изначальная цель (на момент появления C++ ещё не был создан тетрис). В этом случае характеристики языка просто очень удачно подходят для решения заданной задачи.</p>
-<p>Предназначение языка программирования выражается на практике в его реализации, о чём мы поговорим далее.</p>
-<h3 id="Исполнение-программ-на-ЯП"><a class="header" href="#Исполнение-программ-на-ЯП">Исполнение программ на ЯП</a></h3>
-<p>Существуют разные способы "запуска" кода на каком-то языке программирования. Подробнее об этом говорится <a href="https://dj1vs.github.io/cpp-course/book/language_processors.html">здесь</a>.</p>
-<p>Но если коротко, код, написанный на разных языках программирования, запускается и работает по-разному.</p>
-<p>Какой-то код собирается в готовую программу (например, <code>.exe</code>), какой-то нет.<br />
-Для программ на одном языке может использоваться сборщик мусора (что это такое, рассмотрим в другой статье), для программ на другом языке нет.</p>
-<p>Это может значительно влиять как на производительность программ, так и на простоту их переноса с одной системы на другую.</p>
-<h3 id="Идиомы-и-парадигмы"><a class="header" href="#Идиомы-и-парадигмы">Идиомы и парадигмы</a></h3>
-<p>Люди занимаются программированием (...в том или ином виде) уже больше сотни лет, и за это время у разработчиков выработалось огромное число разных подходов и основных техник написания кода, планирования архитектуры программы, и так далее.</p>
-<p>Если говорить обобщённо, то какие-то из этих подходов и техник можно назвать <em>идиомами</em>, а какие-то <em>парадигмами</em>. Конкретно об этих понятиях мы будем говорить далее.</p>
-<p>Яркими примерами парадигм программирования являются <strong>Объектно-ориентированное программирование (ООП)</strong>, <strong>Функциональное программирование (ФП)</strong> и <strong>Аспектно-ориентированное программирование</strong>.</p>
-<p>Как пример самых простых идиом же можно привести <strong>RAII</strong>, <strong>Обмен значениями</strong> и <strong>Инкремент</strong>.</p>
-<h3 id="Реализованные-концепции"><a class="header" href="#Реализованные-концепции">Реализованные концепции</a></h3>
-<p>В языках программирования существуют разные инструменты, которые облегчают работу над какими-то задачами, или просто позволяют подстроить процесс написания программы под себя.</p>
-<p>В разных языках реализовываются разные <em>концепции</em>. Например, в C++ есть перегрузка операторов, шаблонное программирование, указатели, и так далее.</p>
-<h3 id="Низкоуровневость"><a class="header" href="#Низкоуровневость">Низкоуровневость</a></h3>
-<p>Разные языки на разных уровнях взаимодействуют с железом компьютера.</p>
-<p>Компьютеру, чтобы, например, вывести на экран окно графического приложения (например, того же калькулятора), нужно сделать очень много вычислений: просчитать координаты всех пикселей на экране, которые нужно вывести, закрасить их каким-то цветом, и т.д. и т.п.</p>
-<p>И на каких-то языках можно программировать <em>очень близко</em> к тем самым <em>низкоуровневым</em> командам, которые на самом деле выполняются на машине, а на каких-то нет.<br />
-В том же питоне, например, то же самое окно можно инициализировать буквально за пару строчек кода.</p>
-<p><em>Низкоуровневость</em> языка влияет на его скорость: чем ближе мы с помощью ЯП общаемся с компьютером, тем точнее и быстрее будут программы на этом языке (очень грубо говоря).</p>
-<p>Но у <em>низкоуровневости</em> есть и свои минусы: из-за того, что мы <em>близко</em> общаемся с целевым компьютером, переносить приложения на таких ЯП с одной машины на другую может быть достаточно проблематично. Также увеличивается время и сложность разработки в целом.</p>
-<h3 id="Дизайнерские-решения"><a class="header" href="#Дизайнерские-решения">Дизайнерские решения</a></h3>
-<p>Это те отличия, которые и без всякой теоретической базы вы заметите при переходе от одного языка программирования на другой.</p>
-<p>В основном, это конечно же разный синтаксис, разные правила оформления кода, разные структуры и расширения файлов с исходным кодом и так далее.</p>
-<h2 id="Косвенные-различия-ЯП"><a class="header" href="#Косвенные-различия-ЯП">Косвенные различия ЯП</a></h2>
-<p>Итак, всё то, что мы обсуждали выше - это <em>основные</em> различия языков программирования, то есть различия, которые в язык были заложены самими создателями языка. Далее же мы посмотрим на более бытовые, и из-за этого чуть более <em>актуальные</em>, раличия между ЯП.</p>
-<h3 id="Сферы-применения"><a class="header" href="#Сферы-применения">Сферы применения</a></h3>
-<p>Об этом мы частично говорили в пункте про <em>разное предназначение</em>.</p>
-<p>Какие-то языки используют в основном для написания игр и серверных программ, какие-то - для веб-разработки, какие-то для написания драйверов и программирования микроконтроллеров, какие-то языки используют для научных расчётов, и т.д.</p>
-<p>Зачастую люди выбирают ЯП именно из-за конкретной сферы разработки, с которой они хотели бы работать.</p>
-<h3 id="Порог-входа"><a class="header" href="#Порог-входа">Порог входа</a></h3>
-<p>Какие-то языки программирования легко начинать изучать с нуля, а на какие-то необходимо потратить не один десяток часов, чтобы начать хотя бы примерно понимать, что там вообще происходит.</p>
-<p>Как пример ЯП с низким порогом входа, можно вспомнить Python и Golang (у Golang низкий порог входа вообще является чуть ли не одним из главных преимуществ).</p>
-<p>Как пример ЯП с высоким порогом входа упомяну:</p>
+<pre><code class="language-cpp">int a = 1; // правильно
+int b; // тоже правильно; сразу же считываем значение b с консоли
+std::cin &gt;&gt; b;
+int c; // ОШИБКА!
+std::cout &lt;&lt; c;
+</code></pre>
+<h2 id="Основные-операторы"><a class="header" href="#Основные-операторы">Основные операторы</a></h2>
+<p><strong>Арифметика</strong></p>
 <ul>
-<li>NASM, TASM и прочие диалекты ассемблера</li>
-<li>C</li>
-<li>Rust</li>
-<li>С++</li>
-<li>...</li>
+<li><code>+</code> - сложение</li>
+<li><code>-</code> - вычитание</li>
+<li><code>*</code> - умноженгие</li>
+<li><code>/</code> - деление</li>
+<li><code>%</code> - взятие остатка от деления
+Пример :</li>
 </ul>
-<h3 id="Актуальность"><a class="header" href="#Актуальность">Актуальность</a></h3>
-<p>Возможно, учить какой-нибудь <code>Lisp</code>, <code>COBOL</code> или <code>Eiffel</code> очень интересно, но в реальном мире эти языки не особо то и применяются, и работу со знанием этих технологий будет найти очень тяжело.</p>
-<p>Но актуальность языка выражается не только в количестве рабочих мест: это отражается и на самом процессе разработки. В устаревшем ЯП скорее всего не будут поддерживаться современные технологии и концепции, реализованные в новых языках, для него будет мало современных <em>библиотек, фреймворков и SDK</em> (что это такое подробнее обсудим позже), из-за чего писать программы на нём будет уже не так удобно.</p>
-<h3 id="Уровень-зп"><a class="header" href="#Уровень-зп">Уровень з/п</a></h3>
-<p>Пункт, который косвенно связан с предыдущим. Но здесь скорее играет роль спрос и предложение на специалистов в конкретной области.</p>
-<p>Ведь питон, например, сейчас <strong>очень</strong> востребован, и применяется в практически любой крупной компании. Но одновременно с этим людей, которые ищут работу для начинающего разработчика на этом языке тоже огромное множество: из-за огромной популярности языка, низкого порога входа и бесчисленных курсов.</p>
+<pre><code class="language-cpp">int a = 5;
+int b = a + 2; // b = 7
+b = b - 3; // b = 4
+b = b * 10; // b = 40
+b = b / 2; // b = 20
+b = b % 7; // b = 1 -&gt; 21 - 20 = 1. Стандартный трюк проверки числа на делимость.
+</code></pre>
+<p><strong>Бинарные операторы</strong></p>
+<ul>
+<li><code>^</code> - XOR (исключающее или)</li>
+<li><code>|</code> - OR (бинарное или)</li>
+<li><code>&amp;</code> - AND (бинарное и)</li>
+<li><code>~</code> - бинарное отрицание</li>
+<li><code>&lt;&lt;</code> - бинарный сдвиг влево</li>
+<li><code>&gt;&gt;</code> - бинарный сдвиг вправо
+Пример:</li>
+</ul>
+<pre><code class="language-cpp">int a = 5; // 101
+a = a &amp; 4; // 100
+a = a | 3; // 111
+a = a &lt;&lt; 3; // 111000
+a = a &gt;&gt; 2; // 1110
+int b = ~a; // b = 11111111111111111111111111110001 (-15)
+</code></pre>
+<p>Почему <code>~a</code> получается таким большим, мы рассмотрим при более подробном погружении в типы С++
+<strong>Логические операторы</strong></p>
+<ul>
+<li><code>||</code> - логическое или</li>
+<li><code>&amp;&amp;</code> - логическое и</li>
+<li><code>!</code> - логическое отрицание
+<strong>Операторы сравнения</strong></li>
+<li><code>&lt;</code> - меньше</li>
+<li><code>&gt;</code> - больше</li>
+<li><code>&lt;=</code> - меньше/равно</li>
+<li><code>&gt;=</code> - больше/равно</li>
+<li><code>==</code> - сравнение</li>
+<li><code>!=</code> - не равняется</li>
+</ul>
+<p>Логические операторы и операторы сравнения подробнее будут рассмотрены далее.</p>
+<p>На первых порах вам не понадобяться <strong>все</strong> эти операторы. Просто бегло посмотрите, что тут есть, и выберите нужное.</p>
+<h2 id="Условные-выражения"><a class="header" href="#Условные-выражения">Условные выражения</a></h2>
+<pre><code class="language-cpp">if (/*какое-то условие*/)
+{
+	// что-то делаем
+}
+else if (/*какое-то ещё условие*/)
+{
+	// то-то это делаем
+}
+else
+{
+	// в крайнем случае делаем вот это
+}
+</code></pre>
+<p>Внутри круглых скобочек <code>if</code> и <code>else if</code> нужно использовать какие-то логические выражения, которые составляются при помощи логических операторов и операторов сравнения, например:</p>
+<pre><code class="language-cpp">if (1 &lt; 2) // ...
+if (first_value == second_value) // ...
+if (1 &gt; 0 &amp;&amp; 5 &lt; 6) // ...
+if (a != b) // ...
+</code></pre>
+<h2 id="Циклы"><a class="header" href="#Циклы">Циклы</a></h2>
+<h3 id="while"><a class="header" href="#while">while</a></h3>
+<pre><code class="language-cpp">while (/*какое-то условие*/)
+{
+	// что-то делаем
+}
+</code></pre>
+<p>Цикл <code>while</code> - пока условие будет выполняться, выполняем какой-то набор команд.</p>
+<p>Набор операций, записанный здесь в фигурных скобках, называется <em>телом цикла</em>.</p>
+<p>Схематически <code>while</code> можно описать так:</p>
+<ol>
+<li>Проверь условие</li>
+<li>Если условие выполняется, выполни тело цикла. Если нет, выход из цикла</li>
+<li>Перейди к шагу 1.</li>
+</ol>
+<h3 id="do-while"><a class="header" href="#do-while">do while</a></h3>
+<pre><code class="language-cpp">do
+{
+	// что-то делаем
+}
+while (/* какое-то условие */)
+</code></pre>
+<p>Если нам нужно, чтобы тело цикла выполнилось <em>как минимум</em> один раз, мы можем использовать <code>do-while</code>.</p>
+<p>Схематически <code>do while</code> можно описать так:</p>
+<ol>
+<li>Выполни тело цикла</li>
+<li>Проверь условие</li>
+<li>Если условие выполняется, перейди к первому шагу</li>
+</ol>
+<h3 id="for"><a class="header" href="#for">for</a></h3>
+<p>Здесь уже поинтереснее. С помощью <code>for</code> мы можем создавать более сложные и выразительные циклы. Но стоит понимать, что любой цикл <code>for</code> можно заменить на цикл <code>while</code> с небольшим изменением кода.</p>
+<p>Цикл <code>for</code> записывается следующим образом:</p>
+<pre><code class="language-cpp">for (/* выражение 1*/; /* выражение 2 */; /*выражение 3 */)
+{
+
+}
+</code></pre>
+<ul>
+<li>Выражение 1 - это операция, которую надо выполнить один раз перед запуском цикла</li>
+<li>Выражение 2 - это условие, при выполнении которого цикл будет завершён</li>
+<li>Выражение 3 - это операция, которая будет выполнена после каждого тела цикла</li>
+</ul>
+<p>Пример:</p>
+<pre><code class="language-cpp">for (int i = 0; i &lt; 10; i = i + 1)
+{
+	std::cout &lt;&lt; i &lt;&lt; std::endl;
+}
+</code></pre>
+<p>В этом коде мы выводим на экран все числа от 0 до 9 включительно.</p>
+<ol>
+<li>Перед выполнением цикла мы выполняем операцию <code>int i = 0</code>, то есть создаём переменную <code>i</code> и помещаем в неё 0</li>
+<li>Далее мы в цикле выводим на экран переменную <code>i</code>, и потом выполняем операцию <code>i = i + 1</code>, то есть увеличиваем <code>i</code> на 1</li>
+<li>После этого проверям условие <code>i &lt; 10</code>, то есть, если i становится равным 10, мы выходим из цикла</li>
+</ol>
+<div class="mdbook-callouts mdbook-callouts-info">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  задание
+</p>
+<p>Переписать этот цикл, используя <code>while</code></p>
+</div>
+<h2 id="Функции"><a class="header" href="#Функции">Функции</a></h2>
+<p>Для того, чтобы переиспользовать единожды записанный код, в С++ существуют функции (так же, как и в любом другом <em>адекватном</em> ЯП).</p>
+<h3 id="База"><a class="header" href="#База">База</a></h3>
+<p>Синтаксис написания функций примерно следующий:</p>
+<pre><code class="language-cpp">/*возвращаемый тип*/ /*название функции*/ (/*аргументы*/)
+{
+	// тело функции - что-то делаем
+}
+</code></pre>
+<p>Аргументы записываются следующим образом:</p>
+<pre><code class="language-cpp">(/*тип аргумента 1*/ /*имя аргумента 1*/, /*тип аргумента 2*/ /*.....*/)
+</code></pre>
+<p>Чтобы вернуть какое-то значение из функции, мы используем ключевое слово <code>return</code>:</p>
+<pre><code class="language-cpp">return "nya-nya-nya :3";
+</code></pre>
+<p>Пример самой базовой функции:</p>
+<pre><code class="language-cpp">int mystery_function(int a, int b)
+{
+	return a + b;
+}
+</code></pre>
+<div class="mdbook-callouts mdbook-callouts-info">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  задание
+</p>
+<p>Что делает эта функция?</p>
+</div>
+<p>Что происходит в этом коде?</p>
+<ul>
+<li>Мы объявили функцию, которая называется <code>mystery_function</code></li>
+<li>Она возвращает значение типа <code>int</code> (целое число)</li>
+<li>Функция принимает два аргумента типа <code>int</code> (a и b)</li>
+<li>В <em>теле функции</em> мы возвращаем из функции значение, равное сумме переменных a и b</li>
+</ul>
+<p>В коде вызвать функцию можно следующим образом:</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; mystery_function(1, 2) &lt;&lt; std::endl;
+int large_number = mystery_function(101, 107);
+</code></pre>
+<h3 id="Процедуры"><a class="header" href="#Процедуры">Процедуры</a></h3>
+<p>Чтобы объявить процедуру (функцию, которая не возвращает никакого значения), используется ключевое слово <code>void</code>:</p>
+<pre><code class="language-cpp">void procedure()
+{
+	std::cout &lt;&lt; "I am procedure!\n";
+}
+</code></pre>
+<p>Так же, как видите, можно объявлять функции, которые вообще не принимают аргументов</p>
+<h3 id="Значения-аргументов-по-умолчанию"><a class="header" href="#Значения-аргументов-по-умолчанию">Значения аргументов по умолчанию</a></h3>
+<pre><code class="language-cpp">int whats_my_age(int born_year = 2000)
+{
+	std::cout &lt;&lt; "You were born " &lt;&lt; 2024 - born_year &lt;&lt; " years ago\n";
+}
+</code></pre>
+<div class="mdbook-callouts mdbook-callouts-warning">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  warning
+</p>
+<p>В реальном проекте такой код писать - плохо. Не считайте его образцом для подражания. Это просто пример.</p>
+</div>
+<p>Вызов функции:</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; whats_my_age(1900) &lt;&lt; std::endl; // выведется 124
+std::cout &lt;&lt; whats_my_age() &lt;&lt; std::endl; // вывдедется 24
+</code></pre>
+<h2 id="Ввод-переменной-из-терминала"><a class="header" href="#Ввод-переменной-из-терминала">Ввод переменной из терминала</a></h2>
+<pre><code class="language-cpp">int a;
+std::cin &gt;&gt; a;
+</code></pre>
+<h3 id="Заключение"><a class="header" href="#Заключение">Заключение</a></h3>
+<p>В принципе, на этом самые базовые инструменты для программирования на C++ закончились. Мы умеем создавать и инициализировать переменные, проводить над ними какие-то операции, умеем составлять условные выражения и циклы, а также можем выносить код в функции.</p>
+<p>Также мы познакомились с основами работы с терминалом (ввод/вывод текста).</p>
+<p>На этой основе уже можно, с <em>небольшими</em> оговорками, спокойно решить ЕГЭ по информатике, решать самые базовые олимпиадные задачки по программированию, и даже делать примитивные функциональные приложения.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../basics/first_program/tasks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="intro/language_processors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../basics/bare_minimum/tasks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -493,8 +673,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../basics/first_program/tasks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="intro/language_processors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../basics/bare_minimum/tasks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -509,17 +692,17 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="mermaid.min.js"></script>
-        <script src="mermaid-init.js"></script>
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
 
 
     </div>
