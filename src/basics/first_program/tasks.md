@@ -24,4 +24,4 @@ GNU Autotools provide:
 
 4. Бонус! С использованием `raw string literals` выведи тот же текст, что и в пункте 3
 
-Решения выложены в [репозитории](https://github.com/dj1vs/cpp-course) курса.
+[Решения](https://github.com/dj1vs/cpp-course/tree/main/code/basics/first_program)

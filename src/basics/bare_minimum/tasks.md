@@ -35,4 +35,4 @@ int main()
 }
 ```
 
-Решения выложены в [репозитории](https://github.com/dj1vs/cpp-course) курса.
+[Решения](https://github.com/dj1vs/cpp-course/tree/main/code/basics/bare_minimum)
