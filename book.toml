@@ -13,9 +13,12 @@ command = "mdbook-mermaid"
 [preprocessor.emojify]
 command = "./emojitsu-wrapper.sh"
 
+[preprocessor.callouts]
+
 [output]
 
 [output.html]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 default-theme = "rust"
 preferred-dark-theme = "rust"
+git-repository-url = "https://github.com/dj1vs/cpp-course/"
