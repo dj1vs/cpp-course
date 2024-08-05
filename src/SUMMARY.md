@@ -2,6 +2,7 @@
 
 # Подготовка к курсу
 
+- [Двоичная система счисления](intro/binary_number_system.md)
 - [Чем отличаются языки программирования](intro/pl_differences.md)
 - [Языковые процессоры](intro/language_processors.md)
 

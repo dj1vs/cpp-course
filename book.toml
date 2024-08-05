@@ -18,6 +18,7 @@ command = "./emojitsu-wrapper.sh"
 [output]
 
 [output.html]
+mathjax-support = true
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 default-theme = "rust"
 preferred-dark-theme = "rust"
