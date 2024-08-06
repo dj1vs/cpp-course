@@ -2,7 +2,8 @@
 
 # Подготовка к курсу
 
-- [Двоичная система счисления](intro/binary_number_system.md)
+- [Двоичная система счисления](intro/binary_number_system/binary_number_system.md) 
+    - [Задания](intro/binary_number_system/tasks.md)
 - [Чем отличаются языки программирования](intro/pl_differences.md)
 - [Языковые процессоры](intro/language_processors.md)
 
@@ -15,7 +16,7 @@
     - [Задания](basics/first_program/tasks.md)
 - [Марш бросок по основам языка](basics/bare_minimum/bare_minimum.md)
     - [Задания](basics/bare_minimum/tasks.md)
-- [Типы данных (в разработке)](basics/types/types.md)
+- [Типы данных](basics/types/types.md)
 
 # ООП
 - [Виртуальные функции (в разработке)](oop/virtual.md)
