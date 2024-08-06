@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Марш бросок по основам языка - Курс по C++</title>
+        <title>Задания - Курс по C++</title>
 
 
         <!-- Custom HTML head -->
@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/binary_number_system/binary_number_system.html"><strong aria-hidden="true">1.</strong> Двоичная система счисления</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../intro/binary_number_system/tasks.html"><strong aria-hidden="true">1.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">2.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">3.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">4.</strong> Компиляция и сборка программ на C++ (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html"><strong aria-hidden="true">5.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html" class="active"><strong aria-hidden="true">6.</strong> Марш бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">6.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/types/types.html"><strong aria-hidden="true">7.</strong> Типы данных</a></li><li class="chapter-item expanded affix "><li class="part-title">ООП</li><li class="chapter-item expanded "><a href="../../oop/virtual.html"><strong aria-hidden="true">8.</strong> Виртуальные функции (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Функторы</li><li class="chapter-item expanded "><a href="../../functors/lambda.html"><strong aria-hidden="true">9.</strong> Лямбда-выражения (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">10.</strong> Введение в GNU Autotools с нуля</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/binary_number_system/binary_number_system.html"><strong aria-hidden="true">1.</strong> Двоичная система счисления</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../intro/binary_number_system/tasks.html" class="active"><strong aria-hidden="true">1.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">2.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">3.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">4.</strong> Компиляция и сборка программ на C++ (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html"><strong aria-hidden="true">5.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">6.</strong> Марш бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">6.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/types/types.html"><strong aria-hidden="true">7.</strong> Типы данных</a></li><li class="chapter-item expanded affix "><li class="part-title">ООП</li><li class="chapter-item expanded "><a href="../../oop/virtual.html"><strong aria-hidden="true">8.</strong> Виртуальные функции (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Функторы</li><li class="chapter-item expanded "><a href="../../functors/lambda.html"><strong aria-hidden="true">9.</strong> Лямбда-выражения (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">10.</strong> Введение в GNU Autotools с нуля</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -415,257 +415,53 @@
   --color-pink: #d53984;
 }
 </style>
-<h1 id="Марш-бросок-по-основам-языка"><a class="header" href="#Марш-бросок-по-основам-языка">Марш-бросок по основам языка</a></h1>
-<p>Давайте разберём самую базовую базу С++, необходимую для написания минимально полезных программ на C++.</p>
-<p>Мы не будем вдаваться в конкретные подробности каждой темы и вообще в целом будем обо всём говорить поверхностно. Но основная цель данного урока - это просто как можно быстрее преодолеть вот этот порог, до которого "непонятно как" писать код на C++.</p>
-<h2 id="Переменные"><a class="header" href="#Переменные">Переменные</a></h2>
-<p>Как мы упоминали ранее, С++ - это <em>сильно типизированный</em> язык. Это значит, что для каждой функции, для каждой переменной, и т.д. мы должны явно чётко указывать <em>тип</em>.
-Переменные на С++ объявляются следующим образом:</p>
-<pre><code class="language-cpp">/*тип переменной*/ /*название переменной*/;
-</code></pre>
-<p>Пример: объявление переменной типа <code>int</code> с именем <code>a</code>:</p>
-<pre><code class="language-cpp">int a = 1;
-</code></pre>
-<div class="mdbook-callouts mdbook-callouts-quote">
-<p class="mdbook-callouts-title">
-  <span class="mdbook-callouts-icon"></span>
-  страуструп б. - программирование. принципы и практика с использованием c++
-</p>
-<p>В языке С++ предусмотрен довольно широкий выбор типов (см. раздел А.8). Однако можно создавать прекрасные программы, обходясь лишь пятью из них.</p>
-<pre><code class="language-cpp">int number_of_steps = 39; // int - для целых чисел
-double flyinq_time = 3.5; // double - для чисел с плавающей точкой
-char decimal_point = '.'; // char - для СИМВ ОЛОВ
-string name = "Annemarie"; // string - для строк
-bool tap_on = true ; // bool - для логических переменных
-</code></pre>
-</div>
-<p>Но учтите, что <code>string</code> записывается как <code>std::string</code> - это часть <em>стандартной библиотеки</em>, или же <em>стандартного пространства имён</em>. Про пространства имён поговорим в следующих занятиях.</p>
-<p>Скорее всего, с названием переменной у вас не будет проблем, но вот основные правила именования:</p>
-<ul>
-<li>Имена переменных могут состоять только из букв, цифр и нижних подчёркиваний</li>
-<li>Имена переменных не могут начинаться с цифры</li>
-<li>В качестве имён переменных нельзя использовать ключевые слова C++ (<code>return</code>, <code>int</code>, <code>double</code>, ...)
-Обратите внимание! Если не <em>инициализировать</em> переменную при создании (то есть если ей не присвоить какое-то значение), то в ней будут лежать мусорные данные, состав которых предсказать невозможно! Поэтому, при создании переменной, обязательно нужно в неё что-то "класть" (ну, кроме случаев, когда из контекста понятно, что не будет доступа к инициализированной памяти):\</li>
-</ul>
-<pre><code class="language-cpp">int a = 1; // правильно
-int b; // тоже правильно; сразу же считываем значение b с консоли
-std::cin &gt;&gt; b;
-int c; // ОШИБКА!
-std::cout &lt;&lt; c;
-</code></pre>
-<h2 id="Основные-операторы"><a class="header" href="#Основные-операторы">Основные операторы</a></h2>
-<p><strong>Арифметика</strong></p>
-<ul>
-<li><code>+</code> - сложение</li>
-<li><code>-</code> - вычитание</li>
-<li><code>*</code> - умноженгие</li>
-<li><code>/</code> - деление</li>
-<li><code>%</code> - взятие остатка от деления</li>
-</ul>
-<p>Пример :</p>
-<pre><code class="language-cpp">int a = 5;
-int b = a + 2; // b = 7
-b = b - 3; // b = 4
-b = b * 10; // b = 40
-b = b / 2; // b = 20
-b = b % 7; // b = 1 -&gt; 21 - 20 = 1. Стандартный трюк проверки числа на делимость.
-</code></pre>
-<p><strong>Бинарные операторы</strong></p>
-<ul>
-<li><code>^</code> - XOR (исключающее или)</li>
-<li><code>|</code> - OR (бинарное или)</li>
-<li><code>&amp;</code> - AND (бинарное и)</li>
-<li><code>~</code> - бинарное отрицание</li>
-<li><code>&lt;&lt;</code> - бинарный сдвиг влево</li>
-<li><code>&gt;&gt;</code> - бинарный сдвиг вправо</li>
-</ul>
-<p>Пример:</p>
-<pre><code class="language-cpp">int a = 5; // 101
-a = a &amp; 4; // 100
-a = a | 3; // 111
-a = a &lt;&lt; 3; // 111000
-a = a &gt;&gt; 2; // 1110
-int b = ~a; // b = 11111111111111111111111111110001 (-15)
-</code></pre>
-<p>Почему <code>~a</code> получается таким большим, мы рассмотрим при более подробном погружении в типы С++
-<strong>Логические операторы</strong></p>
-<ul>
-<li><code>||</code> - логическое или</li>
-<li><code>&amp;&amp;</code> - логическое и</li>
-<li><code>!</code> - логическое отрицание
-<strong>Операторы сравнения</strong></li>
-<li><code>&lt;</code> - меньше</li>
-<li><code>&gt;</code> - больше</li>
-<li><code>&lt;=</code> - меньше/равно</li>
-<li><code>&gt;=</code> - больше/равно</li>
-<li><code>==</code> - сравнение</li>
-<li><code>!=</code> - не равняется</li>
-</ul>
-<p>Логические операторы и операторы сравнения подробнее будут рассмотрены далее.</p>
-<p>На первых порах вам не понадобяться <strong>все</strong> эти операторы. Просто бегло посмотрите, что тут есть, и выберите нужное.</p>
-<h2 id="Условные-выражения"><a class="header" href="#Условные-выражения">Условные выражения</a></h2>
-<pre><code class="language-cpp">if (/*какое-то условие*/)
-{
-	// что-то делаем
-}
-else if (/*какое-то ещё условие*/)
-{
-	// то-то это делаем
-}
-else
-{
-	// в крайнем случае делаем вот это
-}
-</code></pre>
-<p>Внутри круглых скобочек <code>if</code> и <code>else if</code> нужно использовать какие-то логические выражения, которые составляются при помощи логических операторов и операторов сравнения, например:</p>
-<pre><code class="language-cpp">if (1 &lt; 2) // ...
-if (first_value == second_value) // ...
-if (1 &gt; 0 &amp;&amp; 5 &lt; 6) // ...
-if (a != b) // ...
-</code></pre>
-<h2 id="Циклы"><a class="header" href="#Циклы">Циклы</a></h2>
-<h3 id="while"><a class="header" href="#while">while</a></h3>
-<pre><code class="language-cpp">while (/*какое-то условие*/)
-{
-	// что-то делаем
-}
-</code></pre>
-<p>Цикл <code>while</code> - пока условие будет выполняться, выполняем какой-то набор команд.</p>
-<p>Набор операций, записанный здесь в фигурных скобках, называется <em>телом цикла</em>.</p>
-<p>Схематически <code>while</code> можно описать так:</p>
+<h1 id="Задания-к-уроку-Двоичная-система-счисления"><a class="header" href="#Задания-к-уроку-Двоичная-система-счисления">Задания к уроку "Двоичная система счисления"</a></h1>
+<h2 id="1-Перевод-в-двоичную-систему-счисления"><a class="header" href="#1-Перевод-в-двоичную-систему-счисления">1. Перевод в двоичную систему счисления</a></h2>
+<p>Переведи следующие числа из десятичной в двоичную систему счисления</p>
 <ol>
-<li>Проверь условие</li>
-<li>Если условие выполняется, выполни тело цикла. Если нет, выход из цикла</li>
-<li>Перейди к шагу 1.</li>
+<li>0</li>
+<li>1</li>
+<li>3</li>
+<li>12</li>
+<li>57</li>
+<li>148</li>
+<li>673</li>
+<li>227</li>
+<li>64</li>
+<li>126</li>
 </ol>
-<h3 id="do-while"><a class="header" href="#do-while">do while</a></h3>
-<pre><code class="language-cpp">do
-{
-	// что-то делаем
-}
-while (/* какое-то условие */)
-</code></pre>
-<p>Если нам нужно, чтобы тело цикла выполнилось <em>как минимум</em> один раз, мы можем использовать <code>do-while</code>.</p>
-<p>Схематически <code>do while</code> можно описать так:</p>
+<h2 id="2-Перевод-в-десятичную-систему-счисления"><a class="header" href="#2-Перевод-в-десятичную-систему-счисления">2. Перевод в десятичную систему счисления</a></h2>
+<p>Переведи следующие числа из двоичной в десятичную систему счисления</p>
 <ol>
-<li>Выполни тело цикла</li>
-<li>Проверь условие</li>
-<li>Если условие выполняется, перейди к первому шагу</li>
+<li><code>10</code></li>
+<li><code>1000</code></li>
+<li><code>101010</code></li>
+<li><code>1000111010</code></li>
+<li><code>1011101001</code></li>
+<li><code>10001</code></li>
+<li><code>10111</code></li>
+<li><code>01</code></li>
+<li><code>111010</code></li>
+<li><code>1010111110001</code></li>
+<li><code>1011111</code></li>
 </ol>
-<h3 id="for"><a class="header" href="#for">for</a></h3>
-<p>Здесь уже поинтереснее. С помощью <code>for</code> мы можем создавать более сложные и выразительные циклы. Но стоит понимать, что любой цикл <code>for</code> можно заменить на цикл <code>while</code> с небольшим изменением кода.</p>
-<p>Цикл <code>for</code> записывается следующим образом:</p>
-<pre><code class="language-cpp">for (/* выражение 1*/; /* выражение 2 */; /*выражение 3 */)
-{
-
-}
-</code></pre>
-<ul>
-<li>Выражение 1 - это операция, которую надо выполнить один раз перед запуском цикла</li>
-<li>Выражение 2 - это условие, при выполнении которого цикл будет завершён</li>
-<li>Выражение 3 - это операция, которая будет выполнена после каждого тела цикла</li>
-</ul>
-<p>Пример:</p>
-<pre><code class="language-cpp">for (int i = 0; i &lt; 10; i = i + 1)
-{
-	std::cout &lt;&lt; i &lt;&lt; std::endl;
-}
-</code></pre>
-<p>В этом коде мы выводим на экран все числа от 0 до 9 включительно.</p>
+<h2 id="3-Бонусная-секция-прочие-системы-счисления"><a class="header" href="#3-Бонусная-секция-прочие-системы-счисления">3. Бонусная секция: прочие системы счисления</a></h2>
 <ol>
-<li>Перед выполнением цикла мы выполняем операцию <code>int i = 0</code>, то есть создаём переменную <code>i</code> и помещаем в неё 0</li>
-<li>Далее мы в цикле выводим на экран переменную <code>i</code>, и потом выполняем операцию <code>i = i + 1</code>, то есть увеличиваем <code>i</code> на 1</li>
-<li>После этого проверям условие <code>i &lt; 10</code>, то есть, если i становится равным 10, мы выходим из цикла</li>
+<li>Переведи в троичную систему число \(165_{10}\)</li>
+<li>Переведи число \(1011_{2}\) в семиричную систему счисления</li>
+<li>Переведи число \(753_{8}\) в девятиричную систему счисления</li>
+<li>Переведи число \(333_{4}\) в пятиричную систему счисления</li>
 </ol>
-<div class="mdbook-callouts mdbook-callouts-info">
-<p class="mdbook-callouts-title">
-  <span class="mdbook-callouts-icon"></span>
-  задание
-</p>
-<p>Переписать этот цикл, используя <code>while</code></p>
-</div>
-<h2 id="Функции"><a class="header" href="#Функции">Функции</a></h2>
-<p>Для того, чтобы переиспользовать единожды записанный код, в С++ существуют функции (так же, как и в любом другом <em>адекватном</em> ЯП).</p>
-<h3 id="База"><a class="header" href="#База">База</a></h3>
-<p>Синтаксис написания функций примерно следующий:</p>
-<pre><code class="language-cpp">/*возвращаемый тип*/ /*название функции*/ (/*аргументы*/)
-{
-	// тело функции - что-то делаем
-}
-</code></pre>
-<p>Аргументы записываются следующим образом:</p>
-<pre><code class="language-cpp">(/*тип аргумента 1*/ /*имя аргумента 1*/, /*тип аргумента 2*/ /*.....*/)
-</code></pre>
-<p>Чтобы вернуть какое-то значение из функции, мы используем ключевое слово <code>return</code>:</p>
-<pre><code class="language-cpp">return "nya-nya-nya :3";
-</code></pre>
-<p>Пример самой базовой функции:</p>
-<pre><code class="language-cpp">int mystery_function(int a, int b)
-{
-	return a + b;
-}
-</code></pre>
-<div class="mdbook-callouts mdbook-callouts-info">
-<p class="mdbook-callouts-title">
-  <span class="mdbook-callouts-icon"></span>
-  задание
-</p>
-<p>Что делает эта функция?</p>
-</div>
-<p>Что происходит в этом коде?</p>
-<ul>
-<li>Мы объявили функцию, которая называется <code>mystery_function</code></li>
-<li>Она возвращает значение типа <code>int</code> (целое число)</li>
-<li>Функция принимает два аргумента типа <code>int</code> (a и b)</li>
-<li>В <em>теле функции</em> мы возвращаем из функции значение, равное сумме переменных a и b</li>
-</ul>
-<p>В коде вызвать функцию можно следующим образом:</p>
-<pre><code class="language-cpp">std::cout &lt;&lt; mystery_function(1, 2) &lt;&lt; std::endl;
-int large_number = mystery_function(101, 107);
-</code></pre>
-<h3 id="Процедуры"><a class="header" href="#Процедуры">Процедуры</a></h3>
-<p>Чтобы объявить процедуру (функцию, которая не возвращает никакого значения), используется ключевое слово <code>void</code>:</p>
-<pre><code class="language-cpp">void procedure()
-{
-	std::cout &lt;&lt; "I am procedure!\n";
-}
-</code></pre>
-<p>Так же, как видите, можно объявлять функции, которые вообще не принимают аргументов</p>
-<h3 id="Значения-аргументов-по-умолчанию"><a class="header" href="#Значения-аргументов-по-умолчанию">Значения аргументов по умолчанию</a></h3>
-<pre><code class="language-cpp">int whats_my_age(int born_year = 2000)
-{
-	std::cout &lt;&lt; "You were born " &lt;&lt; 2024 - born_year &lt;&lt; " years ago\n";
-}
-</code></pre>
-<div class="mdbook-callouts mdbook-callouts-warning">
-<p class="mdbook-callouts-title">
-  <span class="mdbook-callouts-icon"></span>
-  warning
-</p>
-<p>В реальном проекте такой код писать - плохо. Не считайте его образцом для подражания. Это просто пример.</p>
-</div>
-<p>Вызов функции:</p>
-<pre><code class="language-cpp">std::cout &lt;&lt; whats_my_age(1900) &lt;&lt; std::endl; // выведется 124
-std::cout &lt;&lt; whats_my_age() &lt;&lt; std::endl; // вывдедется 24
-</code></pre>
-<h2 id="Ввод-переменной-из-терминала"><a class="header" href="#Ввод-переменной-из-терминала">Ввод переменной из терминала</a></h2>
-<pre><code class="language-cpp">int a;
-std::cin &gt;&gt; a;
-</code></pre>
-<h3 id="Заключение"><a class="header" href="#Заключение">Заключение</a></h3>
-<p>В принципе, на этом самые базовые инструменты для программирования на C++ закончились. Мы умеем создавать и инициализировать переменные, проводить над ними какие-то операции, умеем составлять условные выражения и циклы, а также можем выносить код в функции.</p>
-<p>Также мы познакомились с основами работы с терминалом (ввод/вывод текста).</p>
-<p>На этой основе уже можно, с <em>небольшими</em> оговорками, спокойно решить ЕГЭ по информатике, решать самые базовые олимпиадные задачки по программированию, и даже делать примитивные функциональные приложения.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../basics/first_program/tasks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../intro/binary_number_system/binary_number_system.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../basics/bare_minimum/tasks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../intro/pl_differences.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -675,11 +471,11 @@ std::cin &gt;&gt; a;
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../basics/first_program/tasks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../intro/binary_number_system/binary_number_system.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../basics/bare_minimum/tasks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../intro/pl_differences.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
