@@ -16,8 +16,10 @@
     - [Задания](basics/first_program/tasks.md)
 - [Марш бросок по основам языка](basics/bare_minimum/bare_minimum.md)
     - [Задания](basics/bare_minimum/tasks.md)
-- [Типы данных](basics/types/types.md)
-    - [Работа с разными типами данных](basics/types/operating_different_types.md)
+- [Фундаментальные типы данных](basics/fundamental_types/types.md)
+    - [Возможные ошибки при работе](basics/fundamental_types/operating_different_types.md)
+    - [Литералы](basics/fundamental_types/literals.md)
+    
 
 # ООП
 - [Виртуальные функции (в разработке)](oop/virtual.md)
