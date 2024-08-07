@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "d6bce1f5d92ebaaf",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b86504c3afa01a3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "285a3fdb2f3822be",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "basics/operations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eb28a22e5bb3b1c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "55c192427f0457a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6c0af7894d5fd6bb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "aa2c0cb086354ffb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "03a1588b12a887e7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "459a5b9a70fbeb23",
+    "type": "split",
+    "children": [
+      {
+        "id": "cce039bff304c734",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e86aa0f528a21520",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "basics/operations.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5f2d9306348cd12e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "basics/operations.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ed474070c0d565f6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "93d1849ccc979171",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "basics/operations.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "285a3fdb2f3822be",
+  "lastOpenFiles": [
+    "SUMMARY.md",
+    "basics/operations.md",
+    "oop/virtual.md",
+    "basics/fundamental_types/types.md",
+    "basics/fundamental_types/operating_different_types.md",
+    "basics/fundamental_types/literals.md",
+    "basics/fundamental_types"
+  ]
+}
