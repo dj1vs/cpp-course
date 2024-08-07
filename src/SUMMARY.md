@@ -19,6 +19,7 @@
 - [Фундаментальные типы данных](basics/fundamental_types/types.md)
     - [Возможные ошибки при работе](basics/fundamental_types/operating_different_types.md)
     - [Литералы](basics/fundamental_types/literals.md)
+- [Операции и операторы](basics/operations.md)
     
 
 # ООП
