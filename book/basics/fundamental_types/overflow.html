@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Литералы - Курс по C++</title>
+        <title>Переполнения - Курс по C++</title>
 
 
         <!-- Custom HTML head -->
@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/binary_number_system/binary_number_system.html"><strong aria-hidden="true">1.</strong> Двоичная система счисления</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../intro/binary_number_system/tasks.html"><strong aria-hidden="true">1.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">2.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">3.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">4.</strong> Компиляция и сборка программ на C++ (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html"><strong aria-hidden="true">5.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">6.</strong> Марш-бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">6.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/types.html"><strong aria-hidden="true">7.</strong> Фундаментальные типы данных</a></li><li class="chapter-item expanded "><a href="../../basics/operations.html"><strong aria-hidden="true">8.</strong> Операции и операторы</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/auto_keyword.html"><strong aria-hidden="true">9.</strong> Ключевое слово auto</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/type_casting.html"><strong aria-hidden="true">10.</strong> Приведение типов</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/overflow.html"><strong aria-hidden="true">11.</strong> Переполнения</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/literals.html" class="active"><strong aria-hidden="true">12.</strong> Литералы</a></li><li class="chapter-item expanded affix "><li class="part-title">ООП</li><li class="chapter-item expanded "><a href="../../oop/virtual.html"><strong aria-hidden="true">13.</strong> Виртуальные функции (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Функторы</li><li class="chapter-item expanded "><a href="../../functors/lambda.html"><strong aria-hidden="true">14.</strong> Лямбда-выражения (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">15.</strong> Введение в GNU Autotools с нуля</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/binary_number_system/binary_number_system.html"><strong aria-hidden="true">1.</strong> Двоичная система счисления</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../intro/binary_number_system/tasks.html"><strong aria-hidden="true">1.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">2.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">3.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">4.</strong> Компиляция и сборка программ на C++ (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html"><strong aria-hidden="true">5.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">6.</strong> Марш-бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">6.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/types.html"><strong aria-hidden="true">7.</strong> Фундаментальные типы данных</a></li><li class="chapter-item expanded "><a href="../../basics/operations.html"><strong aria-hidden="true">8.</strong> Операции и операторы</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/auto_keyword.html"><strong aria-hidden="true">9.</strong> Ключевое слово auto</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/type_casting.html"><strong aria-hidden="true">10.</strong> Приведение типов</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/overflow.html" class="active"><strong aria-hidden="true">11.</strong> Переполнения</a></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/literals.html"><strong aria-hidden="true">12.</strong> Литералы</a></li><li class="chapter-item expanded affix "><li class="part-title">ООП</li><li class="chapter-item expanded "><a href="../../oop/virtual.html"><strong aria-hidden="true">13.</strong> Виртуальные функции (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Функторы</li><li class="chapter-item expanded "><a href="../../functors/lambda.html"><strong aria-hidden="true">14.</strong> Лямбда-выражения (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">15.</strong> Введение в GNU Autotools с нуля</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -415,111 +415,53 @@
   --color-pink: #d53984;
 }
 </style>
-<h1 id="Литералы"><a class="header" href="#Литералы">Литералы</a></h1>
-<p>Литералы - это специальные <em>символы</em>, которые мы можем использовать для более удобной записи кода, или для спецификации типа значения.</p>
-<p>Литералы - это не переменные и не ключевые слова, это именно <em>специальные символы</em>.</p>
-<h2 id="Очевидное"><a class="header" href="#Очевидное">Очевидное</a></h2>
-<p>Когда мы записываем какое-то число в переменную:</p>
-<pre><code class="language-cpp">int a = 123;
-</code></pre>
-<p>...мы пользуемся <em>целочисленным литералом</em>. В данном примере мы используем целочисленный литерал <code>123</code>.</p>
+<h1 id="Переполнение-типа"><a class="header" href="#Переполнение-типа">Переполнение типа</a></h1>
+<p>Ещё один очень важный аспект работы с типами данных - это переполнение.</p>
+<p>Мы уже косвенно сталкивались с ним при рассмотрении небезопасного преобразования типов, но давайте поговорим об этом подробнее.</p>
+<h2 id="Что-это-такое"><a class="header" href="#Что-это-такое">Что это такое</a></h2>
+<p>Переполнение переменной - это ситуация, когда мы пытаемся сложить в переменную значение, которое в неё не помещается.</p>
+<p>Можно себе представить аналогию с коробками и песком. Если переменная (коробка) занимает определённое количество памяти (вмещает в себя определённое количество песка), и мы пытаемся положить в неё слишком "большие" данные (засыпаем в неё слишком большое количество песка), часть данных будет потеряна (часть песка просто высыпется).</p>
+<p>Частично переполнение уже обсуждалось в статье про приведение типов, в разделе о небезопасных преобразованиях - там мы разбирали, что происходит, когда мы пытаемся в переменную типа <code>char</code> сложить число <code>300</code>.</p>
+<h2 id="Пример-переполнения"><a class="header" href="#Пример-переполнения">Пример переполнения</a></h2>
+<p>Предположим, что в переменной <code>char a</code> уже лежит число 127. В бинарном виде это будет выглядеть как:</p>
+<p><code>01111111</code></p>
+<p>Тип <code>char</code> <em>формально</em> может принимать и отрицательные значения, поэтому первый бит, по аналогии с <code>int</code>, равен 0.</p>
+<p>Что же будет, если мы попытаемся к переменной <code>a</code> добавить ещё единицу? Результат в принципе будет предсказуем. Бинарное представление переменной будет выглядеть так:</p>
+<p><code>10000000</code></p>
+<p>Как видим, первый бит теперь равен 1 - а это для типа <code>char</code> это означает, что число отрицательное. Далее, за битом знака, идут только нули. <code>-0</code> автоматически переведётся в <code>-128</code>.</p>
+<p>Получается, мы хотели в <code>char</code> положить <code>128</code>, а получилось, что там теперь лежит <code>-128</code>.</p>
+<p>Аналогично, если мы попытаеимся в <code>char</code> положить заведомо слишком большое число, например <code>300</code>:</p>
+<p><code>100101100</code> -&gt; <code>1[00101100]</code></p>
+<p>Квадратными скобками здесь я выделил часть числа <code>300</code>, которая непосредственно будет записана в переменную <code>char</code>. Таким образом, мы запишем в переменную не число <code>300</code>, а число \( 101100_2 = 44_{10} \).</p>
+<h2 id="Последствия-переполнений-переменных-в-реальном-мире"><a class="header" href="#Последствия-переполнений-переменных-в-реальном-мире">Последствия переполнений переменных в реальном мире</a></h2>
+<p>Как я уже говорил, в истории человечества было множество примеров, когда неправильная работа с типами данных в С/C++ приводила к катастрофическим последствиям. Когда-то это были потерянные огромные суммы денег, когда-то это были реальные человеческие жертвы. Иногда это просто вызывало небольшой дискомфорт для пользователей программы, но всё равно критичность ошибки это сильно не меняет.</p>
+<h3 id="therac-25"><a class="header" href="#therac-25">Therac-25</a></h3>
+<p>В 1985-1987 медицинской аппаратурлй Therac-25 смертельной дозой радиации были убиты 6-7 человек.</p>
+<p>Причиной послужила неправильная работа с многопоточностью и возникший вследствие этого <code>integer overflow</code> (переполнение переменной <code>int</code>).</p>
+<p>На эту тему есть отличное видео-эссе, которое я оставил в источниках.</p>
+<h3 id="Баги-в-видеоиграх"><a class="header" href="#Баги-в-видеоиграх">Баги в видеоиграх</a></h3>
+<p>Очень много ошибок в видеоиграх, которые при желании очень легко нагуглить.</p>
+<p>Наверное, самый легендарный пример - это сломанный экран в пакмане</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/ru/1/1e/Pac-Man_screenshot_256_level.png" alt="" /></p>
+<p>Если играть достаточно долго, переменная с номер уровня переполняется, и экран уровня заполняется случайными символами, из-за которых пройти игру становится невозможно.</p>
 <hr />
-<p>С дробными числами, соответственно, используются <em>литералы с плавающей точкой</em>:</p>
-<pre><code class="language-cpp">float pi = 3.14
-</code></pre>
-<hr />
-<p>То же самое относится к символам и строкам:</p>
-<pre><code class="language-cpp">char a = 'A';
-std::string b = "ABCDE";
-</code></pre>
-<p>Здесь мы используем <em>строковые</em> и <em>символьные</em> литералы.</p>
-<h2 id="Обознечение-типа-литералов"><a class="header" href="#Обознечение-типа-литералов">Обознечение типа литералов</a></h2>
-<p>Логично, что целочисленные, символьные и прочие литералы обозначают значение, которое принадлежит к некому типу данных.</p>
-<p>По умолчанию происходит так:</p>
-<ul>
-<li>Целочисленные литералы обозначают тип <code>int</code></li>
-<li>Литералы с плавающей точкой обозначают тип <code>float</code></li>
-<li>Символьные литералы обозначают тип <code>char</code></li>
-<li>Для строковых литералов всё сложнее - они обозначают тип <code>char[]</code>, или же <em>массив символов (<code>char</code>)</em>.</li>
-</ul>
-<p>Про массивы будем подробнее говорить в следующих уроках.</p>
-<p>Но что, если в нашем конкретном случае литерал должен обозначать другой тип? Для этого используются специальные суффиксы.</p>
-<p>Думаю, самая критичная ситуация, в которой используются суффиксы - это для строковых и символьных литералов. Если для этих литералов не задать правильный суффикс, данные будут повреждены. Подробнее об этом будет далее.</p>
-<h3 id="Целые-числа"><a class="header" href="#Целые-числа">Целые числа</a></h3>
-<pre><code class="language-cpp">unsigned int num6{ 1024U };         // U - unsigned int
-long num7{ -2048L };                // L - long
-unsigned long num8{ 2048UL };       // UL - unsigned long
-long long num9{ -4096LL };          // LL - long long
-unsigned long long num10{ 4096ULL };// ULL - unsigned long long
-</code></pre>
-<h3 id="Символы-и-строки-суффиксы-те-же"><a class="header" href="#Символы-и-строки-суффиксы-те-же">Символы и строки (суффиксы те же)</a></h3>
-<p>Частично этот синтаксис рассматривался в уроке про типы данных:</p>
-<pre><code class="language-cpp">wchar_t  w_ch = L'Д';
-char8_t C1 = u8'a';
-char16_t uc2 = u'¢'
-char32_t Uc4 = U'🍌'
-</code></pre>
-<p>Почему для символьных и строковых литералов особенно важно указывать эти суффиксы? (далее буду говорить только про символы, чтобы просто не писать много текста - со строками всё то же самое).</p>
-<p>Рассмотрим следующий код:</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-
-int main()
-{
-    wchar_t wide_char = 'Д';
-    std::wcout &lt;&lt; wide_char;
-}
-</code></pre>
-<p>Вроде бы, здесь не происходит ничего ужасного. Но что означает запись <code>'Д'</code>?</p>
-<p>Как мы помним, символьные литералы по умолчанию воспринимаются как тип данных <code>char</code>. А в этом коде, мы вместо символа из ASCII-таблицы используем <code>Д</code>.</p>
-<p>Когда компилятор будет разбирать этот код, он преобразует символ <code>Д</code> в какую-то последовательность бит <strong>в зависимости от кодировки самого файла с исходным кодом</strong>. В файле исходного кода же по сути тоже лежит текст, представленный в определённой кодировке.</p>
-<p>И символ <code>Д</code> в итоге преобразуется в некоторое число бит, которое явно не поместится в один байт. Из-за этого компилятор "обрежет" эти биты и будет воспринимать как <code>char</code> только первые 8 бит.</p>
-<p>Вследствие этого на экран в нашем примере выведется мусорное значение.</p>
-<p>На самом деле компилятор по этому поводу даже выведет на экран предупреждение:</p>
-<pre><code class="language-bash">warning: multi-character character constant [-Wmultichar]
-    6 |     wchar_t wide_char = 'Д';
-</code></pre>
-<p>Здесь компилятор предупреждает, что мы <em>как будто</em> указали в одинарных скобках больше, чем один символ - это происходит как раз из-за того, что символ <code>Д</code> занимает в памяти больше 8 бит.</p>
-<h3 id="Числа-с-плавающей-точкой"><a class="header" href="#Числа-с-плавающей-точкой">Числа с плавающей точкой</a></h3>
-<pre><code class="language-cpp">float float_var = 3.14f;
-double double_var = 3.14;
-long double long_double_var = 3.14l;
-</code></pre>
-<h2 id="Другие-формы-записи"><a class="header" href="#Другие-формы-записи">Другие формы записи</a></h2>
-<p>Те же самые литералы (целочиселнные, строковые, ...) можно записывать в другом формате.</p>
-<h3 id="Разделение-числа-на-разряды"><a class="header" href="#Разделение-числа-на-разряды">Разделение числа на разряды</a></h3>
-<p>При записи целого числа в любом месте между цифрами можно поставить <code>'</code>.<br />
-Так число можно сделать более читаемым:</p>
-<pre><code class="language-cpp">int large_number = 1000000;
-int million = 1'000'000;
-</code></pre>
-<p>То же самое можно использовать и для дробных чисел.</p>
-<h3 id="Научная-нотация"><a class="header" href="#Научная-нотация">Научная нотация</a></h3>
-<p>Дробные числа можно записывать с помощью научной нотации:</p>
-<pre><code class="language-cpp">double some_value = 4e2;
-</code></pre>
-<p>Запись <code>4e2</code> в математическом эквиваленте на самом деле просто обозначает \( 4 \times 10^2 \).</p>
-<h3 id="Разные-системы-счисления"><a class="header" href="#Разные-системы-счисления">Разные системы счисления</a></h3>
-<p>Очень полезной может оказаться также запись числа в разных системах счисления.</p>
-<p><strong>Двоичная система счисления:</strong></p>
-<pre><code class="language-cpp">int binary_number = 0b10010010111;
-</code></pre>
-<p><strong>Шестнадцатиричная система счисления:</strong></p>
-<pre><code class="language-cpp">int address = 0xFFF87AD;
-</code></pre>
-<p>В такой записи можно использовать те же привычные суффиксы и литералы:</p>
-<pre><code class="language-cpp">int a = 0b11'01'10;
-int b = 0b11001011UU;
-</code></pre>
+<p>Справедливости ради должен отметить, что все эти примеры, мягко говоря, случились достаточно давно - но это не значит, что проблемы, описанные в этой статье, неактуальны.</p>
+<p>Просто если их не учитывать, по уровню разработки вы откатитесь на 20-30 лет назад.</p>
+<h2 id="Источники"><a class="header" href="#Источники">Источники</a></h2>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Integer_overflow">Integer overlow - Wiki</a></li>
+<li><a href="https://youtu.be/Ap0orGCiou8">History's Worst Software Error - Youtube</a></li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../basics/fundamental_types/overflow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../basics/fundamental_types/type_casting.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../oop/virtual.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../basics/fundamental_types/literals.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -529,11 +471,11 @@ int b = 0b11001011UU;
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../basics/fundamental_types/overflow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../basics/fundamental_types/type_casting.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../oop/virtual.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../basics/fundamental_types/literals.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
