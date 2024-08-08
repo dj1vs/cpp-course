@@ -16,12 +16,13 @@
     - [Задания](basics/first_program/tasks.md)
 - [Марш-бросок по основам языка](basics/bare_minimum/bare_minimum.md)
     - [Задания](basics/bare_minimum/tasks.md)
-- [Фундаментальные типы данных](basics/fundamental_types/types.md)
+- [Фундаментальные типы данных](basics/fundamental_types.md)
 - [Операции и операторы](basics/operations.md)
-- [Ключевое слово `auto`](basics/fundamental_types/auto_keyword.md)
-- [Приведение типов](basics/fundamental_types/type_casting.md)
-- [Переполнения](basics/fundamental_types/overflow.md)
-- [Литералы](basics/fundamental_types/literals.md)
+- [Ключевое слово `auto`](basics/auto_keyword.md)
+- [Приведение типов](basics/type_casting.md)
+- [Переполнения](basics/overflow.md)
+- [Литералы](basics/literals.md)
+- [Константные данные](basics/const.md)
     
 
 # ООП
