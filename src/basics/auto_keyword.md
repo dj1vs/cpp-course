@@ -34,3 +34,6 @@ std::map<std::string, std::pair<std::optional<int32_t>, std::vector<std::string 
 ```cpp
 auto f_result = f();
 ```
+
+## Источники
+1. [Документация C++ по спецификаторам типа заполнителя](https://ru.cppreference.com/w/cpp/language/auto)

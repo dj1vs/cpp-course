@@ -223,5 +223,5 @@ if (a)
 
 ## Источники
 1. [Статическая типизация и преобразования типов - Metanit](https://metanit.com/cpp/tutorial/2.4.php)
-2. [Космическая ошибка: $370 000 000 за Integer overflow - Habr](https://habr.com/ru/companies/pvs-studio/articles/306748/)
+2. [Космическая ошибка: $370 000 000 за Integer overflow - Хабр](https://habr.com/ru/companies/pvs-studio/articles/306748/)
 3. [Ariane 5 rocket launch explosion - Youtube](https://youtu.be/PK_yguLapgA)

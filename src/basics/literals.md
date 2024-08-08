@@ -140,3 +140,9 @@ int address = 0xFFF87AD;
 int a = 0b11'01'10;
 int b = 0b11001011UU;
 ```
+
+## Источники
+- [Докуметация C++ по целочисленным литералам](https://ru.cppreference.com/w/cpp/language/integer_literal)
+- [Документация C++ по литералам с плавающей точкой](https://ru.cppreference.com/w/cpp/language/floating_literal)
+- [Документация C++ по строковым литералам](https://ru.cppreference.com/w/cpp/language/string_literal)
+- [Документация C++ по символьным литералам](https://ru.cppreference.com/w/cpp/language/character_literal)
