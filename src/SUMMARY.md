@@ -14,13 +14,14 @@
 # Основы
 - [Первая программа на C++](basics/first_program/first_program.md)
     - [Задания](basics/first_program/tasks.md)
-- [Марш бросок по основам языка](basics/bare_minimum/bare_minimum.md)
+- [Марш-бросок по основам языка](basics/bare_minimum/bare_minimum.md)
     - [Задания](basics/bare_minimum/tasks.md)
 - [Фундаментальные типы данных](basics/fundamental_types/types.md)
-    - [Последовательность преобразований](basics/fundamental_types/conversion_sequence.md)
-    - [Возможные ошибки при работе](basics/fundamental_types/types_detailed.md)
-    - [Литералы](basics/fundamental_types/literals.md)
 - [Операции и операторы](basics/operations.md)
+- [Ключевое слово `auto`](basics/fundamental_types/auto_keyword.md)
+- [Приведение типов](basics/fundamental_types/type_casting.md)
+- [Переполнения](basics/fundamental_types/overflow.md)
+- [Литералы](basics/fundamental_types/literals.md)
     
 
 # ООП
