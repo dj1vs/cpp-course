@@ -18,7 +18,7 @@
     - [Задания](basics/bare_minimum/tasks.md)
 - [Фундаментальные типы данных](basics/fundamental_types/types.md)
     - [Последовательность преобразований](basics/fundamental_types/conversion_sequence.md)
-    - [Возможные ошибки при работе](basics/fundamental_types/operating_different_types.md)
+    - [Возможные ошибки при работе](basics/fundamental_types/types_detailed.md)
     - [Литералы](basics/fundamental_types/literals.md)
 - [Операции и операторы](basics/operations.md)
     
