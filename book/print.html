@@ -4263,6 +4263,10 @@ greetings += '!';
 <p>Здесь как раз идеальная ситуация для использования <code>auto</code>:</p>
 <pre><code class="language-cpp">auto f_result = f();
 </code></pre>
+<h2 id="Источники-3"><a class="header" href="#Источники-3">Источники</a></h2>
+<ol>
+<li><a href="https://ru.cppreference.com/w/cpp/language/auto">Документация C++ по спецификаторам типа заполнителя</a></li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><style>
 .mdbook-callouts {
   padding: 8px 16px;
@@ -4657,10 +4661,10 @@ if (a)
 В этом случае в программе 64-битное вещественное число преобразовывалось к 16-битному целому числу, из-за чего ракета, стоившая сотни миллионов долларов, взорвалась при старте. Подробнее на эту тему можно почитать прекрасную статью с хабра, её я оставлю в источниках.</p>
 <h2 id="Мораль"><a class="header" href="#Мораль">Мораль</a></h2>
 <p>Всегда следите за преобразованием типов в своей программе, используйте статическое приведение типов и не забывайте отслеживать в своей программе неявные (и явные тоже) небезопасные преобразования.</p>
-<h2 id="Источники-3"><a class="header" href="#Источники-3">Источники</a></h2>
+<h2 id="Источники-4"><a class="header" href="#Источники-4">Источники</a></h2>
 <ol>
 <li><a href="https://metanit.com/cpp/tutorial/2.4.php">Статическая типизация и преобразования типов - Metanit</a></li>
-<li><a href="https://habr.com/ru/companies/pvs-studio/articles/306748/">Космическая ошибка: $370 000 000 за Integer overflow - Habr</a></li>
+<li><a href="https://habr.com/ru/companies/pvs-studio/articles/306748/">Космическая ошибка: $370 000 000 за Integer overflow - Хабр</a></li>
 <li><a href="https://youtu.be/PK_yguLapgA">Ariane 5 rocket launch explosion - Youtube</a></li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><style>
@@ -4932,7 +4936,7 @@ if (a)
 <hr />
 <p>Справедливости ради должен отметить, что все эти примеры, мягко говоря, случились достаточно давно - но это не значит, что проблемы, описанные в этой статье, неактуальны.</p>
 <p>Просто если их не учитывать, по уровню разработки вы откатитесь на 20-30 лет назад.</p>
-<h2 id="Источники-4"><a class="header" href="#Источники-4">Источники</a></h2>
+<h2 id="Источники-5"><a class="header" href="#Источники-5">Источники</a></h2>
 <ol>
 <li><a href="https://en.wikipedia.org/wiki/Integer_overflow">Integer overlow - Wiki</a></li>
 <li><a href="https://youtu.be/Ap0orGCiou8">History's Worst Software Error - Youtube</a></li>
@@ -5269,6 +5273,13 @@ int million = 1'000'000;
 <pre><code class="language-cpp">int a = 0b11'01'10;
 int b = 0b11001011UU;
 </code></pre>
+<h2 id="Источники-6"><a class="header" href="#Источники-6">Источники</a></h2>
+<ul>
+<li><a href="https://ru.cppreference.com/w/cpp/language/integer_literal">Докуметация C++ по целочисленным литералам</a></li>
+<li><a href="https://ru.cppreference.com/w/cpp/language/floating_literal">Документация C++ по литералам с плавающей точкой</a></li>
+<li><a href="https://ru.cppreference.com/w/cpp/language/string_literal">Документация C++ по строковым литералам</a></li>
+<li><a href="https://ru.cppreference.com/w/cpp/language/character_literal">Документация C++ по символьным литералам</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><style>
 .mdbook-callouts {
   padding: 8px 16px;
@@ -5548,6 +5559,10 @@ int b = 0b11001011UU;
 <p>Стоит понимать, что из себя <em>по факту</em> представляет ключевое слово <code>const</code>.</p>
 <p><strong><code>const</code> - это просто подсказка для компилятора</strong>. Когда мы обозначаем переменную через <code>const</code>, мы просим компилятор проследить, чтобы никто не менял эту переменную, и всё.</p>
 <p>Константность переменной <em>никак</em> не отражается на выходном коде.</p>
+<h2 id="Источники-7"><a class="header" href="#Источники-7">Источники</a></h2>
+<ul>
+<li><a href="https://dev.koshovyi.com/2018/04/18/antipattern-1-magicheskoe-chislo-magic-number/">Статья про магическме числа</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><style>
 .mdbook-callouts {
   padding: 8px 16px;
@@ -7592,7 +7607,7 @@ endif
 <li><strong>Не является плохой практикой</strong> объявлять переменные, которые не имеют для <code>automake</code> никакого смысла. Например, для использования в кастомных правилах.</li>
 <li><strong>Остерегайтесь внутренних конфликтов automake!</strong>. Ваши вручную определённые имена или правила сборки могут конфликтовать с уже существующими. Такое поведение можно избежать, используя флаг <code>-Wall</code></li>
 </ul>
-<h2 id="Источники-5"><a class="header" href="#Источники-5">Источники</a></h2>
+<h2 id="Источники-8"><a class="header" href="#Источники-8">Источники</a></h2>
 <ul>
 <li>A. Duret-Lutz -  Using GNU Autotools - May 16, 2010</li>
 </ul>
