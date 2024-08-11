@@ -1,0 +1,1514 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Введение в GNU Autotools с нуля - Курс по C++</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../intro/binary_number_system/binary_number_system.html"><strong aria-hidden="true">1.</strong> Двоичная система счисления</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/binary_number_system/tasks.html"><strong aria-hidden="true">1.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../intro/pl_differences.html"><strong aria-hidden="true">2.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../intro/language_processors.html"><strong aria-hidden="true">3.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../cpp_intro/compile_and_link.html"><strong aria-hidden="true">4.</strong> Компиляция и сборка программ на C++ (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../basics/first_program/first_program.html"><strong aria-hidden="true">5.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/first_program/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">6.</strong> Марш-бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/bare_minimum/tasks.html"><strong aria-hidden="true">6.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/fundamental_types/fundamental_types.html"><strong aria-hidden="true">7.</strong> Фундаментальные типы данных</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basics/fundamental_types/task.html"><strong aria-hidden="true">7.1.</strong> Задание</a></li></ol></li><li class="chapter-item expanded "><a href="../basics/operations.html"><strong aria-hidden="true">8.</strong> Операции и операторы</a></li><li class="chapter-item expanded "><a href="../basics/auto_keyword.html"><strong aria-hidden="true">9.</strong> Ключевое слово auto</a></li><li class="chapter-item expanded "><a href="../basics/type_casting.html"><strong aria-hidden="true">10.</strong> Приведение типов</a></li><li class="chapter-item expanded "><a href="../basics/overflow.html"><strong aria-hidden="true">11.</strong> Переполнения</a></li><li class="chapter-item expanded "><a href="../basics/literals.html"><strong aria-hidden="true">12.</strong> Литералы</a></li><li class="chapter-item expanded "><a href="../basics/const.html"><strong aria-hidden="true">13.</strong> Константные данные</a></li><li class="chapter-item expanded affix "><li class="part-title">ООП</li><li class="chapter-item expanded "><a href="../oop/virtual.html"><strong aria-hidden="true">14.</strong> Виртуальные функции (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Функторы</li><li class="chapter-item expanded "><a href="../functors/lambda.html"><strong aria-hidden="true">15.</strong> Лямбда-выражения (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../articles/gnu_autotools_from_scratch.html" class="active"><strong aria-hidden="true">16.</strong> Введение в GNU Autotools с нуля</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Курс по C++</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dj1vs/cpp-course/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-callouts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  /* border-left: 0.25em solid var(--mdbook-callouts-color); */
+  background: var(--mdbook-callouts-background);
+}
+
+.mdbook-callouts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-callouts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-callouts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-callouts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-callouts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-callouts-icon);
+  mask-image: var(--mdbook-callouts-icon);
+}
+
+/* icons at: https://lucide.dev/icons/ */
+
+.mdbook-callouts-info {
+  --mdbook-callouts-color: rgb(var(--color-blue-rgb));
+  --mdbook-callouts-background: rgba(var(--color-blue-rgb), 0.1);
+  /* https://lucide.dev/icons/info */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWluZm8iPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBhdGggZD0iTTEyIDE2di00Ii8+PHBhdGggZD0iTTEyIDhoLjAxIi8+PC9zdmc+');
+}
+
+.mdbook-callouts-note {
+  --mdbook-callouts-color: rgb(var(--color-blue-rgb));
+  --mdbook-callouts-background: rgba(var(--color-blue-rgb), 0.1);
+  /* https://lucide.dev/icons/pencil */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXBlbmNpbCI+PHBhdGggZD0iTTE3IDNhMi44NSAyLjgzIDAgMSAxIDQgNEw3LjUgMjAuNSAyIDIybDEuNS01LjVaIi8+PHBhdGggZD0ibTE1IDUgNCA0Ii8+PC9zdmc+');
+}
+
+.mdbook-callouts-tip,
+.mdbook-callouts-hint {
+  --mdbook-callouts-color: rgb(var(--color-cyan-rgb));
+  --mdbook-callouts-background: rgba(var(--color-cyan-rgb), 0.1);
+  /* https://lucide.dev/icons/flame */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZsYW1lIj48cGF0aCBkPSJNOC41IDE0LjVBMi41IDIuNSAwIDAgMCAxMSAxMmMwLTEuMzgtLjUtMi0xLTMtMS4wNzItMi4xNDMtLjIyNC00LjA1NCAyLTYgLjUgMi41IDIgNC45IDQgNi41IDIgMS42IDMgMy41IDMgNS41YTcgNyAwIDEgMS0xNCAwYzAtMS4xNTMuNDMzLTIuMjk0IDEtM2EyLjUgMi41IDAgMCAwIDIuNSAyLjV6Ii8+PC9zdmc+');
+}
+
+.mdbook-callouts-important {
+  --mdbook-callouts-color: rgb(var(--color-purple-rgb));
+  --mdbook-callouts-background: rgba(var(--color-purple-rgb), 0.1);
+  /* https://lucide.dev/icons/alert-circle */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFsZXJ0LWNpcmNsZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjgiIHkyPSIxMiIvPjxsaW5lIHgxPSIxMiIgeDI9IjEyLjAxIiB5MT0iMTYiIHkyPSIxNiIvPjwvc3ZnPg==');
+}
+
+.mdbook-callouts-success,
+.mdbook-callouts-check,
+.mdbook-callouts-done {
+  --mdbook-callouts-color: rgb(var(--color-green-rgb));
+  --mdbook-callouts-background: rgba(var(--color-green-rgb), 0.1);
+  /* https://lucide.dev/icons/check */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-question,
+.mdbook-callouts-help,
+.mdbook-callouts-faq {
+  --mdbook-callouts-color: rgb(var(--color-pink-rgb));
+  --mdbook-callouts-background: rgba(var(--color-pink-rgb), 0.1);
+  /* https://lucide.dev/icons/help-circle */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWhlbHAtY2lyY2xlIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik05LjA5IDlhMyAzIDAgMCAxIDUuODMgMWMwIDItMyAzLTMgMyIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-warning,
+.mdbook-callouts-warn {
+  --mdbook-callouts-color: rgb(var(--color-orange-rgb));
+  --mdbook-callouts-background: rgba(var(--color-orange-rgb), 0.1);
+  /* https://lucide.dev/icons/alert-triangle */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFsZXJ0LXRyaWFuZ2xlIj48cGF0aCBkPSJtMjEuNzMgMTgtOC0xNGEyIDIgMCAwIDAtMy40OCAwbC04IDE0QTIgMiAwIDAgMCA0IDIxaDE2YTIgMiAwIDAgMCAxLjczLTNaIi8+PHBhdGggZD0iTTEyIDl2NCIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-caution {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/shield-alert */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNoaWVsZC1hbGVydCI+PHBhdGggZD0iTTEyIDIyczgtNCA4LTEwVjVsLTgtMy04IDN2N2MwIDYgOCAxMCA4IDEwIi8+PHBhdGggZD0iTTEyIDh2NCIvPjxwYXRoIGQ9Ik0xMiAxNmguMDEiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-failure,
+.mdbook-callouts-fail,
+.mdbook-callouts-missing {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/x */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXgiPjxwYXRoIGQ9Ik0xOCA2IDYgMTgiLz48cGF0aCBkPSJtNiA2IDEyIDEyIi8+PC9zdmc+');
+}
+
+.mdbook-callouts-error,
+.mdbook-callouts-danger {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/zap */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXphcCI+PHBvbHlnb24gcG9pbnRzPSIxMyAyIDMgMTQgMTIgMTQgMTEgMjIgMjEgMTAgMTIgMTAgMTMgMiIvPjwvc3ZnPg==');
+}
+
+.mdbook-callouts-bug {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/bug */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJ1ZyI+PHBhdGggZD0ibTggMiAxLjg4IDEuODgiLz48cGF0aCBkPSJNMTQuMTIgMy44OCAxNiAyIi8+PHBhdGggZD0iTTkgNy4xM3YtMWEzLjAwMyAzLjAwMyAwIDEgMSA2IDB2MSIvPjxwYXRoIGQ9Ik0xMiAyMGMtMy4zIDAtNi0yLjctNi02di0zYTQgNCAwIDAgMSA0LTRoNGE0IDQgMCAwIDEgNCA0djNjMCAzLjMtMi43IDYtNiA2Ii8+PHBhdGggZD0iTTEyIDIwdi05Ii8+PHBhdGggZD0iTTYuNTMgOUM0LjYgOC44IDMgNy4xIDMgNSIvPjxwYXRoIGQ9Ik02IDEzSDIiLz48cGF0aCBkPSJNMyAyMWMwLTIuMSAxLjctMy45IDMuOC00Ii8+PHBhdGggZD0iTTIwLjk3IDVjMCAyLjEtMS42IDMuOC0zLjUgNCIvPjxwYXRoIGQ9Ik0yMiAxM2gtNCIvPjxwYXRoIGQ9Ik0xNy4yIDE3YzIuMS4xIDMuOCAxLjkgMy44IDQiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-examples,
+.mdbook-callouts-example {
+  --mdbook-callouts-color: rgb(var(--color-purple-rgb));
+  --mdbook-callouts-background: rgba(var(--color-purple-rgb), 0.1);
+  /* https://lucide.dev/icons/list */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxpc3QiPjxsaW5lIHgxPSI4IiB4Mj0iMjEiIHkxPSI2IiB5Mj0iNiIvPjxsaW5lIHgxPSI4IiB4Mj0iMjEiIHkxPSIxMiIgeTI9IjEyIi8+PGxpbmUgeDE9IjgiIHgyPSIyMSIgeTE9IjE4IiB5Mj0iMTgiLz48bGluZSB4MT0iMyIgeDI9IjMuMDEiIHkxPSI2IiB5Mj0iNiIvPjxsaW5lIHgxPSIzIiB4Mj0iMy4wMSIgeTE9IjEyIiB5Mj0iMTIiLz48bGluZSB4MT0iMyIgeDI9IjMuMDEiIHkxPSIxOCIgeTI9IjE4Ii8+PC9zdmc+');
+}
+
+.mdbook-callouts-quote {
+  --mdbook-callouts-color: rgb(158, 158, 158);
+  --mdbook-callouts-background: rgba(158, 158, 158, 0.1);
+  /* https://lucide.dev/icons/quote */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXF1b3RlIj48cGF0aCBkPSJNMyAyMWMzIDAgNy0xIDctOFY1YzAtMS4yNS0uNzU2LTIuMDE3LTItMkg0Yy0xLjI1IDAtMiAuNzUtMiAxLjk3MlYxMWMwIDEuMjUuNzUgMiAyIDIgMSAwIDEgMCAxIDF2MWMwIDEtMSAyLTIgMnMtMSAuMDA4LTEgMS4wMzFWMjBjMCAxIDAgMSAxIDF6Ii8+PHBhdGggZD0iTTE1IDIxYzMgMCA3LTEgNy04VjVjMC0xLjI1LS43NTctMi4wMTctMi0yaC00Yy0xLjI1IDAtMiAuNzUtMiAxLjk3MlYxMWMwIDEuMjUuNzUgMiAyIDJoLjc1YzAgMi4yNS4yNSA0LTIuNzUgNHYzYzAgMSAwIDEgMSAxeiIvPjwvc3ZnPg==');
+}
+
+
+.ayu {
+  --color-red-rgb: 251, 70, 76;
+  --color-red: #fb464c;
+  --color-orange-rgb: 233, 151, 63;
+  --color-orange: #e9973f;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-yellow: #e0de71;
+  --color-green-rgb: 68, 207, 110;
+  --color-green: #44cf6e;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-cyan: #53dfdd;
+  --color-blue-rgb: 2, 122, 255;
+  --color-blue: #027aff;
+  --color-purple-rgb: 168, 130, 255;
+  --color-purple: #a882ff;
+  --color-pink-rgb: 250, 153, 205;
+  --color-pink: #fa99cd;
+}
+
+.light {
+  --color-red-rgb: 233, 49, 71;
+  --color-red: #e93147;
+  --color-orange-rgb: 236, 117, 0;
+  --color-orange: #ec7500;
+  --color-yellow-rgb: 224, 172, 0;
+  --color-yellow: #e0ac00;
+  --color-green-rgb: 8, 185, 78;
+  --color-green: #08b94e;
+  --color-cyan-rgb: 0, 191, 188;
+  --color-cyan: #00bfbc;
+  --color-blue-rgb: 8, 109, 221;
+  --color-blue: #086ddd;
+  --color-purple-rgb: 120, 82, 238;
+  --color-purple: #7852ee;
+  --color-pink-rgb: 213, 57, 132;
+  --color-pink: #d53984;
+}
+
+.coal {
+  --color-red-rgb: 251, 70, 76;
+  --color-red: #fb464c;
+  --color-orange-rgb: 233, 151, 63;
+  --color-orange: #e9973f;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-yellow: #e0de71;
+  --color-green-rgb: 68, 207, 110;
+  --color-green: #44cf6e;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-cyan: #53dfdd;
+  --color-blue-rgb: 2, 122, 255;
+  --color-blue: #027aff;
+  --color-purple-rgb: 168, 130, 255;
+  --color-purple: #a882ff;
+  --color-pink-rgb: 250, 153, 205;
+  --color-pink: #fa99cd;
+}
+
+.navy {
+  --color-red-rgb: 251, 70, 76;
+  --color-red: #fb464c;
+  --color-orange-rgb: 233, 151, 63;
+  --color-orange: #e9973f;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-yellow: #e0de71;
+  --color-green-rgb: 68, 207, 110;
+  --color-green: #44cf6e;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-cyan: #53dfdd;
+  --color-blue-rgb: 2, 122, 255;
+  --color-blue: #027aff;
+  --color-purple-rgb: 168, 130, 255;
+  --color-purple: #a882ff;
+  --color-pink-rgb: 250, 153, 205;
+  --color-pink: #fa99cd;
+}
+
+.rust {
+  --color-red-rgb: 233, 49, 71;
+  --color-red: #e93147;
+  --color-orange-rgb: 236, 117, 0;
+  --color-orange: #ec7500;
+  --color-yellow-rgb: 224, 172, 0;
+  --color-yellow: #e0ac00;
+  --color-green-rgb: 8, 185, 78;
+  --color-green: #08b94e;
+  --color-cyan-rgb: 0, 191, 188;
+  --color-cyan: #00bfbc;
+  --color-blue-rgb: 8, 109, 221;
+  --color-blue: #086ddd;
+  --color-purple-rgb: 120, 82, 238;
+  --color-purple: #7852ee;
+  --color-pink-rgb: 213, 57, 132;
+  --color-pink: #d53984;
+}
+</style>
+<h1 id="Введение-в-gnu-autotools"><a class="header" href="#Введение-в-gnu-autotools">Введение в GNU Autotools</a></h1>
+<blockquote>
+<p>Значительную часть по теории я взял из презентации <code>Alexandre Duret-Lutz</code>. Все источники в конце страницы.</p>
+</blockquote>
+<p><code>GNU Autotools</code> - это набор из нескольких утилит (<code>automake</code>, <code>autoreconf</code>, ...), которые при совместном использовании предоставляют разработчику удобную среду для сборки, компиляции и распространения своих проектов.</p>
+<p>Очень важной особенностью GNU Autotools является то, что они нацелены на поддержку и распространение проектов, <em>написанных согласно стандарту GNU</em> - см. <a href="https://www.gnu.org/prep/standards/standards.html">GNU Coding Standarts</a>. Но, конечно же, подчиняться <em>всем</em> правилам стандарта при использовании Autotools не обязательно (хотя от многих из них просто так уйти не получится).</p>
+<p>Стоит также понимать, что GNU Autotools не зависят от конкретного языка программирования, и по аналогии с Make, представляют собой очень сложную надстройку над обычными скриптами командной оболочки. С помощью Autotools можно собирать проекты как на C, так и на C++, Python, C#, и так далее.</p>
+<h2 id="Зачем-нам-нужны-autotools"><a class="header" href="#Зачем-нам-нужны-autotools">Зачем нам нужны Autotools</a></h2>
+<h3 id="Входные-условия"><a class="header" href="#Входные-условия">Входные условия</a></h3>
+<p>Предположим, у нас есть некоторый проект на C/C++, и мы хотим, чтобы пользователи на разных машинах могли собрать его.</p>
+<p>Поэтому мы решаем поставлять наш проект в формате исходного кода, который потом должен быть скомпилирован на целевом устройстве.</p>
+<p>С портированием проекта на другие системы есть множество проблем:</p>
+<ol>
+<li>На разных машинах могут быть процессоры разной архитектуры (RISC-V, ARM, x64, ...) и разной разрядности</li>
+<li>На разных машинах могут быть разные ОС</li>
+<li>На разных машинах могут быть установлены разные компиляторы, разных версий и с разными реализациями рантайма (<code>clang</code>, <code>msvc</code>, <code>gcc</code>, <code>musl</code>, ...)</li>
+</ol>
+<p>Кроме того, существуют проблемы касательно самого исходного кода, даже на уровне совершенно стандартных операций (на примере языка C):</p>
+<ol>
+<li>Некоторые стандартные функции есть не на всех системах (<code>strtod</code>)</li>
+<li>У некоторых стандартных функций на разных системах могут быть разные названия (<code>strchr()</code> и <code>index()</code>)</li>
+<li>У стандартных функций на разных системах могут быть разные прототипы (<code>setpgrp(void)</code> и <code>setpgrp(int, int)</code>)</li>
+<li>Стандартные функции на разных системах могут вести себя по-разному (например, вызов <code>malloc(0)</code>)</li>
+<li>Стандартные функции могут быть определены в разных разделяемых библиотеках (например, для математических функций - <code>libm.so</code> и <code>libc.so</code>)</li>
+<li>Стандартные функции могут быть объявлены в разных заголовках (<code>string.h</code>, <code>strings.h</code>, <code>memory.h</code>)
+И плюс к этому, проект может использовать сторонние зависимости, которые тоже в свою очередь по реализации могу отличаться на разных системах. Самый банальный пример - это работа с графикой через API конкретной платформы.</li>
+</ol>
+<p>Нам, как разработчикам, нужно разобраться, как со всем этим работать</p>
+<h3 id="Примитивные-решения"><a class="header" href="#Примитивные-решения">Примитивные решения</a></h3>
+<h4 id="1-Заполнение-кода-директивами-ifelse"><a class="header" href="#1-Заполнение-кода-директивами-ifelse">1. Заполнение кода директивами <code>#if</code>/<code>#else</code></a></h4>
+<pre><code class="language-c">#if !defined (CODE_EXECUTABLE)
+static long pagesize = 0;
+#if defined (EXECUTABLE_VIA_MMAP_DEVZERO)
+static int zero_fd ;
+#endif
+if (! pagesize)
+{
+#if defined (HAVE_MACH_VM)
+	pagesize = vm page size ;
+#else
+	pagesize = getpagesize ();
+#endif
+#if defined (EXECUTABLE_VIA_MMAP_DEVZERO)
+	zero_fd = open ("/dev/zero", O_RDONLY, 0644) ;
+	if (zero_fd &lt; 0)
+	{
+		fprintf (stderr, "trampoline: Cannot open /dev/zero! \n") ;
+	abort() ;
+	}
+#endif
+}
+#endif
+</code></pre>
+<p>Такой код:</p>
+<ul>
+<li>неудобно читать</li>
+<li>неудобно изменять</li>
+<li>неудобно поддерживать</li>
+</ul>
+<p>В процессе написания программы, вместо мыслей о реальной логике программы, мы будем заняты написанием повторяющегося неаккуратного кода для учёта мелких незначительных деталей разработки под конкретную систему.</p>
+<h4 id="2-Макросы-для-замены-кода"><a class="header" href="#2-Макросы-для-замены-кода">2. Макросы для замены кода</a></h4>
+<p>Если на целевой платформе нет нужной нам функции, мы могли бы определить её через макрос:</p>
+<pre><code class="language-c">#if ! HAVE_FSEEKO &amp;&amp; ! defined fseeko
+#define fseeko(s, o, w) ((o) == (long)(o) \
+				? fseek(s, o, w) \
+				: (errno = EOVERFLOW, -1))
+#endif
+</code></pre>
+<p>Но определять через макросы каждую функцию было бы ужасно утомительно. Да и в целом использовать такие макросы это не очень хорошая практика.</p>
+<h4 id="3-Ручная-замена-функций"><a class="header" href="#3-Ручная-замена-функций">3. Ручная замена функций</a></h4>
+<p>Если какой-то функции нет на целевой платформе, мы могли бы сами в отдельном файле переписывать эту функцию и линковать её с основной программой.</p>
+<pre><code class="language-c">char* strdup(const char *s)
+{
+	sizt_t len = strlen(s) + 1;
+	void* new = malloc(len);
+	if (new == NULL)
+	{
+		return NULL;
+	}
+	return char* memcpy(new, s, len);
+}
+</code></pre>
+<h3 id="Пару-слов-про-make"><a class="header" href="#Пару-слов-про-make">Пару слов про Make</a></h3>
+<p>Как первый шаг к решению этих проблем разберём использование утилиты <code>make</code> и проблемы, которые она решает.</p>
+<h4 id="Сборка-без-make"><a class="header" href="#Сборка-без-make">Сборка без Make</a></h4>
+<p>Напрямую, чтобы собрать программу, нам нужно запустить компилятор для каждого "модуля" этой программы и получить для него готовый объектный файл, и потом объектные файлы объединялись бы с помощью линковщика в готовую программу. Конечно же, эта схема сильно упрощена, но суть примерно такая.</p>
+<p>Чтобы напрямую при помощи командной строки собрать даже небольшой проект из трёх компонентов, нужно писать очень много текста:</p>
+<pre><code class="language-bash">g++ -c 1.cpp
+g++ -c 2.cpp
+g++ -c 3.cpp
+g++ -c main.cpp
+g++ 1.o 2.o 3.o main.o -o main
+./main
+</code></pre>
+<p>И это мы ещё не писали каких-то аргументов для компилятора и для сборщика, не подключали сторонние библиотеки и вообще - собрали маленький простенький проект.</p>
+<p>Вы можете возразить, что весь этот код можно просто записать в <code>shell</code>-скрипт и не прописывать его каждый раз:</p>
+<pre><code class="language-bash">sh compile.sh
+./main
+</code></pre>
+<p>И это, конечно, делает жизнь чуть легче.</p>
+<p>Но что, если из огромного проекта на сотни объектных файлов нам потребовалось поменять только две строчки кода?
+Тогда нам придётся, если использовать единый скрипт, перекомпилировать <em>весь</em> проект ради одного небольшого изменения.</p>
+<p>Конечно, можно написать отдельный скрипт для линковки, и отдельный скрипт для компиляции каждого отдельного файла... Но тогда нам придётся при каждой новой компиляции чётко помнить, какие объектные файлы нужно пересобирать, и по итогу, мы не сильно уйдём от начальной структуры, где мы для каждого файла отдельно прописывали команды компиляции.</p>
+<p>Есть и другие проблемы при использовании самописных <code>shell</code>-скриптов:</p>
+<ul>
+<li>Отсутствие единого стандарта: каждый пишет, как он хочет</li>
+<li>Много лишней повторяющейся работы</li>
+<li>Невозможность запустить компиляцию целевой программы в несколько потоков</li>
+<li>...</li>
+</ul>
+<h4 id="Использование-make"><a class="header" href="#Использование-make">Использование Make</a></h4>
+<p>Описанные выше проблемы помогает решить утилита <code>make</code>, разработанная ещё в 1978 году.</p>
+<p>Утилита <code>make</code> позволяет с помощью унифицированного синтаксиса записывать правила сборки больших проектов.</p>
+<p>Правила сборки для <code>make</code> записываются в специальном файле <code>Makefile</code>.</p>
+<p><code>Makefile</code> для нашего синтетического примера выглядел бы примерно так:</p>
+<pre><code class="language-make">1.o : 1.cpp
+	g++ -c 1.cpp
+2.o: 2.cpp
+	g++ -c 2.cpp
+3.o : 3.cpp
+	g++ -c 3.cpp
+main.o : main.cpp
+	g++ -c main.cpp
+main: 1.o 2.o 3.o main.o
+	g++ 1.o 2.o 3.o main.o -o main
+</code></pre>
+<p>Стоит отметить, что этот <code>Makefile</code> не очень аккуратный, и вообще-то, так писать лучше не стоит. Но мы его рассматриваем чисто для примера.</p>
+<p>Что же здесь записано?</p>
+<p>Как видим, сначала тут прописываются цели сборки, потом прописываются файлы/другие цели сборки, необходимые для этой, и сама команда сборки:</p>
+<pre><code class="language-make">цель_сборки: зависимость_1 зависимость_2 ...
+	команда_для_сборки
+</code></pre>
+<p><code>команда_для_сборки</code> - это обычная команда для выполнения в командной оболочке (<code>bash</code>, <code>fish</code>, ...).</p>
+<p>Чтобы выполнить команду для сборки определённой цели, нужно вызвать команду <code>make</code>, и как аргумент передать название цели:</p>
+<pre><code class="language-bash">make 1.o
+</code></pre>
+<p>При таком вызове будет выполнена команда <code>g++ -c 1.cpp</code>, и сгенерируется файл <code>1.o</code></p>
+<p>Если же прописать:</p>
+<pre><code class="language-bash">make main
+</code></pre>
+<p>Утилита <code>make</code> увидит, что для цели <code>main</code> ей нужно собрать цели <code>1.o</code>, <code>2.o</code>, <code>3.o</code>, <code>main.o</code> - и она в указанном порядке выполнит их. И только после этого будет выполнена команда для <code>main</code>.</p>
+<p>Как итог, "под капотом" будут выполнены те же команды, которые были прописаны вручную ранее, но в данном случае вместо ручного прописывания всех команд мы выполняем всего один простой вызов <code>make</code>.</p>
+<p>Кроме того, утилита <code>make</code> отслеживает дату изменения файлов, используемых при сборке. И поэтому, если мы изменим в проекте только один файл, <code>make</code> отследит этот момент и пересоберёт только цель, связанную с этим одним файлом, а не весь проект целиком.</p>
+<p>Вообще, в целом, утилита <code>make</code> - это чуть более удобная обёртка над теми же <code>shell</code>-скриптами. С помощью <code>make</code> можно выполнять вообще любые команды, например, можно вывести на экран <code>Hello World</code>:</p>
+<pre><code class="language-make">hello_world:
+	echo "Hello World"
+</code></pre>
+<pre><code class="language-bash">make hello_world
+</code></pre>
+<p>...+ ко всему перечисленному, в Makefile можно определять локальные переменные, можно использовать переменные окружения, оставлять специальные параметры сборки, и т.д. и т.п.
+Пример сложного и хорошо записанного <code>Makefile</code> можно посмотреть <a href="https://gitlab.com/sortie/meaty-skeleton/-/blob/master/kernel/Makefile?ref_type=heads">здесь</a>.</p>
+<p>Также частой практикой является создание в проекте "вложенных" <code>Makefile</code>-ов: один главный <code>Makefile</code>, которые генерирует готовое решение, вызывает <code>make</code> для других, "вложенных" <code>Makefile</code>-ов, которые собирают отдельные компоненты программ. Так можно разделить логику сборки проекта целиком и его отдельных частей.</p>
+<h4 id="Стандартные-цели-сборки-make"><a class="header" href="#Стандартные-цели-сборки-make">Стандартные цели сборки Make</a></h4>
+<p>Так как <code>make</code> можно использовать не только для непосредственно компиляции программы, но и вообще в принципе для чего угодно, с помощью <code>make</code> зачастую задают и инструкции для установки программы в системе (см. Unix-утилиту <code>install</code>), для очистки сборочных файлов, для деинсталляции пакета из системы, и так далее.</p>
+<p>В основном, определяют следующие стандартные цели:</p>
+<ul>
+<li><code>make all</code> - сборка программ, библиотек, документации, ...</li>
+<li><code>make install</code> - установка чего-либо</li>
+<li><code>make uninstall</code> - деинсталляция чего-либо</li>
+<li><code>make clean</code> - стереть всё, что было собрано (противоположность <code>make all</code>)</li>
+<li><code>make check</code> - запустить тесты, если такие есть</li>
+<li><code>make install check</code> - проверить установленные программы или библиотеки, если это поддерживается</li>
+<li><code>make dist</code> - создать <code>PACKAGE-VERSION.tar.gz</code> - <code>tar</code>-архив с файлами проекта для установки на конкретной системе</li>
+</ul>
+<p>Если вызвать <code>make</code> без указания цели, выполняется цель <code>all</code>.</p>
+<h3 id="Почему-make-недостаточно"><a class="header" href="#Почему-make-недостаточно">Почему Make недостаточно</a></h3>
+<p>Конечно, <code>make</code> значительно упрощает процесс сборки программ по сравнению с использованием обычных <code>shell</code>-скриптов. Но те же самые проблемы, которые были озвучены ранее, остаются и с использованием <code>make</code>:</p>
+<ul>
+<li>Различие версий компиляторов и библиотек на разных системах</li>
+<li>В принципе разные компиляторы на разных системах</li>
+<li>Отличающиеся флаги и аргументы компилятора на разных машинах</li>
+<li>Проблемы с самим исходным кодом, перечисленные ранее</li>
+<li>и т.д.</li>
+</ul>
+<p>Таким образом, если при компиляции и сборке проекта ограничиться только использованием <code>make</code>, мы значительно упростим процесс сборки программы, но всё равно нам пришлось бы заставлять пользователей программы вручную менять скрипты в <code>Makefile</code> и, возможно, даже менять что-то в самом исходном коде.</p>
+<h3 id="Скрипт-configure"><a class="header" href="#Скрипт-configure">Скрипт configure</a></h3>
+<p>В какой-то момент, для решения вышеприведённых проблем, стандартным решением стал скрипт <code>configure</code> - разработчики вручную писали скрипт, который сканировал систему, определял её основные параметры, искал системные заголовки, библиотеки и прочее, и на основе этого генерировал <code>Makefile</code>, из которого уже собирался и устанавливался требуемый пакет.</p>
+<p>Со временем, чтобы как-то унифицировать процесс сборки различных программ, было принято решение стандартизировать API скрипта и его схему работы. Далее рассмотрим то, как же он функционирует на практике.</p>
+<p>...на выходе <code>configure</code> генерирует несколько файлов:</p>
+<ul>
+<li><code>configure.h</code> - файл со всеми необходимыми включениями библиотек и дефайнами</li>
+<li><code>Makefile</code> - <code>Makefile</code> для сборки всего проекта под конкретную платформу</li>
+<li><code>src/Makefile</code> - вложенные <code>Makefile</code>ы для отдельных компонентов</li>
+</ul>
+<pre class="mermaid">flowchart TD
+	A[&quot;configure&quot;] --&gt; B[&quot;Makefile&quot;]
+	A --&gt; C[&quot;src/Makefile&quot;]
+	A --&gt; D[&quot;configure.h&quot;]
+
+	classDef utility fill:yellow,color:black
+	classDef finalfile fill:black,color:white
+
+	class A utility
+	
+	class B finalfile
+	class C finalfile
+	class D finalfile
+		
+</pre>
+<p>И вот так выглядит типичный процесс установки программы с использованием <code>make</code> и <code>configure:</code></p>
+<pre><code class="language-bash">tar zxf helloworld-1.0.tar.gz # распаковываем архив с исходниками
+cd helloworld-1.0 # переходим в папку с исходниками
+./configure # запуск скрипта configure
+make # компилируем и собираем проект 
+make check # проверяем, собралось ли всё правильно
+sudo make install # устанавливаем собранный проект в систему
+make installcheck # проверяем корректность устновки
+</code></pre>
+<h4 id="Базовый-процесс-установки"><a class="header" href="#Базовый-процесс-установки">Базовый процесс установки</a></h4>
+<h5 id="Файловая-иерархия"><a class="header" href="#Файловая-иерархия">Файловая иерархия</a></h5>
+<p>Наш проект следует установить где-то в системе, а если это библиотека, нужно ещё и в какую-то локацию положить динамические/статические либы и заголовочные файлы.</p>
+<p>Учитывая все эти сложности, скрипт должен понимать, как эти папки и файлы располагаются в системе и как они зависят друг от друга.</p>
+<div class="table-wrapper"><table><thead><tr><th>Переменная</th><th>Значение по умолчанию</th></tr></thead><tbody>
+<tr><td>prefix</td><td>/usr/local/</td></tr>
+<tr><td>exec-prefix</td><td>prefix</td></tr>
+<tr><td>bindir</td><td>prefix/bin</td></tr>
+<tr><td>libdir</td><td>prefix/lib</td></tr>
+<tr><td>includedir</td><td>prefix/include</td></tr>
+<tr><td>datarootdir</td><td>prefix/share</td></tr>
+<tr><td>datadir</td><td>datarootdir</td></tr>
+<tr><td>mandir</td><td>datarootdir/man</td></tr>
+<tr><td>infodir</td><td>datarootdir/info</td></tr>
+</tbody></table>
+</div>
+<p>Пример конфигурации проекта, который использует папки, отличные от папок по умолчанию:</p>
+<pre><code class="language-bash">./configure --prefix ~/usr
+make
+make install
+</code></pre>
+<h5 id="Задание-флагов-сборки"><a class="header" href="#Задание-флагов-сборки">Задание флагов сборки</a></h5>
+<p><code>configure</code> в своей работе использует много настроек, и мы можем вручную поменять некоторые из них.</p>
+<div class="table-wrapper"><table><thead><tr><th>Флаг</th><th>Описание</th></tr></thead><tbody>
+<tr><td>CC</td><td>Компилятор для C</td></tr>
+<tr><td>CFLAGS</td><td>Флаги компиляции для C</td></tr>
+<tr><td>CXX</td><td>Компилятор для C++</td></tr>
+<tr><td>CXXFLAGS</td><td>Флаги компиляции для C++</td></tr>
+<tr><td>LDFLAGS</td><td>Флаги для линковщика</td></tr>
+<tr><td>CPPFLAGS</td><td>Флаги препроцессора C/C++</td></tr>
+</tbody></table>
+</div>
+<p>Пример конфигурации проекта с заданием кастомных флагов:</p>
+<pre><code class="language-bash">./configure --prefix ~/usr CC=gcc-3 CPPFLAGS=-I$HOME/usr/include LDFLAGS=-L$HOME/usr/lib
+</code></pre>
+<p>На самом деле, это конечно же не все возможные настройки для скрипта. Перечень всех доступных настроек выводится через <code>./configure --help</code>.</p>
+<h4 id="Более-сложные-параметры-сборки"><a class="header" href="#Более-сложные-параметры-сборки">Более сложные параметры сборки</a></h4>
+<h5 id="Вынесение-настроек-конфигурации-в-отдельный-файл"><a class="header" href="#Вынесение-настроек-конфигурации-в-отдельный-файл">Вынесение настроек конфигурации в отдельный файл</a></h5>
+<p>Можно вынести настройки конфигурации в отдельный файл, чтобы каждый раз не прописывать длинную очередь команд.</p>
+<p><code>configure.site</code>:</p>
+<pre><code class="language-bash">test -z "$CC" &amp;&amp; CC=gcc-3
+test -z "$CPPFLAGS" &amp;&amp; CPPFLAGS = -I$HOME/usr/include
+test -z "$LDFLAGS"&amp;&amp; LDFLAGS=-L$HOME/usr/lib
+</code></pre>
+<p>Итоговый запуск сборки:</p>
+<pre><code class="language-bash">./configure --prefix=~/usr
+</code></pre>
+<p>И в выводе скрипта увидим строчку:</p>
+<pre><code class="language-bash">configure: loading site script /home/dmitriy/usr/share/config.site
+</code></pre>
+<h5 id="Отделение-папки-сборки-и-папки-с-исходниками"><a class="header" href="#Отделение-папки-сборки-и-папки-с-исходниками">Отделение папки сборки и папки с исходниками</a></h5>
+<pre><code class="language-bash">mkdir build &amp;&amp; cd build
+../configure
+make
+</code></pre>
+<p>Исходный код будет записан в <code>/helloworld-1.0</code>, а файлы сборки в <code>/helloworld-1.0/build/</code>.</p>
+<h5 id="Сборка-под-разные-архитектуры"><a class="header" href="#Сборка-под-разные-архитектуры">Сборка под разные архитектуры</a></h5>
+<p>Из одних и тех же исходников возможно собрать проект под несколько архитектур.</p>
+<p>Извлечение исходников:</p>
+<pre><code class="language-bash">cd /nfs/src
+tar zxf ~/helloworld-1.0-tar.gz
+</code></pre>
+<p>Сборка на конкретной платформе:</p>
+<pre><code class="language-bash">mkdir /tmp/hw &amp;&amp; cd /tmp/hw
+/nfs/src/helloworld-1.0/configure
+make &amp;&amp; sudo make install
+</code></pre>
+<p>Либо же, может быть запущен <code>make install-exec</code>, если две системы разделяют одни и те же <em>данные</em></p>
+<h5 id="Двухуровневая-установка"><a class="header" href="#Двухуровневая-установка">Двухуровневая установка</a></h5>
+<p>Цель <code>make install</code> на самом деле использует внутри следующие цели:</p>
+<ol>
+<li><code>make install-exec</code> - установка файлов, зависящих от конкретной платформы (разделяемые библиотеки, исполняемые файлы, ...)</li>
+<li><code>make install-data</code> - установка платформенно независимых файлов - файлов, которые могут быть расшарены на несколько машин (например, документация, или <code>man pages</code>)</li>
+</ol>
+<h5 id="Кросс-компиляция"><a class="header" href="#Кросс-компиляция">Кросс-компиляция</a></h5>
+<p>Опция, с помощью которой можно на машине с одной архитектурой и платформой собрать проект под совершенно другую архитектуру и платформу (например, на 64-битной Linux-машине собрать проект для 32-битной Windows машины).
+Конечно же, подразумевается, что на машине уже установлен кросс-компилятор</p>
+<p>Пример кросс-компиляции:</p>
+<pre><code class="language-bash">./configure --build=i686-pc-linux-gnu  --host=i586-mingw-32msvc
+make
+cd src; file helloworld.exe
+</code></pre>
+<p>Опции для кросс-компиляции:</p>
+<div class="table-wrapper"><table><thead><tr><th>Опция</th><th>Описание</th></tr></thead><tbody>
+<tr><td><code>--build=BUILD</code></td><td>Система, <em>на которой</em> собирается проект</td></tr>
+<tr><td><code>--host=HOST</code></td><td>Система, <em>под которую</em> собирается проект</td></tr>
+</tbody></table>
+</div>
+<h5 id="Переименовывание-программы-во-время-установки"><a class="header" href="#Переименовывание-программы-во-время-установки">Переименовывание программы во время установки</a></h5>
+<p>Что, если программа с заданными нами именем уже существует в системе? Было бы неплохо предусмотреть подобный сценарий чтобы случайно не перезаписать существующее ПО.</p>
+<p>Опции скрипта <code>configure</code> для переименовывания при установке:</p>
+<div class="table-wrapper"><table><thead><tr><th>Опция</th><th>Описание</th></tr></thead><tbody>
+<tr><td><code>--program-prefix=PREFIX</code></td><td>Добавить префикс к имени программы</td></tr>
+<tr><td><code>--program-suffix=SUFFIX</code></td><td>........ суффикс .................</td></tr>
+<tr><td><code>--program-transform-name=PROGRAM</code></td><td>Заменить имена установленных программ на PROGRAM через <code>sed</code></td></tr>
+</tbody></table>
+</div>
+<h4 id="Установка-проекта-как-пакета"><a class="header" href="#Установка-проекта-как-пакета">Установка проекта как пакета</a></h4>
+<p>Можно собрать пакет в готовый <code>tar.gz</code> архив и потом использовать его для распаковки на целевой машине.</p>
+<p><code>DESTDIR</code> используется чтобы перенести пакет во время установки.</p>
+<pre><code class="language-bash">./configure --prefix ~/usr
+make
+make DESTDIR=$HOME/inst install
+...
+cd ~/inst
+tar zcvf ~/helloworld-1.0-i686.tar.gz .
+</code></pre>
+<h4 id="Итоговый-алгоритм-работы-configure"><a class="header" href="#Итоговый-алгоритм-работы-configure">Итоговый алгоритм работы <code>configure</code></a></h4>
+<h5 id="Упрощённый"><a class="header" href="#Упрощённый">Упрощённый</a></h5>
+<pre class="mermaid">flowchart TD
+	A[&quot;Makefile.in&quot;] --&gt; B[&quot;configure&quot;]
+	C[&quot;src/Makefile.in&quot;] --&gt; B
+	D[&quot;config.h.in&quot;] --&gt; B
+	B --&gt; E[&quot;Makefile&quot;]
+	B --&gt; F[&quot;src/Makefile&quot;]
+	B --&gt; G[&quot;config.h&quot;]
+
+	classDef configfile fill:orange,color:black
+	classDef configutil fill:yellow,color:black
+	classDef finalfile fill:black,color:white
+
+	class A configfile
+	class C configfile
+	class D configfile
+
+	class E finalfile
+	class F finalfile
+	class G finalfile
+
+	class B configutil
+</pre>
+<p><code>*.in</code> - это файлы-шаблоны, которые скрипт <code>configure</code> использует для генерации готовых конфигурационных файлов <code>Makefile</code>, <code>src/Makefile</code>, <code>config.h</code></p>
+<h5 id="Реальный"><a class="header" href="#Реальный">Реальный</a></h5>
+<pre class="mermaid">flowchart LR
+	A[&quot;Makefile.in&quot;] --&gt; F
+	C[&quot;src/Makefile.in&quot;] --&gt; F
+	D[&quot;config.h.in&quot;] --&gt; F
+	B[&quot;configure&quot;] --&gt; E[&quot;config.log&quot;]
+	B --&gt; F[&quot;config.status&quot;]
+	F --&gt; G[&quot;Makefile&quot;]
+	F --&gt; H[&quot;src/Makefile&quot;]
+	F --&gt; I[&quot;config.h&quot;]
+	F --&gt; E
+	B --&gt; J[&quot;config.cache&quot;]
+	J --&gt; B
+
+	classDef configfile fill:orange,color:black
+	classDef configutil fill:yellow,color:black
+	classDef configtemp fill:brown,color:black
+	classDef finalfile fill:black,color:white
+	
+	class A configfile
+	class C configfile
+	class D configfile
+
+	class G finalfile
+	class H finalfile
+	class I finalfile
+
+	class B configutil
+	class F configutil
+
+	class J configtemp
+	class E configtemp
+
+</pre>
+<ul>
+<li>В <code>config.log</code> хранится лог процесса конфигурации</li>
+<li>Фактически обрабатывает шаблонные файлы <code>config.status</code></li>
+<li>В файле <code>config.cache</code> храним кэш конфигурации для более быстрой переконфигурации проекта. Генерируется командой <code>configure -C</code></li>
+</ul>
+<h2 id="Вывод-зачем-нам-нужны-autotools"><a class="header" href="#Вывод-зачем-нам-нужны-autotools">Вывод: зачем нам нужны Autotools</a></h2>
+<p>Как легко заметить, выше мы рассмотрели огромное число достаточно сложных для реализации функций. Даже если мы не хотим придерживаться чёткого конкретного стандарта разработки от GNU, всё равно весь перечисленный функционал, в той или иной форме, должен быть доступен пользователю для сборки вашего проекта.</p>
+<p>Представьте, что реализацию кросс-компиляции, чтения файла настроек, обнаружение компилятора в системе с проверкой его версии и с учётом запуска скрипта на разных ОС, ... - что всё это нам пришлось бы писать самостоятельно. Очевидно, мы натыкаемся на огромное число велосипедов, которые делать будет долго и сложно.</p>
+<p>Плюс со временем общий стандарт работы систем сборки может изменяться, могут появляться новые требования к процессу сборки от пользователей вашего программного продукта.</p>
+<p>Да и к тому же, какой-то функционал, который может быть критически важен для некоторых пользователей, вы можете просто не рассмотреть в своей реализации <code>configure</code>.</p>
+<p><code>GNU Autotools</code> представляют готовое, оптимизированное и оттестированное решение, которое периодически обновляется и улучшается и которое уже поддерживает весь необходимый функционал.</p>
+<h2 id="gnu-autotools"><a class="header" href="#gnu-autotools">GNU Autotools</a></h2>
+<h3 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h3>
+<h4 id="Готовое-решение"><a class="header" href="#Готовое-решение">Готовое решение</a></h4>
+<p>Создадим базовый проект <code>Hello World</code>, чтобы продемонстрировать возможности <code>GNU Autotools</code>, и далее обсудим, что здесь происходит.</p>
+<h5 id="Структура-проекта"><a class="header" href="#Структура-проекта">Структура проекта:</a></h5>
+<pre><code>- src/
+- - main.cpp
+- - Makefile.am
+- configure.ac
+- Makefile.am
+</code></pre>
+<p><code>src/main.cpp</code>:</p>
+<pre><code class="language-cpp">#include &lt;config.h&gt;
+#include &lt;iostream&gt;
+
+int main(void)
+{
+	std::cout &lt;&lt; "Hello World!\n";
+	std::cout &lt;&lt; "This is " &lt;&lt; PACKAGE_STRING &lt;&lt; " .\n";
+}
+</code></pre>
+<p>Программа выводит строчку <code>Hello World!</code> и название пакета.</p>
+<p><code>src/Makefile.am</code>:</p>
+<pre><code class="language-automake">bin_PROGRAMS = helloworld
+helloworld_SOURCES = main.cpp
+</code></pre>
+<p><code>configure.ac</code>:</p>
+<pre><code class="language-autoconf">AC_INIT([helloworld], [1.0], [example@mail.com])
+AM_INIT_AUTOMAKE([foreign -Wall -Werror])
+AC_PROG_CXX
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_FILES([Makefile src/Makefile])
+AC_OUTPUT
+</code></pre>
+<p><code>Makefile.am</code>:</p>
+<pre><code class="language-automake">SUBDIRS=src
+</code></pre>
+<h5 id="Подготовка-скрипта-configure"><a class="header" href="#Подготовка-скрипта-configure">Подготовка скрипта <code>configure</code>:</a></h5>
+<pre><code class="language-bash">autoreconf --install
+</code></pre>
+<p>Вывод:</p>
+<pre><code class="language-bash">configure.ac:2: installing './install-sh'
+configure.ac:2: installing './missing'
+src/Makefile.am: installing './depcomp'
+</code></pre>
+<p>Итоговая структура проекта:</p>
+<pre><code>- alocal.m4
+- autom4te.cache/
+- config.h.in
+- configure
+- configure.ac
+- depcomp
+- install-sh
+- Makefile.am
+- Makefile.in
+- missing
+- src/
+- - main.cpp
+- - Makefile.am
+- - Makefile.in
+</code></pre>
+<h5 id="Запуск-скрипта-configure"><a class="header" href="#Запуск-скрипта-configure">Запуск скрипта <code>configure</code>:</a></h5>
+<pre><code class="language-bash">./configure
+</code></pre>
+<p>Вывод:</p>
+<pre><code class="language-bash">checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of g++... gcc3
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+</code></pre>
+<h5 id="Сборка-программы"><a class="header" href="#Сборка-программы">Сборка программы:</a></h5>
+<pre><code class="language-bash">make
+</code></pre>
+<p>Вывод:</p>
+<pre><code class="language-bash">(CDPATH="${ZSH_VERSION+.}:" &amp;&amp; cd . &amp;&amp; /bin/sh /home/admin1/dev/autotools-test/missing autoheader)
+rm -f stamp-h1
+touch config.h.in
+cd . &amp;&amp; /bin/sh ./config.status config.h
+config.status: creating config.h
+config.status: config.h is unchanged
+make  all-recursive
+make[1]: вход в каталог «/home/admin1/dev/autotools-test»
+Making all in src
+make[2]: вход в каталог «/home/admin1/dev/autotools-test/src»
+g++ -DHAVE_CONFIG_H -I. -I..     -g -O2 -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.cpp
+mv -f .deps/main.Tpo .deps/main.Po
+g++  -g -O2   -o helloworld main.o  
+make[2]: выход из каталога «/home/admin1/dev/autotools-test/src»
+make[2]: вход в каталог «/home/admin1/dev/autotools-test»
+make[2]: выход из каталога «/home/admin1/dev/autotools-test»
+make[1]: выход из каталога «/home/admin1/dev/autotools-test»
+</code></pre>
+<h5 id="Запуск-готовой-программы"><a class="header" href="#Запуск-готовой-программы">Запуск готовой программы:</a></h5>
+<pre><code class="language-bash">src/helloworld
+</code></pre>
+<p>Вывод:</p>
+<pre><code class="language-bash">Hello World!
+This is helloworld 1.0
+</code></pre>
+<h5 id="Сборка-пакета-targz-с-проверкой-корректности"><a class="header" href="#Сборка-пакета-targz-с-проверкой-корректности">Сборка пакета <code>tar.gz</code> с проверкой корректности:</a></h5>
+<pre><code class="language-bash">make distcheck
+</code></pre>
+<p>Вывод: (сокращён из-за большого объёма):</p>
+<pre><code class="language-bash">make  dist-gzip am__post_remove_distdir='@:'
+make[1]: вход в каталог «/home/admin1/dev/autotools-test»
+...
+================================================  
+helloworld-1.0 archives ready for distribution:    
+helloworld-1.0.tar.gz  
+================================================
+</code></pre>
+<h5 id="Распаковка-получившегося-пакета-на-целевой-системе"><a class="header" href="#Распаковка-получившегося-пакета-на-целевой-системе">Распаковка получившегося пакета на целевой системе:</a></h5>
+<pre><code class="language-bash">tar ztf helloworld-1.0.tar.gz
+</code></pre>
+<h4 id="Алгоритм-работы"><a class="header" href="#Алгоритм-работы">Алгоритм работы</a></h4>
+<p>В данном примере мы используем утилиту <code>autoreconf</code> для того, чтобы сгенерировать скрипт <code>configure</code> и его "входные" файлы (<code>Makefile.in</code>, <code>src/Makefile.in</code>, <code>config.h.in</code>).
+Таким образом, получаем следующую схему сборки нашего проекта:</p>
+<pre class="mermaid">flowchart LR
+	L[&quot;configure.ac&quot;] --&gt; K
+	M[&quot;Makefile.am&quot;] --&gt; K
+	N[&quot;src/Makefile.am&quot;] --&gt; K
+	K[&quot;autoreconf&quot;] --&gt; A
+	K --&gt; C
+	K --&gt; D
+	K --&gt; B 
+	A[&quot;Makefile.in&quot;] --&gt; F
+	C[&quot;src/Makefile.in&quot;] --&gt; F
+	D[&quot;config.h.in&quot;] --&gt; F
+	B[&quot;configure&quot;] --&gt; E[&quot;config.log&quot;]
+	B --&gt; F[&quot;config.status&quot;]
+	F --&gt; G[&quot;Makefile&quot;]
+	F --&gt; H[&quot;src/Makefile&quot;]
+	F --&gt; I[&quot;config.h&quot;]
+	F --&gt; E
+	B --&gt; J[&quot;config.cache&quot;]
+	J --&gt; B
+
+	classDef autotools fill:green,color:black
+	classDef utility fill:red,color:black
+	classDef configfile fill:orange,color:black
+	classDef configutil fill:yellow,color:black
+	classDef configtemp fill:brown,color:black
+	classDef finalfile fill:black,color:white
+	
+	class A configfile
+	class C configfile
+	class D configfile
+
+	class G finalfile
+	class H finalfile
+	class I finalfile
+
+	class B configutil
+	class F configutil
+
+	class J configtemp
+	class E configtemp
+
+	class L autotools
+	class M autotools
+	class N autotools
+
+	class K utility
+
+</pre>
+<h5 id="Сгенерированные-файлы"><a class="header" href="#Сгенерированные-файлы">Сгенерированные файлы</a></h5>
+<ul>
+<li><code>Makefile.in</code>, <code>configure.h.in</code>, <code>src/Makefile.in</code> - шаблонные файлы для настройки конфигурации</li>
+<li><code>configure</code> - сам скрипт конфигурации</li>
+<li><code>alocal.m4</code> - определения для сторонних макросов, используемых в <code>configure.ac</code></li>
+<li><code>depcomp</code>, <code>install-sh</code>, <code>missing</code> - вспомогательные инструменты, которые используются во время сборки</li>
+<li><code>autom4te.cache</code> - кэш, сгенерированный <code>Autotools</code></li>
+</ul>
+<h5 id="Состав-autotools"><a class="header" href="#Состав-autotools">Состав Autotools</a></h5>
+<p>На самом деле, <code>autoreconf</code> - это не единственная утилита <code>Autotools</code>, которая была нами использована в процессе сборки.
+Рассмотрим примерное устройство <code>GNU Autotools</code>:</p>
+<pre class="mermaid">flowchart LR
+a[&quot;GNU Autotools&quot;] --&gt; b[&quot;GNU Autoconf&quot;]
+a --&gt; c[&quot;GNU Automake&quot;]
+b --&gt; d[&quot;autoconf&quot;]
+b --&gt; e[&quot;autoheader&quot;]
+b --&gt; f[&quot;autoreconf&quot;]
+b --&gt; g[&quot;autoscan&quot;]
+b --&gt; h[&quot;autoupdate&quot;]
+b --&gt; i[&quot;ifnames&quot;]
+b --&gt; j[&quot;autom4te&quot;]
+c --&gt; k[&quot;automake&quot;]
+c --&gt; l[&quot;aclocal&quot;]
+</pre>
+<h6 id="gnu-autocnf"><a class="header" href="#gnu-autocnf">GNU Autocnf</a></h6>
+<ul>
+<li><code>autoconf</code> - Создаёт скрипт <code>configure</code> из конфига <code>configure.ac</code></li>
+<li><code>autoheader</code> - Создаёт <code>configure.h.in</code> из <code>configure.ac</code></li>
+<li><code>autoreconf</code> - <strong>Запускает все утилиты в нужном порядке</strong></li>
+<li><code>autoscan</code> - Проверяет исходники на возможные проблемы, связанные с переносимостью проекта на другие устройства, а также проверяет отсутствие соответствующих макросов в <code>configure.ac</code></li>
+<li><code>autoupdate</code> - Обновляет устаревшие макросы в <code>configure.ac</code></li>
+<li><code>ifnmaes</code> - Собирает идентификаторы на основе всех директив <code>#if</code>/<code>#ifdef</code></li>
+<li><code>autom4te</code> - Основной инструмент <code>Autotools</code>. Он отвечает за запуск <code>M4</code> и реализовывает фичи, которые используют все остальные инструменты. Может быть использовано не только для создания <code>configure</code> скрипта.</li>
+</ul>
+<h6 id="gnu-automake"><a class="header" href="#gnu-automake">GNU Automake</a></h6>
+<ul>
+<li><code>automake</code> - создаёт шаблоны <code>Makefile.in</code> на основе <code>Makefile.am</code> и <code>configure.ac</code></li>
+<li><code>aclocal</code> - проверяет <code>configure.ac</code> на использование сторонних макросов, и собирает их определения из <code>alocal.m4</code></li>
+</ul>
+<hr />
+<p>Таким образом, конечная реальная схема будет выглядеть так:</p>
+<pre class="mermaid">flowchart TD
+	K[&quot;configure.ac&quot;] --&gt; L[&quot;aclocal&quot;]
+	L --&gt; M[&quot;alocal.m4&quot;]
+	N[&quot;autoconf&quot;] --&gt; B
+	K --&gt; N
+	M --&gt; N
+	O[&quot;autoheader&quot;] --&gt; D
+	M --&gt; O
+	K --&gt; O
+	P[&quot;automake&quot;] --&gt; A
+	P --&gt; C
+	Q[&quot;Makefile.am&quot;] --&gt; P
+	R[&quot;src/Makefile.am&quot;] --&gt; P
+	M --&gt; P
+	K --&gt; P
+	A[&quot;Makefile.in&quot;] --&gt; F
+	C[&quot;src/Makefile.in&quot;] --&gt; F
+	D[&quot;config.h.in&quot;] --&gt; F
+	B[&quot;configure&quot;] --&gt; E[&quot;config.log&quot;]
+	B --&gt; F[&quot;config.status&quot;]
+	F --&gt; G[&quot;Makefile&quot;]
+	F --&gt; H[&quot;src/Makefile&quot;]
+	F --&gt; I[&quot;config.h&quot;]
+	F --&gt; E
+	B --&gt; J[&quot;config.cache&quot;]
+	J --&gt; B
+	
+	classDef autotools fill:green,color:black
+	classDef utility fill:red,color:black
+	classDef configfile fill:orange,color:black
+	classDef configutil fill:yellow,color:black
+	classDef configtemp fill:brown,color:black
+	classDef finalfile fill:black,color:white
+			
+	class K autotools
+	class Q autotools
+	class R autotools
+
+	class L utility
+	class N utility
+	class O utility
+	class P utility
+
+	class A configfile
+	class C configfile
+	class D configfile
+
+	class B configutil
+	class F configutil
+
+	class J configtemp
+	class E configtemp
+
+	class G finalfile
+	class H finalfile
+	class I finalfile
+</pre>
+<ul>
+<li>Зелёный - файлы конфигурации для <code>Automake</code></li>
+<li>Красный - утилиты <code>Autotools</code></li>
+<li>Оранжевый - шаблонные файлы для скрипта <code>configure</code></li>
+<li>Жёлтый - скрипты конфигурации сборки (<code>configure</code> и <code>config.status</code>)</li>
+<li>Коричневый - вспомогательные файлы для конфигурации сборки</li>
+<li>Чёрный - итоговые файлы для сборки проекта на целевой машине</li>
+</ul>
+<h5 id="Почему-мы-используем-autoreconf"><a class="header" href="#Почему-мы-используем-autoreconf">Почему мы используем autoreconf</a></h5>
+<ul>
+<li>Не нужно запоминать чёткую последовательность и правила взаимодействия всех утилит внутри <code>Autotools</code></li>
+<li>Для начальной настройки пакета используется только <code>autoreconf --install</code></li>
+<li>Для сборки нужно только примерно понимать, за что отвечает та или иная утилита из <code>Autotools</code>, чтобы понимать сгенерированные ошибки</li>
+</ul>
+<h5 id="configureac"><a class="header" href="#configureac">configure.ac</a></h5>
+<p>Разберём ключевой конфиг <code>autoconf</code> (<code>configure.ac</code>) по строчкам.</p>
+<pre><code class="language-autoconf">AC_INIT([helloworld], [1.0], [example@mail.com])
+</code></pre>
+<p>Здесь мы инициализируем работу с <code>autoconf</code> командой <code>AC_INIT</code>. В неё мы передаём аргументы, которые обозначают название пакета, версию пакета и email для багрепортов.</p>
+<p>Обратите внимание, что для определения строчек используются квадратные скобки, вместо кавычек</p>
+<hr />
+<pre><code class="language-autoconf">AM_INIT_AUTOMAKE([foreign -Wall -Werror])
+</code></pre>
+<p>Здесь мы инициализируем работу с <code>automake</code>. Внутри мы передаём аргументы для компиляции, а также задаём для пакета параметр <code>foreign</code>.</p>
+<p>Слово <code>foreign</code> относится как раз к стандартам написания кода от проекта <code>GNU</code>. Когда мы задаём для пакета свойство <code>foreign</code>, мы говорим, что не хотим полностью подчиняться этому стандарту. Если бы мы не прописали <code>foreign</code>, после запуска <code>autoreconf --install</code>, <code>automake</code> выдал бы нам следующие ошибки:</p>
+<pre><code class="language-bash">Makefile.am: error: required file './NEWS' not found  
+Makefile.am: error: required file './README' not found  
+Makefile.am: error: required file './AUTHORS' not found  
+Makefile.am: error: required file './ChangeLog' not found  
+Makefile.am: installing './COPYING' using GNU General Public License v3 file  
+Makefile.am:     Consider adding the COPYING file to the version control system  
+Makefile.am:     for your code, to avoid questions about which license your project uses
+</code></pre>
+<p>Запуск завершается с ошибкой из-за того, что мы не оформили проект по всем правилам: не добавили файл со списком изменений, не добавили файл со списком авторов пакета, и т.д. и т.п.</p>
+<p><code>-Wall</code> и <code>-Werror</code> же - это просто флаги для компилятора, которые включают вывод всех возможных предупреждений и затем превращают все предупреждения в ошибки.</p>
+<hr />
+<pre><code class="language-autoconf">AC_PROG_CXX
+</code></pre>
+<p>Ищет в системе компилятор для C++.</p>
+<hr />
+<pre><code class="language-autoconf">AC_CONFIG_HEADERS([config.h])
+</code></pre>
+<p>Заявляем, что нам нужно сгенерировать выходной хэдер <code>config.h</code></p>
+<hr />
+<pre><code class="language-autoconf">AC_CONFIG_FILES([Makefile src/Makefile])
+</code></pre>
+<p>Определяем выходные конфигурационные файлы <code>Makefile</code> и <code>src/Makefile</code></p>
+<hr />
+<pre><code class="language-autoconf">AC_OUTPUT
+</code></pre>
+<p>Создаём все определённые в конфиге выходные файлы</p>
+<h5 id="makefileam"><a class="header" href="#makefileam">Makefile.am</a></h5>
+<pre><code class="language-automake">SUBDIRS = src
+</code></pre>
+<p>Говорим, что в папке <code>src</code> есть ещё файлы конфигурации <code>Makefile.am</code></p>
+<p>Для главной папки больше ничего не определили. В основном <code>Makefile</code> будет просто комбинация <code>Makefile</code>-ов из папки <code>src</code>.</p>
+<p>Обычно корневые <code>Makefile</code>-ы всегда достаточно короткие, так что всё нормально</p>
+<h5 id="srcmakefileam"><a class="header" href="#srcmakefileam">src/Makefile.am</a></h5>
+<pre><code class="language-automake">bin_PROGRAMS = helloworld
+</code></pre>
+<ul>
+<li><code>_PROGRAMS</code> - вы собираем какие-то программы</li>
+<li><code>bin</code> - эти программы будут собраны в <code>bindir</code> (вспоминаем файловую иерархию проекта)</li>
+<li>Мы будем собирать только одну программу: <code>helloworld</code></li>
+</ul>
+<hr />
+<pre><code class="language-automake">helloworld_SOURCES = main.cpp
+</code></pre>
+<p>Для того, чтобы собрать <code>helloworld</code>, нужно просто скомпилировать  <code>main.cpp</code></p>
+<h3 id="Использование-autoconf"><a class="header" href="#Использование-autoconf">Использование Autoconf</a></h3>
+<p>По сути, <code>autoconf</code> - это просто преобразователь макросов.</p>
+<p><code>configure.ac</code> - это, на самом деле, просто <code>shell</code>-скрипт, которые использует макросы. <code>autoconf</code> обрабатывает эти макросы и на основе их составляет скрипт <code>configure</code>. Но <code>configure.ac</code>, состоящий только из встроенных макросов - это абсолютно нормальное явление.</p>
+<p><code>autoconf</code> предоставляет большое количество встроенных макросов для стандартных операций сборки и проверки конфигурации.</p>
+<p>На самом деле, непосредственно сами макросы обрабатывает M4 - специальная программа-обработчик макросов, которую тоже поставляет проект GNU. <code>autoconf</code> представляет только надстройку над M4, + список предопределённых макросов.</p>
+<h4 id="Принцип-работы-m4"><a class="header" href="#Принцип-работы-m4">Принцип работы M4</a></h4>
+<pre><code class="language-m4">m4_define(NAME1, Harry)
+m4_define(NAME2, Sally)
+m4_define(MET, $1 met $2)
+MET(NAME1, NAME2)
+</code></pre>
+<p>Вот так выглядит типичное объявление и использование макросов M4.
+В данном случае, MET(NAME1, NAME2) будет преобразовано в "Harry met Sally".
+Так же стоит учитывать, что для того, чтобы не обрабатывать какое-то слово или строку, или чтобы использовать в качестве одного слова строку с пробелами, следует использовать кавычки:</p>
+<pre><code class="language-m4">m4_define('NAME1', 'Harry, Jr.')
+m4_define('NAME2', 'Sally')
+m4_define('MET', '$1 met $2')
+MET('NAME1', 'NAME2')
+</code></pre>
+<p>Данный код будет работать правильно, и с генерирует строчку <code>Harry, Jr. met Sally</code>
+Следующий же код выдаст неправильную строку (точнее не ту, которую мы от него ожидаем):</p>
+<pre><code class="language-m4">m4_define(NAME1, 'Harry, Jr.')
+m4_define(NAME2, Sally)
+m4_define(MET, $1 met $2)
+MET(NAME1, NAME2)
+</code></pre>
+<p>Как будет выполняться замена макросов в данной случае?</p>
+<ol>
+<li>Запомнили, что NAME1 -&gt; 'Harry, Jr.'</li>
+<li>Запомнили, что NAME2 -&gt; Sally</li>
+<li>Запомнили, что MET -&gt; $1 met $2</li>
+<li>Встретили макрос MET, который принимает NAME1 и NAME2</li>
+<li>Заменили NAME1 на 'Harry, Jr.'. Получили MET(Harry, Jr., NAME2)</li>
+<li>Заменили NAME2 на Sally, получили MET(Harry, Jr., Sally)</li>
+<li>Заменили MET(Harry, Jr., Sally) на <em>первый аргумент макроса</em> + "met" + <em>второй аргумент макроса</em>, получили "Harry met Jr."</li>
+</ol>
+<h4 id="autoconf-как-надстройка-над-m4"><a class="header" href="#autoconf-как-надстройка-над-m4">Autoconf как надстройка над M4</a></h4>
+<ul>
+<li>В отличии от M4 в <code>autoconf</code>, как отмечалось ранее, для обозначения строк используются квадратные скобки вместо кавычек</li>
+<li>В следствие первого пункта, для условий в скрипте <code>configure.ac</code> мы используем вместо квадратных скобок слово <code>test</code>:</li>
+</ul>
+<pre><code class="language-bash">if ["$x" = "$y"]; then ... # Привычный синтаксиси
+</code></pre>
+<pre><code class="language-autoconf">if test "$x" = "$y"; then ... # Синтаксис autoconf
+</code></pre>
+<ul>
+<li>Макросы в Autoconf определяются при помощи <code>AC_DEFUN</code>:</li>
+</ul>
+<pre><code class="language-autoconf">AC_DEFUN([NAME1], [Harry])
+</code></pre>
+<h4 id="Структура-файла-configureac"><a class="header" href="#Структура-файла-configureac">Структура файла configure.ac</a></h4>
+<p>Обычно файл <code>configure.ac</code> записывают согласно предопределённому порядку выполнения команд:</p>
+<ol>
+<li>Первоначальная настройка - <code>AC_INIT</code>, <code>AM_INIT_AUTOMAKE</code></li>
+<li>Проверки на наличие программ - <code>AC_PROG_CC</code>, <code>AC_PROG_CXX</code></li>
+<li>Проверки на наличие библиотек</li>
+<li>Проверки на наличие заголовочных файлов</li>
+<li>Проверки на <code>typedef</code>-ы, структуры и характеристики компилятора</li>
+<li>Проверки библиотечных функций</li>
+<li>Определение результирующих файлов (<code>AC_CONFIG_HEADERS</code>, <code>AC_CONFIG_FILES</code>, <code>AC_OUTPUT</code>)</li>
+</ol>
+<h5 id="Макросы-для-первоначальной-настройки"><a class="header" href="#Макросы-для-первоначальной-настройки">Макросы для первоначальной настройки</a></h5>
+<ul>
+<li><code>AC_INIT(PACKAGE, VERSION, BUG-REPORT-ADDRESS)</code> - обязательная инициализация Autoconf</li>
+<li><code>AC_PREREQ(VERSION)</code> - определение минимальной возможной версии Autoconf</li>
+<li><code>AC_CONFIG_SRCDIR(FILE)</code> - макрос для проверки того, что <code>autoconf</code> запущен из правильной директории. Например, <code>AC_CONFIG_SSRCDIR([src/main.c])</code> - если из текущей директории не получится открыть <code>src/main.c</code>, выведется ошибка.</li>
+<li><code>AC_CONFIG_AUX_DIR(FOLDER)</code> - все вспомогательные файлы для сборки (<code>depcomp</code>, <code>missing</code>, ...) должны быть расположены в папке <code>FOLDER</code></li>
+<li>...</li>
+</ul>
+<h5 id="Макросы-для-проверки-наличия-программ"><a class="header" href="#Макросы-для-проверки-наличия-программ">Макросы для проверки наличия программ</a></h5>
+<ul>
+<li><code>AC_PROG_CC</code>, <code>AC_PROG_CXX</code>, <code>AC_PROG_F77</code> - поиск компиляторов в системе (можно также найти кросс-компиляторы, при необходимости)</li>
+<li><code>AC_PROG_SED</code>, <code>AC_PROG_LEX</code>, ... - поиск наиболее подходящих реализаций программ (<code>sed</code>, <code>lex</code>, ...) в системе</li>
+<li><code>AC_CHECK_PROGS(VAR, PROGS, [VAL-IF-NOT-FOUND])</code> - ищет перечисленные программы в системе, и записывает найденные программы в <code>VAR</code>. Если какая-то программа не будет найдена, запишет в <code>VAR</code> значение <code>VAL-IF-NOT-FOUND</code>. Пример использования:</li>
+</ul>
+<pre><code class="language-autoconf">AC_CHECK_PROGS([TAR], [tar gtar], [:])
+if test "$TAR" = :; then
+	AC_MSG_ERROR([This package needs tar])
+fi
+</code></pre>
+<p>Ищем в системе утилиту <code>tar</code>, и если не нашли, выводим ошибку</p>
+<ul>
+<li>...</li>
+</ul>
+<h5 id="Макросы-действий-autoconf"><a class="header" href="#Макросы-действий-autoconf">Макросы действий Autoconf</a></h5>
+<ul>
+<li><code>AC_MSG_ERROR(ERROR-DESCRIPTION, [EXIT-STATUS])</code> - Печатает на экран ошибку <code>ERROR-DESCRIPTION</code> и завершает скрипт <code>configure</code> со статусом ошибки <code>[EXIT-STATUS]</code></li>
+<li><code>AC_MSG_WARN</code> - то же, что и с <code>ERROR</code>, но только без аварийного выхода</li>
+<li><code>AC_DEFINE(VARIABLE, VALUE, DESCRIPTION)</code> - печатает в выходном <code>config.h</code> файле следующее:</li>
+</ul>
+<pre><code class="language-c">/* DESCRIPTION */
+#define VARIABLE VALUE
+</code></pre>
+<ul>
+<li><code>AC_SUBST(VARIABLE, VALUE)</code>- определяет переменную в результирующем <code>Makefile</code>-е:</li>
+<li>...</li>
+</ul>
+<h5 id="Макросы-для-проверки-на-наличие-библиотек"><a class="header" href="#Макросы-для-проверки-на-наличие-библиотек">Макросы для проверки на наличие библиотек</a></h5>
+<ul>
+<li><code>AC_CHECK_LIB(LIBRARY, FUNCT, [ACT-IF-FOUND], [ACT-IF-NOT])</code> - проверяет, существует ли библиотека <code>LIBRARY</code> с определённой в ней <code>FUNCT</code>. Пример использования:</li>
+</ul>
+<pre><code class="language-autoconf">AC_CHECK_LIB([efence], [malloc], [EFENCELIB=-lefence])
+AC_SUBST([EFENCELIB])
+</code></pre>
+<p>...здесь мы будем далее для линковки использовать <code>$(EFENCELIB)</code>
+Если "действие при нахождении библиотеки" не будет определено, <code>autoconf</code> сделает <code>LIBS=-lLIBRARY $LIBS</code> и <code>#define HAV_LIBLIBRARY</code>. (<code>automake</code> использует для линковки всех библиотек <code>$LIBS</code>)</p>
+<ul>
+<li>...</li>
+</ul>
+<h5 id="Макросы-для-проверки-наличия-заголовков-в-системе"><a class="header" href="#Макросы-для-проверки-наличия-заголовков-в-системе">Макросы для проверки наличия заголовков в системе</a></h5>
+<ul>
+<li><code>AC_CHECK_HEADERS(HEADERS...)</code> - ищет в системе заголовки, и для каждого найденного заголовка определяет дефайн <code>#define HAVE_HEADER_H</code></li>
+<li><code>AC_CHECK_HEADER(HEADER, [ACT-IF-FOUND], [ACT-IF-NOT])</code></li>
+<li>...</li>
+</ul>
+<h5 id="Макросы-для-определения-выходных-файлов"><a class="header" href="#Макросы-для-определения-выходных-файлов">Макросы для определения выходных файлов</a></h5>
+<ul>
+<li><code>AC_CONFIG_HEADERS(HEADERS...)</code> - для каждого <code>HEADER.in</code> генерируется свой <code>HEADER</code>. Здесь всегда нужно использовать только один <code>HEADER</code>, кроме случаев, когда вы реально чётко понимаете, зачем вам нужно несколько заголовков. В выходных заголовках буду дефайны, определённые с <code>AC_DEFINE</code></li>
+<li><code>AC_CONFIG_FILES(FILES...)</code> - для всех <code>FILE.in</code> генерирует <code>FILE</code>. В этих файлах будут определения, заданные <code>AC_SUBST</code>. Те самые <code>FILE.in</code> будет генерировать <code>Automake</code> из соответствующих <code>FILE.am</code>. Как видите, здесь записаны именно <code>FILE</code>, a не <code>Makefile</code>, потому что разрешается с помощью этой команды обрабатывать не только <code>Makefile</code>.</li>
+</ul>
+<h5 id="Использование-кастомных-in-файлов"><a class="header" href="#Использование-кастомных-in-файлов">Использование кастомных .in файлов</a></h5>
+<p>Пример с кастомным скриптом. В <code>AC_CONFIG_FILES</code> правило для его сборки будет записываться как:</p>
+<pre><code class="language-autoconf">AC_CONFIG_FILES([Makefile src/Makefile script.sh:script.in])
+</code></pre>
+<p>Сам <code>script.in</code>:</p>
+<pre><code class="language-sh">#!/bin/sh
+SED='@SED@'
+TAR='@TAR@'
+d=$1; shift; mkdir "$d";
+for f; do
+	"$SED" 's/#.*//' "$f" &gt; "$d/$f"
+done
+"$TAR" cf "$d.tar" "$d"
+</code></pre>
+<p>Из этого файла скрипт <code>config</code> (а точнее <code>config.stats</code>) сделает следующее:</p>
+<pre><code class="language-sh">#!/bin/sh
+SED=’/usr/xpg4/bin/sed’
+TAR=’/usr/bin/tar’
+d=$1; shift; mkdir "$d"
+for f; do
+	"$SED" 's/#.*//' "$f" &gt;"$d/$f"
+done
+"$TAR" cf "$d.tar" "$d"
+</code></pre>
+<p>В  <code>Makefile.in</code> тоже используются такие плейсхолдеры (<code>@SED</code>), но Automake для них просто добавляет определение нужной переменной, поэтому в <code>Makefile.in</code> можно спокойной использовать нужное значение (например, через <code>$(XYZ)</code>).</p>
+<h3 id="Использование-automake"><a class="header" href="#Использование-automake">Использование Automake</a></h3>
+<p>Automake позволяет создавать портируемые <code>Makefile</code>-ы, которые соответствуют стандарту <code>GNU Coding Standard</code>.
+<code>autoamke</code> создаёт сложные <code>Makefile.in</code> на основе простых <code>Makefile.am</code>. Вообще, <code>Makefile.in</code> можно считать просто внутренней сторонней информацией <code>automake</code>.</p>
+<p>Файлы <code>Makefile.am</code> в принципе используют то же синтаксис, что и обычные <code>Makefile</code>-ы, но в основном они содержать только определения переменных.</p>
+<ul>
+<li><code>automake</code> создаёт правила сборки из определений этих переменных</li>
+<li>при желании, можно задать дополнительные <code>Makefile</code>-правила в <code>Makefile.am</code> - они буду сохранены в результирующем <code>Makefile</code> файле.</li>
+</ul>
+<h4 id="Определение-целей-сборки-в-makefileam"><a class="header" href="#Определение-целей-сборки-в-makefileam">Определение целей сборки в Makefile.am</a></h4>
+<pre><code class="language-automake">where_PRIMARY = targets ...
+</code></pre>
+<ul>
+<li><code>_PRIMARY</code>: <code>targets</code> должны быть собраны как:
+<ul>
+<li><code>_PROGRAMS</code></li>
+<li><code>_LIBRARIES</code></li>
+<li><code>_LTLIBRARIES</code> (Libtool libraries)</li>
+<li><code>_HEADERS</code></li>
+<li><code>_SCRIPTS</code></li>
+<li><code>_DATA</code></li>
+</ul>
+</li>
+<li><code>where</code>: <code>targets</code> должны быть установлены в:
+<ul>
+<li><code>bin_</code> <code>$(bindir)</code></li>
+<li><code>lib_</code> <code>$(libdir)</code></li>
+<li>... (вспоминаем файловую иерархию)</li>
+<li>
+<ul>
+<li><code>custom_</code> <code>$(customdir)</code> - можно использовать кастомную библиотеку</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>noinst_</code> - не установлены</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><code>check_</code> - собраны с помощью `make check</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Определение-исходников-в-makefileam"><a class="header" href="#Определение-исходников-в-makefileam">Определение исходников в Makefile.am</a></h4>
+<pre><code class="language-automake">bin_PROGRAMS = foo run-me
+foo_SOURCES = foo.c foo.h print.c print.h
+run_me_SOURCES = run.c run.h print.c
+</code></pre>
+<ul>
+<li>Все символы, которые не являются буквой/цифрой, в <code>automake</code> заменяются на <code>_</code> - см. <code>run_me_SOURCES</code></li>
+<li>В списке исходников мы указываем заголовочные файлы, хотя не должны этого делать (они же включаются препроцессором). Заголовочные файлы указываются для того, чтобы они были в дальнейшем распространены <code>automake</code>.</li>
+<li>Как видим, можно использовать одни и те же исходники в нескольких целях сборки</li>
+<li>Компилятор и линковщик определяются на основе разрешений файлов</li>
+</ul>
+<h4 id="Библиотеки"><a class="header" href="#Библиотеки">Библиотеки</a></h4>
+<p>Для сборки библиотек с использованием <code>automake</code> необходимо:</p>
+<ol>
+<li>Определить макрос <code>AC_PROG_RANLIB</code> в <code>configure.ac</code></li>
+<li>Описать правило сборки библиотеки в <code>Makefile.am</code>:</li>
+</ol>
+<pre><code class="language-automake">lib_LIBRARIES = libfoo.a libbar.a
+libfoo_a_SOURCES = foo.c privfoo.h
+libbar_a_SOURCES = bar.c privbar.h
+include_HEADERS = foo.h bar.h
+</code></pre>
+<ul>
+<li>Библиотеки будут установлены в <code>$(libdir)</code></li>
+<li>Названия библиотек должны соответствовать паттерну <code>lib*.a</code></li>
+<li>Общие заголовки могут быть установлены в <code>$(includedir)</code></li>
+<li>Приватные заголовки не устанавливаются, в отличие от остальных</li>
+</ul>
+<h4 id="Устройство-директорий"><a class="header" href="#Устройство-директорий">Устройство директорий</a></h4>
+<ul>
+<li>На одну директорию должен быть максимум один <code>Makefile</code> (можно в принципе и 0)</li>
+<li>Все вложенные <code>Makefile</code> должны быть объявлены в <code>configure.ac</code> (как пример - <code>Hello World</code>)</li>
+<li><code>make</code> запускается в корневой папке</li>
+<li>В файлах <code>Makefile.am</code> должен чётко задаваться порядок, в котором вызываются вложенные <code>Makefile.am</code> для дочерних директорий:</li>
+</ul>
+<pre><code class="language-automake">SUBDIRS = dir_a dir_b
+</code></pre>
+<p>Если чётко в <code>SUBDIRS</code> не указать текущую папку, она (текущий <code>Makefile.am</code>) будет обработан в конце, после всех объявленных папок (<code>dir_a</code>, <code>dir_b</code>).
+Пример чёткого обозначения порядка каталогов:</p>
+<pre><code class="language-automake">SUBDIRS = dir_a . dir_b
+</code></pre>
+<p>Текущий <code>Makefile.am</code> будет обработан после обработки вложенных <code>Makefile.am</code> в папке <code>dir_a</code>.</p>
+<h4 id="Подключение-локальных-библиотек"><a class="header" href="#Подключение-локальных-библиотек">Подключение локальных библиотек</a></h4>
+<p>Как было описано ранее, скрипт <code>configure</code> в конечном итоге не обязательно будет запускаться из корневой директории. Типичный сценарий:</p>
+<pre><code class="language-bash">mkdir build &amp;&amp; cd build
+../configure
+</code></pre>
+<p>Поэтому это нужно учитывать и при написании <code>Makefile</code>-ов. Например, вместо написания <code>-Idir</code>, лучше использовать предпопределённую переменную <code>-I$(srcdir)</code>.</p>
+<h4 id="Библиотеки-для-упрощения-сборки"><a class="header" href="#Библиотеки-для-упрощения-сборки">Библиотеки для упрощения сборки</a></h4>
+<p>Можно определять библиотеки, которые будут нужны только в рамках процесса сборки программы - как какой-то отдельный модуль в выходном проекте они будут не нужны.</p>
+<pre><code class="language-automake">noinst_LIBRARIES = libcompat.a
+libcompat_a_SOURCES = xalloc.c xalloc.h
+</code></pre>
+<p>Здесь библиотека <code>libcompat.a</code> используется только <em>во время сборки пакета</em>:</p>
+<pre><code class="language-automake">LDADD = ../lib/libcompat.a
+AM_CPPFLAGS = -I$(srcdir)/../lib
+bin_PROGRAMS = foo run-me
+foo_SOURCES = foo.c foo.h print.c print.h
+run_me_SOURCES = run.c run.h print.c
+run_me_LDADD = ../lib/libcompat.a
+run_me_CPPFLAGS = -I$(srcdir)/../lib
+</code></pre>
+<ul>
+<li><code>LDADD</code> добавляется при линковке всех программ</li>
+<li><code>AM_CPPFLAGS</code> содержит дополнительные флаги для препроцессора</li>
+</ul>
+<h4 id="Флаги-для-сборки-целей"><a class="header" href="#Флаги-для-сборки-целей">Флаги для сборки целей</a></h4>
+<ul>
+<li><code>target_CFLAGS</code> - дополнительные флаги для компилятора <code>C</code></li>
+<li><code>target_CPPFLAGS</code> - дополнительные флаги препроцессора (<code>-I</code>, <code>-D</code>)</li>
+<li><code>target_LDADD</code> - дополнительные объекты для линковки (<code>-l</code>, <code>-L</code>) (если <code>target</code> - это программа)</li>
+<li><code>target_LIBADD</code> - то же, что и <code>target_LDADD</code>, только для <code>target</code>-а библиотеки</li>
+<li><code>target_LDFLAGS</code> - дополнительные флаги для линковщика</li>
+</ul>
+<p>Для имён библиотек, объявленных внутри пакета, лучше использовать прямой путь до файла, а <code>-l</code> и <code>-L</code> использовать только для внешних зависимостей.</p>
+<p>Также не стоит забывать про возможность использовать переменные с библиотеками из макросов Autoconf (<code>AC_CHECK_LIB</code>)</p>
+<h4 id="Что-попадает-в-пакет-дистрибутив-targz"><a class="header" href="#Что-попадает-в-пакет-дистрибутив-targz">Что попадает в пакет (дистрибутив) (tar.gz)</a></h4>
+<ul>
+<li>Всех исходники, объявленные через <code>_SOURCES</code></li>
+<li>Все заголовочные файлы, объявленные через <code>_HEADERS</code></li>
+<li>Все скрипты, объявленные через <code>_SCRIPTS</code></li>
+<li>Все файлы с данными, объявленные через <code>_DATA</code></li>
+<li>...</li>
+<li>Стандартные файлы, включаемые в проект по стандартам <code>GNU Coding Conventions</code> (<code>NEWS</code>, <code>AUTHORS</code>, <code>CONTRIBUTING</code>, ...)</li>
+<li><em>Дополнительные файлы или директории, объявленные напрямую через <code>EXTRA_DIS</code></em></li>
+</ul>
+<h4 id="Условные-выражения"><a class="header" href="#Условные-выражения">Условные выражения</a></h4>
+<p>Условная сборка программ:</p>
+<pre><code class="language-automake">bin_PROGRAMS = foo
+if WANT_BAR
+	bin_PROGRAMS += bar
+endif
+foo_SOURCES = foo.c
+bar_SOURCES = bar.c
+</code></pre>
+<p>Условное подключение исходников:</p>
+<pre><code class="language-automake">bin_PROGRAMS = foo
+foo_SOURCES = foo.c
+if WANT_BAR
+	foo_SOURCES += bar.c
+endif
+</code></pre>
+<p>Что здесь происходит?</p>
+<ul>
+<li><code>bar</code> будет собран, только если <code>WANT_BAR = true</code></li>
+<li><code>bar.o</code> будет слинкован в <code>foo</code> если <code>WANT_BAR = true</code></li>
+<li>Во всех случаях foo.c и bar.c будут добавлены в дистрибутив независимо от значения <code>WANT_BAR</code></li>
+<li><code>WANT_BAR</code> должен быть объявлен в <code>configure.ac</code></li>
+</ul>
+<h5 id="Объявление-условных-параметров-в-configureac"><a class="header" href="#Объявление-условных-параметров-в-configureac">Объявление условных параметров в configure.ac</a></h5>
+<p><code>AM_CONDITIONAL(NAME, CONDITION)</code>. <code>CONDITION</code> - это инструкция для оболочки командной строки. Если она выполняется успешно, условный парамер <code>NAME</code> будет включен</p>
+<h4 id="Расширение-правил-сборки-automake"><a class="header" href="#Расширение-правил-сборки-automake">Расширение правил сборки Automake</a></h4>
+<ul>
+<li>Содержимое <code>Makefile.am</code> копируется в <code>Makefile.in</code> почти дословно</li>
+<li><code>automake</code> добавляет новые правила сборки и новые переменные в <code>Makefile.in</code>, чтобы реализовать функционал переменных, вручную объявленных вами</li>
+<li>Небольшое изменение исходного <code>Makefile.am</code> кода производится для того, чтобы такие вещи, как, например, условные выражения, или <code>+=</code>, работали на разных платформах.</li>
+<li><strong>Не является плохой практикой</strong> объявлять свои собственные правила в <code>Makefile.am</code>. Например, для поддержания качества кода (<code>make style-check</code>).</li>
+<li><strong>Не является плохой практикой</strong> объявлять переменные, которые не имеют для <code>automake</code> никакого смысла. Например, для использования в кастомных правилах.</li>
+<li><strong>Остерегайтесь внутренних конфликтов automake!</strong>. Ваши вручную определённые имена или правила сборки могут конфликтовать с уже существующими. Такое поведение можно избежать, используя флаг <code>-Wall</code></li>
+</ul>
+<h2 id="Источники"><a class="header" href="#Источники">Источники</a></h2>
+<ul>
+<li>A. Duret-Lutz -  Using GNU Autotools - May 16, 2010</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../functors/lambda.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../functors/lambda.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../mermaid.min.js"></script>
+        <script src="../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="rust" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Фундаментальные типы данных - Курс по C++</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "rust" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Подготовка к курсу</li><li class="chapter-item expanded "><a href="../../intro/binary_number_system/binary_number_system.html"><strong aria-hidden="true">1.</strong> Двоичная система счисления</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../intro/binary_number_system/tasks.html"><strong aria-hidden="true">1.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../intro/pl_differences.html"><strong aria-hidden="true">2.</strong> Чем отличаются языки программирования</a></li><li class="chapter-item expanded "><a href="../../intro/language_processors.html"><strong aria-hidden="true">3.</strong> Языковые процессоры</a></li><li class="chapter-item expanded affix "><li class="part-title">Введение в C++</li><li class="chapter-item expanded "><a href="../../cpp_intro/compile_and_link.html"><strong aria-hidden="true">4.</strong> Компиляция и сборка программ на C++ (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Основы</li><li class="chapter-item expanded "><a href="../../basics/first_program/first_program.html"><strong aria-hidden="true">5.</strong> Первая программа на C++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/first_program/tasks.html"><strong aria-hidden="true">5.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/bare_minimum/bare_minimum.html"><strong aria-hidden="true">6.</strong> Марш-бросок по основам языка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/bare_minimum/tasks.html"><strong aria-hidden="true">6.1.</strong> Задания</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/fundamental_types/fundamental_types.html" class="active"><strong aria-hidden="true">7.</strong> Фундаментальные типы данных</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../basics/fundamental_types/task.html"><strong aria-hidden="true">7.1.</strong> Задание</a></li></ol></li><li class="chapter-item expanded "><a href="../../basics/operations.html"><strong aria-hidden="true">8.</strong> Операции и операторы</a></li><li class="chapter-item expanded "><a href="../../basics/auto_keyword.html"><strong aria-hidden="true">9.</strong> Ключевое слово auto</a></li><li class="chapter-item expanded "><a href="../../basics/type_casting.html"><strong aria-hidden="true">10.</strong> Приведение типов</a></li><li class="chapter-item expanded "><a href="../../basics/overflow.html"><strong aria-hidden="true">11.</strong> Переполнения</a></li><li class="chapter-item expanded "><a href="../../basics/literals.html"><strong aria-hidden="true">12.</strong> Литералы</a></li><li class="chapter-item expanded "><a href="../../basics/const.html"><strong aria-hidden="true">13.</strong> Константные данные</a></li><li class="chapter-item expanded affix "><li class="part-title">ООП</li><li class="chapter-item expanded "><a href="../../oop/virtual.html"><strong aria-hidden="true">14.</strong> Виртуальные функции (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Функторы</li><li class="chapter-item expanded "><a href="../../functors/lambda.html"><strong aria-hidden="true">15.</strong> Лямбда-выражения (в разработке)</a></li><li class="chapter-item expanded affix "><li class="part-title">Статьи</li><li class="chapter-item expanded "><a href="../../articles/gnu_autotools_from_scratch.html"><strong aria-hidden="true">16.</strong> Введение в GNU Autotools с нуля</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Курс по C++</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/dj1vs/cpp-course/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-callouts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  /* border-left: 0.25em solid var(--mdbook-callouts-color); */
+  background: var(--mdbook-callouts-background);
+}
+
+.mdbook-callouts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-callouts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-callouts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-callouts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-callouts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-callouts-icon);
+  mask-image: var(--mdbook-callouts-icon);
+}
+
+/* icons at: https://lucide.dev/icons/ */
+
+.mdbook-callouts-info {
+  --mdbook-callouts-color: rgb(var(--color-blue-rgb));
+  --mdbook-callouts-background: rgba(var(--color-blue-rgb), 0.1);
+  /* https://lucide.dev/icons/info */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWluZm8iPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBhdGggZD0iTTEyIDE2di00Ii8+PHBhdGggZD0iTTEyIDhoLjAxIi8+PC9zdmc+');
+}
+
+.mdbook-callouts-note {
+  --mdbook-callouts-color: rgb(var(--color-blue-rgb));
+  --mdbook-callouts-background: rgba(var(--color-blue-rgb), 0.1);
+  /* https://lucide.dev/icons/pencil */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXBlbmNpbCI+PHBhdGggZD0iTTE3IDNhMi44NSAyLjgzIDAgMSAxIDQgNEw3LjUgMjAuNSAyIDIybDEuNS01LjVaIi8+PHBhdGggZD0ibTE1IDUgNCA0Ii8+PC9zdmc+');
+}
+
+.mdbook-callouts-tip,
+.mdbook-callouts-hint {
+  --mdbook-callouts-color: rgb(var(--color-cyan-rgb));
+  --mdbook-callouts-background: rgba(var(--color-cyan-rgb), 0.1);
+  /* https://lucide.dev/icons/flame */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZsYW1lIj48cGF0aCBkPSJNOC41IDE0LjVBMi41IDIuNSAwIDAgMCAxMSAxMmMwLTEuMzgtLjUtMi0xLTMtMS4wNzItMi4xNDMtLjIyNC00LjA1NCAyLTYgLjUgMi41IDIgNC45IDQgNi41IDIgMS42IDMgMy41IDMgNS41YTcgNyAwIDEgMS0xNCAwYzAtMS4xNTMuNDMzLTIuMjk0IDEtM2EyLjUgMi41IDAgMCAwIDIuNSAyLjV6Ii8+PC9zdmc+');
+}
+
+.mdbook-callouts-important {
+  --mdbook-callouts-color: rgb(var(--color-purple-rgb));
+  --mdbook-callouts-background: rgba(var(--color-purple-rgb), 0.1);
+  /* https://lucide.dev/icons/alert-circle */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFsZXJ0LWNpcmNsZSI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjgiIHkyPSIxMiIvPjxsaW5lIHgxPSIxMiIgeDI9IjEyLjAxIiB5MT0iMTYiIHkyPSIxNiIvPjwvc3ZnPg==');
+}
+
+.mdbook-callouts-success,
+.mdbook-callouts-check,
+.mdbook-callouts-done {
+  --mdbook-callouts-color: rgb(var(--color-green-rgb));
+  --mdbook-callouts-background: rgba(var(--color-green-rgb), 0.1);
+  /* https://lucide.dev/icons/check */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-question,
+.mdbook-callouts-help,
+.mdbook-callouts-faq {
+  --mdbook-callouts-color: rgb(var(--color-pink-rgb));
+  --mdbook-callouts-background: rgba(var(--color-pink-rgb), 0.1);
+  /* https://lucide.dev/icons/help-circle */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWhlbHAtY2lyY2xlIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik05LjA5IDlhMyAzIDAgMCAxIDUuODMgMWMwIDItMyAzLTMgMyIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-warning,
+.mdbook-callouts-warn {
+  --mdbook-callouts-color: rgb(var(--color-orange-rgb));
+  --mdbook-callouts-background: rgba(var(--color-orange-rgb), 0.1);
+  /* https://lucide.dev/icons/alert-triangle */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFsZXJ0LXRyaWFuZ2xlIj48cGF0aCBkPSJtMjEuNzMgMTgtOC0xNGEyIDIgMCAwIDAtMy40OCAwbC04IDE0QTIgMiAwIDAgMCA0IDIxaDE2YTIgMiAwIDAgMCAxLjczLTNaIi8+PHBhdGggZD0iTTEyIDl2NCIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-caution {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/shield-alert */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNoaWVsZC1hbGVydCI+PHBhdGggZD0iTTEyIDIyczgtNCA4LTEwVjVsLTgtMy04IDN2N2MwIDYgOCAxMCA4IDEwIi8+PHBhdGggZD0iTTEyIDh2NCIvPjxwYXRoIGQ9Ik0xMiAxNmguMDEiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-failure,
+.mdbook-callouts-fail,
+.mdbook-callouts-missing {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/x */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXgiPjxwYXRoIGQ9Ik0xOCA2IDYgMTgiLz48cGF0aCBkPSJtNiA2IDEyIDEyIi8+PC9zdmc+');
+}
+
+.mdbook-callouts-error,
+.mdbook-callouts-danger {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/zap */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXphcCI+PHBvbHlnb24gcG9pbnRzPSIxMyAyIDMgMTQgMTIgMTQgMTEgMjIgMjEgMTAgMTIgMTAgMTMgMiIvPjwvc3ZnPg==');
+}
+
+.mdbook-callouts-bug {
+  --mdbook-callouts-color: rgb(var(--color-red-rgb));
+  --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+  /* https://lucide.dev/icons/bug */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJ1ZyI+PHBhdGggZD0ibTggMiAxLjg4IDEuODgiLz48cGF0aCBkPSJNMTQuMTIgMy44OCAxNiAyIi8+PHBhdGggZD0iTTkgNy4xM3YtMWEzLjAwMyAzLjAwMyAwIDEgMSA2IDB2MSIvPjxwYXRoIGQ9Ik0xMiAyMGMtMy4zIDAtNi0yLjctNi02di0zYTQgNCAwIDAgMSA0LTRoNGE0IDQgMCAwIDEgNCA0djNjMCAzLjMtMi43IDYtNiA2Ii8+PHBhdGggZD0iTTEyIDIwdi05Ii8+PHBhdGggZD0iTTYuNTMgOUM0LjYgOC44IDMgNy4xIDMgNSIvPjxwYXRoIGQ9Ik02IDEzSDIiLz48cGF0aCBkPSJNMyAyMWMwLTIuMSAxLjctMy45IDMuOC00Ii8+PHBhdGggZD0iTTIwLjk3IDVjMCAyLjEtMS42IDMuOC0zLjUgNCIvPjxwYXRoIGQ9Ik0yMiAxM2gtNCIvPjxwYXRoIGQ9Ik0xNy4yIDE3YzIuMS4xIDMuOCAxLjkgMy44IDQiLz48L3N2Zz4=');
+}
+
+.mdbook-callouts-examples,
+.mdbook-callouts-example {
+  --mdbook-callouts-color: rgb(var(--color-purple-rgb));
+  --mdbook-callouts-background: rgba(var(--color-purple-rgb), 0.1);
+  /* https://lucide.dev/icons/list */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxpc3QiPjxsaW5lIHgxPSI4IiB4Mj0iMjEiIHkxPSI2IiB5Mj0iNiIvPjxsaW5lIHgxPSI4IiB4Mj0iMjEiIHkxPSIxMiIgeTI9IjEyIi8+PGxpbmUgeDE9IjgiIHgyPSIyMSIgeTE9IjE4IiB5Mj0iMTgiLz48bGluZSB4MT0iMyIgeDI9IjMuMDEiIHkxPSI2IiB5Mj0iNiIvPjxsaW5lIHgxPSIzIiB4Mj0iMy4wMSIgeTE9IjEyIiB5Mj0iMTIiLz48bGluZSB4MT0iMyIgeDI9IjMuMDEiIHkxPSIxOCIgeTI9IjE4Ii8+PC9zdmc+');
+}
+
+.mdbook-callouts-quote {
+  --mdbook-callouts-color: rgb(158, 158, 158);
+  --mdbook-callouts-background: rgba(158, 158, 158, 0.1);
+  /* https://lucide.dev/icons/quote */
+  --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXF1b3RlIj48cGF0aCBkPSJNMyAyMWMzIDAgNy0xIDctOFY1YzAtMS4yNS0uNzU2LTIuMDE3LTItMkg0Yy0xLjI1IDAtMiAuNzUtMiAxLjk3MlYxMWMwIDEuMjUuNzUgMiAyIDIgMSAwIDEgMCAxIDF2MWMwIDEtMSAyLTIgMnMtMSAuMDA4LTEgMS4wMzFWMjBjMCAxIDAgMSAxIDF6Ii8+PHBhdGggZD0iTTE1IDIxYzMgMCA3LTEgNy04VjVjMC0xLjI1LS43NTctMi4wMTctMi0yaC00Yy0xLjI1IDAtMiAuNzUtMiAxLjk3MlYxMWMwIDEuMjUuNzUgMiAyIDJoLjc1YzAgMi4yNS4yNSA0LTIuNzUgNHYzYzAgMSAwIDEgMSAxeiIvPjwvc3ZnPg==');
+}
+
+
+.ayu {
+  --color-red-rgb: 251, 70, 76;
+  --color-red: #fb464c;
+  --color-orange-rgb: 233, 151, 63;
+  --color-orange: #e9973f;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-yellow: #e0de71;
+  --color-green-rgb: 68, 207, 110;
+  --color-green: #44cf6e;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-cyan: #53dfdd;
+  --color-blue-rgb: 2, 122, 255;
+  --color-blue: #027aff;
+  --color-purple-rgb: 168, 130, 255;
+  --color-purple: #a882ff;
+  --color-pink-rgb: 250, 153, 205;
+  --color-pink: #fa99cd;
+}
+
+.light {
+  --color-red-rgb: 233, 49, 71;
+  --color-red: #e93147;
+  --color-orange-rgb: 236, 117, 0;
+  --color-orange: #ec7500;
+  --color-yellow-rgb: 224, 172, 0;
+  --color-yellow: #e0ac00;
+  --color-green-rgb: 8, 185, 78;
+  --color-green: #08b94e;
+  --color-cyan-rgb: 0, 191, 188;
+  --color-cyan: #00bfbc;
+  --color-blue-rgb: 8, 109, 221;
+  --color-blue: #086ddd;
+  --color-purple-rgb: 120, 82, 238;
+  --color-purple: #7852ee;
+  --color-pink-rgb: 213, 57, 132;
+  --color-pink: #d53984;
+}
+
+.coal {
+  --color-red-rgb: 251, 70, 76;
+  --color-red: #fb464c;
+  --color-orange-rgb: 233, 151, 63;
+  --color-orange: #e9973f;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-yellow: #e0de71;
+  --color-green-rgb: 68, 207, 110;
+  --color-green: #44cf6e;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-cyan: #53dfdd;
+  --color-blue-rgb: 2, 122, 255;
+  --color-blue: #027aff;
+  --color-purple-rgb: 168, 130, 255;
+  --color-purple: #a882ff;
+  --color-pink-rgb: 250, 153, 205;
+  --color-pink: #fa99cd;
+}
+
+.navy {
+  --color-red-rgb: 251, 70, 76;
+  --color-red: #fb464c;
+  --color-orange-rgb: 233, 151, 63;
+  --color-orange: #e9973f;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-yellow: #e0de71;
+  --color-green-rgb: 68, 207, 110;
+  --color-green: #44cf6e;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-cyan: #53dfdd;
+  --color-blue-rgb: 2, 122, 255;
+  --color-blue: #027aff;
+  --color-purple-rgb: 168, 130, 255;
+  --color-purple: #a882ff;
+  --color-pink-rgb: 250, 153, 205;
+  --color-pink: #fa99cd;
+}
+
+.rust {
+  --color-red-rgb: 233, 49, 71;
+  --color-red: #e93147;
+  --color-orange-rgb: 236, 117, 0;
+  --color-orange: #ec7500;
+  --color-yellow-rgb: 224, 172, 0;
+  --color-yellow: #e0ac00;
+  --color-green-rgb: 8, 185, 78;
+  --color-green: #08b94e;
+  --color-cyan-rgb: 0, 191, 188;
+  --color-cyan: #00bfbc;
+  --color-blue-rgb: 8, 109, 221;
+  --color-blue: #086ddd;
+  --color-purple-rgb: 120, 82, 238;
+  --color-purple: #7852ee;
+  --color-pink-rgb: 213, 57, 132;
+  --color-pink: #d53984;
+}
+</style>
+<h1 id="Фундаментальные-типы-данных"><a class="header" href="#Фундаментальные-типы-данных">Фундаментальные типы данных</a></h1>
+<p>C++ - это <em>сильно типизированный</em> язык. Это означает, что у каждой переменной, у каждой функции, ..., должен быть явно указан тип.</p>
+<p>Из-за ошибок при работе с типами данных в <code>C</code> и в <code>C++</code> в истории человечества происходило множество страшных событий: от багов в играх до взрывающихся ракет и падающих самолётов (<strong>буквально</strong> - всё это разберём в дальнейших уроках).</p>
+<p>Поэтому очень важно понимать, какие типы есть в С++ и как с ними работать.</p>
+<h2 id="Что-такое-тип"><a class="header" href="#Что-такое-тип">Что такое тип?</a></h2>
+<p>Справедливый вопрос, который зачастую не обговаривается (а зря).</p>
+<p>Обсудим это на примере переменной.</p>
+<p><strong>Тип</strong> - это <em>свойство</em> переменной, которое определяет:</p>
+<ol>
+<li>Операции, которые можно совершать над переменной (например, основные арифметические операции для целых чисел)</li>
+<li>Набор значений, которые может принимать переменная данного типа.  Например, <em>обычно</em> переменная типа <code>int</code> может принимать значения от <code>-2 147 483 647</code> до <code>2 147 483 647</code>. Или, например, булева переменная (<code>bool</code>) может принимать значение только <code>true</code> или <code>false</code> (1 или 0).</li>
+</ol>
+<p>Пример того, как мы указываем тип в C++:</p>
+<ol>
+<li>При создании функций</li>
+</ol>
+<pre><code class="language-cpp">int sum(int a, int b)
+{
+	return a + b;
+}
+</code></pre>
+<p>Здесь мы чётко указали, что функция с именем <code>sum</code> принимает на вход два целых числа и как результат выполнения тоже возвращает целое число</p>
+<ol start="2">
+<li>При объявлении переменных</li>
+</ol>
+<pre><code class="language-cpp">std::string name;
+</code></pre>
+<p>Здесь мы чётко указали, что переменная с именем <code>name</code> имеет тип <code>std::string</code> (то есть, это строка).</p>
+<h2 id="Переменные-в-памяти-компьютера"><a class="header" href="#Переменные-в-памяти-компьютера">Переменные в памяти компьютера</a></h2>
+<p>Вообще, память компьютера упрощённо можно представить как бесконечную ленту из 0 и 1:</p>
+<pre><code>01010101000100100011110100101010010101010...
+</code></pre>
+<blockquote>
+<p>(конечно, на самом деле это не так, но в рамках курса такое объяснение вполне допустимо).</p>
+</blockquote>
+<p>Какая-то часть этой "ленты" используется запущеными приложениями, какая-то нет.</p>
+<p>Итак, предположим, что у нас в памяти компьютера по какому-то адресу лежит переменная.Это будет выглядеть примерно так:</p>
+<pre><code>...[10011101]...
+</code></pre>
+<p>То есть, у нас выделен определённый фрагмент, в который потом записали обозначенные данные.</p>
+<p>И без <em>типа</em> данных вот эта последовательность нулей и единиц (бит) не имеет <strong>никакого смысла</strong>. Может быть, тут зашифрован символ в какой-то кодировке. Может, здесь зашифровано целое число. А может дробное. А может это вообще какой-то специальный крутой шифр, в котором закодирован пароль запуска ядерных боеголовок - мы не знаем. В такой ситуации, эти данные для нас только мусор.</p>
+<p><strong>Тип данных</strong> наделяет эту последовательность бит <em>смыслом</em>, и определяет то, как с этими данными можно работать. Это важно и для пользователя, который будет работать с переменной, и для компьютера, который будет выполнять над этими данными какие-то машинные операции (переместить в регистр/сложить с другим регистром/скопировать значение в другую область памяти/...).</p>
+<h2 id="Какие-в-С-бывают-типы"><a class="header" href="#Какие-в-С-бывают-типы">Какие в С++ бывают типы?</a></h2>
+<div class="mdbook-callouts mdbook-callouts-quote">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  страуструп б. - программирование. принципы и практика с использованием c++
+</p>
+<p>В языке С++ предусмотрен довольно широкий выбор типов (см. раздел А.8). Однако можно создавать прекрасные программы, обходясь лишь пятью из них.</p>
+<pre><code class="language-cpp">int number_of_steps = 39; // int - для целых чисел
+double flyinq_time = 3.5; // double - для чисел с плавающей точкой
+char decimal_point = '.'; // char - для СИМВ ОЛОВ
+string name = "Annemarie"; // string - для строк
+bool tap_on = true ; // bool - для логических переменных
+</code></pre>
+</div>
+<p>Но всё же, рассмотрим представленные в C++ типы чуть подробнее.</p>
+<h3 id="Общее-деление-типов"><a class="header" href="#Общее-деление-типов">Общее деление типов</a></h3>
+<p><a href="https://ru.cppreference.com/w/cpp/language/type">Согласно документации</a>, типы в C++ делятся на:</p>
+<ol>
+<li><strong>Фундаментальные</strong> - совсем простые типы, без которых никуда не деться (<code>int</code>, <code>char</code>, <code>double</code>, ...)</li>
+<li><strong>Составные</strong> - типы, которые, по сути, строятся на основе фундаментальных</li>
+</ol>
+<h3 id="Фундаментальные-типы"><a class="header" href="#Фундаментальные-типы">Фундаментальные типы</a></h3>
+<p>Фундаментальные типы - это самые простые типы языка C++, которые служат "кирпичиками" для построения более сложных, составных типов.</p>
+<h4 id="Целые-числа-int"><a class="header" href="#Целые-числа-int">Целые числа (int)</a></h4>
+<p>Целые числа в С++ задаются ключевым словом <code>int</code>. Пример:</p>
+<pre><code class="language-cpp">int a = 1; // a - целое число
+</code></pre>
+<h5 id="Вычисление-границ-инта"><a class="header" href="#Вычисление-границ-инта">Вычисление границ инта</a></h5>
+<p><em>Обычно</em>, переменная <code>int</code> занимает 4 байта.</p>
+<p>В памяти целое число хранится просто в виде его представления в двоичной системе счисления.
+Например, число <code>5</code> в памяти будет хранится как <code>101</code>.</p>
+<p>Из этого следует, что мы можем посчитать, какое максимальное число можно уместить в переменной типа <code>int</code>:</p>
+<ul>
+<li>4 байта - это \(4 \times 8 \) = 32 бит</li>
+<li>Целое число может быть и отрицательным - поэтому 1 бит уходит на хранение знака числа (Если первый бит - 1, то число отрицательное, 0 - положительное). Итого на хранение <em>самого числа</em> остаётся 31 бит.</li>
+<li>31 бит соответствует числу в двоичной системе счисления, которое может состоять максимум из 31-го символа.</li>
+<li>Максимальное десятичное число, которое в двоичной системе счисления будет занимать <em>не больше 31-го символа</em> можно вычислить как:
+\[
+x = 2^{31} - 1 = \text{2 147 483 648} - 1 = \text{2 147 483 647}
+\]</li>
+</ul>
+<p>Получается, что целые числа (с учётом знаковости) могут принимать значения <em>от <code>-2 147 483 647</code> до <code>2 147 483 647</code></em>.</p>
+<h5 id="Спецификаторы-типа"><a class="header" href="#Спецификаторы-типа">Спецификаторы типа</a></h5>
+<p>Для типа <code>int</code> можно задавать <em>спецификаторы типа</em> - это специальные ключевые слова, которые <em>уточняют</em> тип переменной <code>int</code>. Давайте разберёмся, какие они бывают.</p>
+<ol>
+<li>Уточняющие <em>знаковость</em> целового числа (может ли число быть положительным или нет) - <code>signed</code> и <code>unsigned</code>. <code>int</code> по умолчанию <code>signed</code>.</li>
+<li>Уточняющие <em>размер</em> числа - <code>short</code>, <code>long</code>, <code>long long</code>. Так мы можем определить, с насколько большим целым числом мы хотим работать (и, соответственно, сколько памяти нужно выделять для хранения этого числа).</li>
+</ol>
+<p>Если число будет <em>беззнаковое</em> (<code>unsigned</code>), то в нём для хранения <em>самого числа</em> выделяется уже не 31, а 32 бита (так как отдельный бит для хранения знака уже не нужен). Получается, числа <code>unsigned int</code> могут лежать в пределах от <code>0</code> до \( 2^{32} - 1 = \text{4 294 967 296} - 1 = \text{4 294 967 296}\).</p>
+<p>По поводу размеров <code>int</code> <em>обычно</em> работает следующая шкала:</p>
+<ul>
+<li><code>short int</code> - 2 байта</li>
+<li><code>int</code> - 4 байта</li>
+<li><code>long int</code> - 8 байт</li>
+<li><code>long long int</code> - 16 байт</li>
+</ul>
+<p>Для этих типов диапазоны значений высчитываются аналогично. При желании, их можно самому легко посчитать в калькуляторе, или банально нагуглить.</p>
+<p>...с помощью спецификаторов можно задавать переменные типа <code>int</code> самыми разными способами:</p>
+<pre><code class="language-cpp">int a;
+short int b;
+short c;
+long d;
+long long e;
+signed int f;
+unsigned int g;
+unsigned long long int h;
+// и т.д.
+</code></pre>
+<p>То есть, можно как угодно сочетать спецификаторы, определяющие размер и знаковость числа. Так же можно опускать при определении типа слово <code>int</code>, если уже используется, например, <code>long long</code> или <code>signed</code>.</p>
+<h5 id="Реальный-размер-инта"><a class="header" href="#Реальный-размер-инта"><em>Реальный</em> размер инта</a></h5>
+<p>Очень тонкий момент заключается в <em>размере <code>int</code></em>. Да, <em>обычно</em>, размеры <code>int</code> такие, как я написал. Но это только обычно, а не всегда. На самом деле, размер <code>int</code> может различаться на разных платформах! Это определяется разрядностью и архитектурой процессора, и другими особенностями. Если взглянуть в <a href="https://ru.cppreference.com/w/cpp/language/types">официальную документацию C++,</a> то размеры <code>int</code> там определены следующим образом:</p>
+<p><img src="../../assets/img/cppreference_int_boundaries_ru.png" alt="" /></p>
+<p>Обратите внимание на словосочетание: "не меньше чем". Стандарт С++ не гарантирует точный размер переменной типа <code>int</code>! По таким ограничениям, <code>short int</code> может быть такого же размера, как <code>int</code>.</p>
+<p>Почему же существует такая путаница и неразбериха? Потому что C++ позволяет очень "близко" (<em>на низком уровне</em>) работать с целевой машиной, на которой работает программа. Поэтому такой базовый тип, как <code>int</code>, и зависит от аппаратных возможностей конкретного конкретного компьютера, на котором будет собрана и запущена программа.</p>
+<p>Но всё не так плохо! Если мы захотим, мы можем создать переменную <code>int</code>, которая будет ровно того размера, который нам нужен.</p>
+<p>Чтобы <strong>чётко</strong> указать компилятору, что мы хотим переменную <code>int</code> размером в столько-то байт, существуют специальные типы:</p>
+<pre><code class="language-cpp">int32_t a; // Переменная signed int размером 32 бита (4 байта)
+int8_t b; // Переменная signed int размером 8 бит (1 байт)
+uint16_t c; // Переменная unsigned int размером 16 бит (2 байта)
+</code></pre>
+<p>На самом деле, это не отдельные типы, а просто заранее определённые <code>typedef</code>-псевдонимы. Они на этапе компиляции "подгоняются" под целевую машину, и, например, вместо <code>int16_t</code> на этапе компиляции может подставиться <code>short int</code>. Что такое <code>typedef</code>, мы разберём подробнее позже.</p>
+<h4 id="Числа-с-плавающей-точкой"><a class="header" href="#Числа-с-плавающей-точкой">Числа с плавающей точкой</a></h4>
+<p>...или же дробные числа, или же вещественный числа, или же числа со знаками после запятой.</p>
+<p>Для хранения вещественных чисел в C++ используется 3 типа данных:</p>
+<ul>
+<li><code>float</code></li>
+<li><code>double</code></li>
+<li><code>long double</code></li>
+</ul>
+<p>С целыми числами все понятно, как они хранятся в памяти: это просто последовательность бит, которая в двоичной системе соответствует целому числу. Последовательность бит <code>10</code> означает \( 2_{10}\), <code>11</code> - \(3_{10}\), и так далее.</p>
+<p>Хранить же дробное число, так же как и выполнять с ним какие-то операции, на уровне бинарной арифметики, достаточно сложно и неудобно. Отсюда зачастую можно встретиться вот с таким интересным поведением программ (и не только на языке C++):</p>
+<pre><code class="language-cpp">float f = 0.6;
+std::cout &lt;&lt; (f/2  == 0.3); // 0 (false)
+</code></pre>
+<p>На эту тему можно посмотреть <a href="https://www.youtube.com/watch?v=2gIxbTn7GSc">отдельный ролик</a>.</p>
+<p>Здесь же скажем коротко: существуют специальные стандарты, которые определяют, как в компьютере будет храниться дробное число, и которые определяют допустимый размер дробного числа.</p>
+<p>Выдержка из документации касательно стандартов представления дробных чисел:</p>
+<div class="mdbook-callouts mdbook-callouts-quote">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  cppreference.com
+</p>
+<ul>
+<li>float - тип с плавающей запятой одинарной точности. Соответствует <a href="https://tftwiki.ru/wiki/Single-precision_floating-point_format">формату IEEE-754 binary32</a>, если поддерживается.</li>
+<li>double - тип с плавающей запятой двойной точности. Соответствует <a href="https://tftwiki.ru/wiki/Double-precision_floating-point_format">формату IEEE-754 binary64</a>, если поддерживается.</li>
+<li>long double - тип с плавающей запятой повышенной точности. Соответствует <a href="https://datewiki.ru/wiki/Quadruple-precision_floating-point_format">формату IEEE-754 binary128</a>, если поддерживается, в противном случае соответствует <a href="https://star-wiki.ru/wiki/Extended_precision">IEEE-754 binary64-расширенному формату</a>, если поддерживается, иначе соответствует некоторому расширенному формату с плавающей запятой, отличному от IEEE-754, если его точность лучше, чем binary64, и диапазон не менее хорош как binary64, иначе соответствует формату IEEE-754 binary64.</li>
+</ul>
+</div>
+<p>Размеры для этих типов распределяются так:</p>
+<ul>
+<li><code>float</code>: представляет вещественное число одинарной точности с плавающей точкой в диапазоне <code>+/- 3.4E-38 до 3.4E+38</code>. В памяти занимает 4 байта (32 бита)</li>
+<li><code>double</code>: представляет вещественное число двойной точности с плавающей точкой в диапазоне <code>+/- 1.7E-308 до 1.7E+308</code>. В памяти занимает 8 байт (64 бита)</li>
+<li><code>long double</code>: представляет вещественное число двойной точности с плавающей точкой не менее 8 байт (64 бит). В зависимости от размера занимаемой памяти может отличаться диапазон допустимых значений</li>
+</ul>
+<h4 id="Символьные-типы"><a class="header" href="#Символьные-типы">Символьные типы</a></h4>
+<h5 id="char"><a class="header" href="#char">char</a></h5>
+<p>Для представления символов в C++ используется тип <em>char</em>.</p>
+<p>Символы в языке C++ обозначаются через одинарные кавычки:</p>
+<pre><code class="language-cpp">char a = 'D';
+</code></pre>
+<p>Обратите внимание, что в C++ существует чёткое разделение между символами и строками (в отличие от того же питона). Поэтому <em>символы</em> обозначаются здесь <em>одинарными кавычками</em>, а <em>строки</em> - <em>двойными</em>.</p>
+<p>Для хранения текста в памяти компьютера вообще (в отрыве от С++) существует огромное число разных <em>кодировок</em>:</p>
+<ul>
+<li>ASCII</li>
+<li>KOI8R</li>
+<li>Windows1251</li>
+<li>UTF8 / UTF16 / UTF32</li>
+<li>...</li>
+</ul>
+<p>В C++ для типа <code>char</code> используется очень простая кодировка <code>ASCII</code>. В этой кодировке самым основным символам предоставляется численный код от 1 до 127:</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ASCII-Table-wide.svg/875px-ASCII-Table-wide.svg.png" alt="" /></p>
+<p>Благодаря этой кодировке, <code>char</code> занимает в памяти только 1 байт. Но с помощью него нельзя хранить специальные символы (эмодзи, математические символы), или символы из алфавитов разных языков (например, иероглифы).</p>
+<p>В кодировке <code>ASCII</code> каждому симолу просто присваевается какое-то число от 0 до 127. Таким образом, символ "!" может быть закодирован как число 33, символ "N" как число 78, и так далее.</p>
+<p>Ну и, соответственно, символ в кодировке <code>ASCII</code> <strong>в памяти будет хранится как то же самое целое число</strong>. Или же, другими словами, последовательность бит, в виде которой хранится в памяти переменная <code>char</code>, соответствует коду сивола в таблице <code>ASCII</code> в двоичной системе счисления.</p>
+<p>По этой причине, значения типа <code>char</code> могут использоваться вместе с целыми числами:</p>
+<pre><code class="language-cpp">int D_ascii_code = 'D'; // Будет хранить 68 - код 'D' в таблице ASCII
+char a = 33; // В переменную a запишется символ с ASCII-кодом 33. То же самое, что a = '!';
+int b = a + 15; // здесь вместо a подставится ASCII-код лежащего там символа. b = 33 + 15 = 48
+char c = 'A' + 1; // После символа 'A' в таблице ASCII лежит символ 'B'. c = 'A' + 1 = 65 + 1 = 66 = 'B'
+</code></pre>
+<p>Формально, <code>char</code> может принимать отрицательное значение (1 бит в его двоичном представлении выделяется на знак). Можно объявить переменную с типом <code>unsigned char</code>, тогда она будет принимать значения от 0 до 255.</p>
+<p>Но правило в этом плане следующее: <strong>всегда используйте только <code>char</code>; <code>unsigned char</code> используйте только в тех редких случаях, когда вы очень чётко представляете, зачем вам это нужно</strong>.</p>
+<p>У использования <code>char</code> для хранения символов есть некоторые минусы:</p>
+<ul>
+<li>Реализация <code>char</code>, так же как и <code>int</code>, различается на разных платформах.</li>
+<li>С помощью <code>char</code> можно хранить только очень небольшой перечень доступных символов</li>
+</ul>
+<p>Для решения второй проблемы существует отдельный тип - <code>wchar_t</code>, или же "широкий char".</p>
+<h5 id="wchar_t"><a class="header" href="#wchar_t">wchar_t</a></h5>
+<p>С помощью этого типа мы можем хранить и выводить на экран хоть эмодзи, хоть иероглифы.</p>
+<p>"Под капотом" в <code>wchar_t</code> хранятся символы в кодировке <code>Unicode</code>.</p>
+<hr />
+<p><strong>Пару слов про Unicode</strong>.
+Юникод работает по тому же принципу, что и ASCII - каждому символу присваевается какой-то код, и в конечном итоге число в памяти компьютера хранится как этот код.</p>
+<p>В отличие от ASCII, в юникоде поддерживается намного больше символов (десятки тычяч против 128).</p>
+<p>Также, у юникода есть несколько разновидностей:</p>
+<ol>
+<li><code>UTF-8</code>. В этой кодировке каждому символу в памяти выделяется <strong>ЛИБО</strong> 8, <strong>либо</strong> 16, <strong>либо</strong> 32 бита. То есть, размер символа в этой кодировке - непостоянный.</li>
+<li><code>UTF-16</code>. В этой кодировке каждому символу в памяти выделяется либо 16, либо 32 бита</li>
+<li><code>UTF-32</code>. В этой кодировке каждый символ занимает в памяти чётко 32 бита.</li>
+</ol>
+<p>Про кодировки <code>UTF-8</code> и <code>UTF-16</code> говорят, что символы в этих кодировках
+<em>соответствуют какому-то количеству кодовых единиц</em>:</p>
+<ul>
+<li>Символы в <code>UTF-16</code> могут занимать одну (16 бит) или две (32 бита) кодовые единицы.</li>
+<li>Символы в <code>UTF-8</code> могут занимать одну (8 бит), две (16 бит) или четыре (32 бита) кодовые единицы.</li>
+</ul>
+<div class="mdbook-callouts mdbook-callouts-question">
+<p class="mdbook-callouts-title">
+  <span class="mdbook-callouts-icon"></span>
+  question
+</p>
+<p>Почему 32 бита в <code>UTF-16</code> соответствуют 4 кодовым единицам, а не 3?</p>
+</div>
+<p>...зачем же нам нужен непостоянный размер символов в кодировке?
+Это помогает сократить использование памяти: для символов, которые спокойно умещаются в 1 байт
+(их номер не превосходит 255), не придётся выделять в памяти лишние 3 байта.</p>
+<p>Но, одновременно с этим, увеличивается сложность обработки текста с непостоянным количеством
+бит на каждый символ.</p>
+<hr />
+<p>...из-за того, что <code>wchar</code> использует <code>unicode</code>, стоит понимать, что он <em>принципиально</em> отличается от <code>char</code>, и просто так <em>заменить</em> один тип на другой не получится, потому что алгоритм работы с разными кодировками сильно различается.</p>
+<p>Например, вот так будет выглядеть вывод одного символа с использованием <code>wchar_t</code>:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main()
+{
+	wchar_t symbol = L'🍌';
+	std::wcout &lt;&lt; symbol &lt;&lt; std::endl;
+}
+</code></pre>
+<p>Здесь можем заметить сразу несколько вещей:</p>
+<ol>
+<li>Для <code>wchar_t</code> нужно использовать специальный поток <code>wcout</code></li>
+<li>Для обозначения шикроких символов нужно писать <code>L''</code> - подробнее об этом расписано в статье про литералы</li>
+</ol>
+<p>Если попытаться в коде выше заменить <code>wcout</code> на <code>cout</code>, компилятор откажется компилировать этот код.</p>
+<p>Но у <code>wchar_t</code> есть один минус: "под капотом" у него не всегда используется одна и та же вариация юникода.<br />
+Например, на Linux-машинах это обычно <code>UTF-32</code> - <code>wchar_t</code> занимает 32 бита и поддерживает все доступные в юникоде символы.
+На Windows-машинах же зачастую используют 16 бит для представления символов, и поэтому в <code>wchar_t</code> помещаются не все юникод-символы.</p>
+<p>Эту проблему видно даже на нашем примере: если в системе, на которой запускается этот код,
+для <code>whcar_t</code> используется 16 бит, код эмодзи просто в них не поместится, и на экран выведется мусор.</p>
+<h5 id="char8_t-char16_t-и-char32_t"><a class="header" href="#char8_t-char16_t-и-char32_t">char8_t, char16_t и char32_t</a></h5>
+<p>Для тех случаев, когда мы чётко хотим определить используемую кодировку, используются типы <code>char8_t</code>, <code>char16_t</code> и <code>char32_t</code>.</p>
+<ul>
+<li>В <code>char8_t</code> хранятся символы <code>UTF-8</code>, <strong>которые помещаются в 8 бит</strong></li>
+<li>В <code>char16_t</code> хранятся символы <code>UTF-16</code>, <strong>которые помещаются в 16 бит</strong></li>
+<li>В <code>char32_t</code> хранятся символы <code>UTF-32</code>. <code>char32_t</code> в памяти занимает 32 бита.</li>
+</ul>
+<p>В коде их использование может выглядеть примерно так:</p>
+<pre><code class="language-cpp">	char8_t C1 = u8'a';
+	//  char8_t C2 = u8'¢';   // ошибка: ¢ соответствует двум кодовым единицам UTF-8
+	//  char8_t C3 = u8'猫';  // ошибка: 猫 соответствует трём кодовым единицам UTF-8
+	//  char8_t C4 = u8'🍌';  // ошибка: 🍌 соответствует четырём кодовым единицам UTF-8
+ 
+    print("\n" "UTF-16 character literals:");
+    char16_t uc1 = u'a';
+    char16_t uc2 = u'¢';
+    char16_t uc3 = u'猫'; 
+	// char16_t uc4 = u'🍌'; // ошибка: 🍌 соответствует двум кодовым единицам UTF-16 
+ 
+    print("\n" "UTF-32 character literals:");
+    char32_t Uc1 = U'a'; 
+    char32_t Uc2 = U'¢'; 
+    char32_t Uc3 = U'猫';
+    char32_t Uc4 = U'🍌';
+</code></pre>
+<p>(пример с <code>cppreference</code>).</p>
+<p>Вообще, нам в курсе эти типы вряд ли потребуются, но полезно знать, что это такое и зачем оно нужно.</p>
+<h4 id="Логический-тип"><a class="header" href="#Логический-тип">Логический тип</a></h4>
+<p>Для представления булевых/логических значений, в C++ используется тип <code>bool</code>.</p>
+<p>Переменные типа <code>bool</code> могут принимать только два значения: <code>true</code> или <code>false</code> (1 или 0).</p>
+<p>Пример использования:</p>
+<pre><code class="language-cpp">bool a = true; // 1
+bool b = false; // 0
+bool c = a | b; // 1 | 0 = 1
+</code></pre>
+<p>В памяти <code>bool</code> занимает один байт. Возможно, у вас возникнет вопрос, почему не один бит, ведь <code>bool</code> по сути хранит только один или ноль.<br />
+Ответ на этот вопрос достаточно сложный, но если попытаться ответить на него коротко, то компьютер не может так дробить память, чтобы выдавать нам ровно 1 бит под хранение переменной. 1 байт - это минимальный размер "долек", на которые компьютер может "дробить" память.</p>
+<h3 id="Составные-типы"><a class="header" href="#Составные-типы">Составные типы</a></h3>
+<p>Это типы, которые являются "надстройками" над фундаментальными типами. К таким типам можно отнести:</p>
+<ol>
+<li>Указатели и ссылки</li>
+<li>Массивы</li>
+<li>Функции и функторы</li>
+<li>Перечисления</li>
+<li>Классы</li>
+</ol>
+<p>Что это всё такое, сейчас разбирать не будем, потому что, по сути, больш<strong>а</strong>я часть нашего курса как раз и посвящена обсуждению того, что это за такие типы <code>:)</code></p>
+<h3 id="Бонус-stdstring"><a class="header" href="#Бонус-stdstring">Бонус: std::string</a></h3>
+<p>Чтобы полностью <em>осознать</em>, что из себя представляет на самом деле <code>std::string</code>, нам потребуется ещё несколько уроков, но пока, чтобы создавать минимально функциональные приложения, можно просто запомнить, как его использовать.</p>
+<p><code>std::string</code> используется для хранения строк в <code>C++</code>. Стоит понимать, что <strong>это не фундаментальный тип</strong> - ведь <code>std::string</code> является не чем-то отдельным, а просто надстройкой над <code>char</code>.</p>
+<p>Пример использования <code>std::string</code>:</p>
+<pre><code class="language-cpp">int main()
+{
+    std::string name = "Maxim";
+
+    std::cout &lt;&lt; "Hi, " + name &lt;&lt; " !" &lt;&lt; std::endl;
+}
+</code></pre>
+<h2 id="Источники"><a class="header" href="#Источники">Источники</a></h2>
+<ol>
+<li><a href="https://en.cppreference.com/w/cpp/language/types">Статья про типы из оф. документации</a></li>
+<li>Программирование. Принципы и практика использования C++ - Бьерн Страуструп</li>
+<li><a href="https://ru.cppreference.com/w/cpp/language/types">Статья про фундаментальные типы из оф. документации</a></li>
+<li><a href="https://youtu.be/2gIxbTn7GSc">Видео про дробные числа (Why Is This Happening?! Floating Point Approximation)</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/IEEE_754-2008">IEEE 754-2008 - вики</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../basics/bare_minimum/tasks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../basics/fundamental_types/task.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../basics/bare_minimum/tasks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../basics/fundamental_types/task.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>
